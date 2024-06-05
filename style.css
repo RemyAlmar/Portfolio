@@ -100,8 +100,8 @@ body
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 28vh;
-    margin-top: 2%;
+    margin-bottom: 10%;
+    margin-top: 10%;
     font-size: 1.7rem;
 }
 .image-profile-header
@@ -153,34 +153,33 @@ body
 .projects video
 {
     width: 100%;
+    position: relative;
+    z-index: 0;
 }
 .video-additional-info
 {
     align-items: center;
     background-color: rgba(30, 30, 30, .8);
-    box-sizing: border-box;
     display: flex;
+    width: 100%;
     font-size: 1rem;
-    padding: 1rem;
-    position: relative;
+    padding: .2rem;
+    position: absolute;
     text-align: left;
-    top: -60px;
+    bottom: 0;
+    z-index: 1;
 }
 
 .video-additional-info div
 {
-    margin-right: 16px;
+    margin: 0 1em;
     display: flex;
     align-items: center;
-}
-.svg-inline--fa 
-{
-    display: var(--fa-display, inline-block);
-    height: 1em;
 }
 .icon
 {
     margin-right: .5em;
+    height: 1.5em;
 }
 /* --------------------- Responsive Phone ------------------------*/
 
@@ -238,19 +237,13 @@ body
         border-radius: 0 4px;
         overflow: hidden;
     }
-    .projects video
-    {
-        object-fit: contain;
-        width: 100%;
-    }
     .video-additional-info
     {
-        display: flex;
-        position: relative;
-        padding: 24px;
-        margin: 0 -32px -52px -16px;
-        left: -8px;
-        top: -50px;
-        font-size: .3rem;
+        font-size: .7em;
+    }
+    .icon
+    {
+        margin-right: .5em;
+        height: 1.5em;
     }
 }
