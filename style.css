@@ -1,9 +1,11 @@
 :root
 {
     --colorBaseFont: #f7f7f7;
-    --colorContact: #45d4df;
+    --colorContact: #e2b887;
     --colorMainTitle: #ffd560;
-    --pageBackgroundColor: #1b1b1b;
+    --colorHover: #87bee2;
+    --pageBackgroundColor: #131313;
+    --pageBandColor: rgba(0, 0, 0, 0.95);
 }
 svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa 
 {
@@ -22,23 +24,18 @@ a:link
 {
     color: var(--colorContact);
 }
-*
+body, html
 {
-    box-sizing: border-box;
-}
-body
-{
-    background-color: #dad3d3;
+    background-color: var(--pageBackgroundColor);
+    color : var(--colorBaseFont);
+    font-family:  Montserrat, sans-serif;
     margin: auto;
     min-width: none;
 }
 .content-wrapper
 {
     align-items: center;
-    background-color: var(--pageBackgroundColor);
-    color : var(--colorBaseFont);
     display: block;
-    font-family:  Montserrat, sans-serif;
     margin: auto;
     max-width: 1100px;
     padding: 0 10px;
@@ -49,10 +46,11 @@ body
 
 .header
 {
-    background-color: #535353;
+    align-items: center;
+    background-color: var(--pageBandColor);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 12px 16px 0 16px;
     position: sticky;
     top: 0;
@@ -60,7 +58,6 @@ body
 }
 .main-title
 {
-    background-color: #7c01b9;
     font-size: 1rem;
     margin-bottom: 1em;
 }
@@ -85,15 +82,17 @@ body
 }
 .contact-header
 {
-    background-color: aquamarine;
     display: flex;
 }
 .link
 {
-    color: #813535;
     font-size: 2rem;
     margin: 0 .25rem;
     width: 3rem;
+}
+:hover.link
+{
+    color: var(--colorHover);    
 }
 
 /* ------------------- Presentation & Picture Profile --------------------------*/
@@ -103,15 +102,13 @@ body
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin: 2% 20%;
     font-size: 1rem;
 }
 .image-profile-header
 {
     align-items: center;
     justify-content: center;
-    background-color: #ffffff;
     border: 3px solid #661212;
     border-radius: 50%;
     margin: 2rem 2rem 2rem 2rem;
@@ -125,6 +122,7 @@ body
 .content-project h2
 {
     font-size: 2rem;
+    color: var(--colorMainTitle);
 }
 
 .projects
@@ -139,7 +137,7 @@ body
 .job-card
 {
     flex: 1 1 25rem;
-    background-color: #661212;
+    background-color: var(--pageContentBGColor);
     border: none;
     border-radius: 3px;
     color: #dad3d3;
@@ -165,11 +163,11 @@ body
 .video-additional-info
 {
     align-items: center;
-    background-color: rgba(30, 30, 30, .8);
+    background-color: var(--pageBandColor);
     display: flex;
     width: 100%;
     font-size: .6rem;
-    padding: .2rem;
+    padding: 0 10px;
     position: absolute;
     text-align: left;
     bottom: 0;
@@ -178,14 +176,14 @@ body
 
 .video-additional-info div
 {
-    margin: 0 1em;
+    margin: 0 10px;
     display: flex;
     align-items: center;
 }
 .icon
 {
     margin-right: .5em;
-    height: 1.5em;
+    height: 1em;
 }
 /*-----------------------Titre et description du jeu----------------------*/
 .project-description
@@ -212,6 +210,38 @@ body
     height: 1.25em;
 }
 
+.contact-footer
+{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: .7rem;
+    justify-content: center;
+    margin: 25px 0 0 0;
+    padding: 25px;
+    color: var(--colorContact);
+
+}
+
+.contact-footer h4
+{
+    color: var(--colorBaseFont);
+    font-size: xx-large;
+    margin: 0;
+}
+.contact-footer a
+{
+    text-decoration: none;
+}
+.contact-footer p
+{
+        font-size: 1.5rem;        
+}
+:hover#mail 
+{
+        color: var(--colorHover);
+        text-decoration: underline;
+}
 /* --------------------- Responsive Phone ------------------------*/
 
 @media(max-width : 800px)
