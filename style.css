@@ -41,7 +41,7 @@ body
     font-family:  Montserrat, sans-serif;
     margin: auto;
     max-width: 1100px;
-    padding: 0 10%;
+    padding: 0 10px;
 }
 
 
@@ -53,8 +53,7 @@ body
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 32px 16px 0 16px;
-    margin: -32px -16px 16px -16px;
+    padding: 12px 16px 0 16px;
     position: sticky;
     top: 0;
     z-index: 5;
@@ -62,7 +61,7 @@ body
 .main-title
 {
     background-color: #7c01b9;
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-bottom: 1em;
 }
 .main-title h1 
@@ -79,7 +78,7 @@ body
 }
 .main-title small
 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 400;
     line-height: 1;
     margin-top: 4px;
@@ -92,9 +91,9 @@ body
 .link
 {
     color: #813535;
-    font-size: 3em;
-    margin: 0 .5rem;
-    width: 1em;
+    font-size: 2rem;
+    margin: 0 .25rem;
+    width: 3rem;
 }
 
 /* ------------------- Presentation & Picture Profile --------------------------*/
@@ -104,9 +103,9 @@ body
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 10%;
-    margin-top: 10%;
-    font-size: 1.25rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 1rem;
 }
 .image-profile-header
 {
@@ -116,8 +115,8 @@ body
     border: 3px solid #661212;
     border-radius: 50%;
     margin: 2rem 2rem 2rem 2rem;
-    width: 20em;
-    max-width: 248px;
+    width: 20rem;
+    max-width: 256px;
     filter: grayscale(80%);
 }
 
@@ -132,21 +131,21 @@ body
 {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     position: relative;
 }
 .job-card
 {
+    flex: 1 1 25rem;
     background-color: #661212;
     border: none;
     border-radius: 3px;
     color: #dad3d3;
-    float: left;
-    margin: 1%;
+    margin: 10px;
     padding: 1rem;
     text-align: left;
-    width: 48%;   
 }
 
 .job-card-video
@@ -215,9 +214,9 @@ body
 
 /* --------------------- Responsive Phone ------------------------*/
 
-@media(max-width : 950px)
+@media(max-width : 800px)
 {
-    .content-wrapper, .header, .main-title h1, .presentation, .content-project, .projects
+    .content-wrapper, .header, .main-title h1, .presentation, .content-project
     {        
         display: flex;
         flex-direction: column;
@@ -227,6 +226,7 @@ body
     .header
     {
         position: relative;
+        margin: auto;
     }
     .main-title h1 
     {              
@@ -282,5 +282,5 @@ body
     {
         font-size: 1.75em;   
     }
-    
+
 }
