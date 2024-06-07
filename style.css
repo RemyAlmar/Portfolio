@@ -1,6 +1,7 @@
 :root
 {
     --colorBaseFont: #f7f7f7;
+    --colorContact: #45d4df;
     --colorMainTitle: #ffd560;
     --pageBackgroundColor: #1b1b1b;
 }
@@ -15,13 +16,16 @@ svg:not(:root)
 }
 a:visited 
 {
-    color: var(--colorBaseFont);
+    color: var(--colorContact);
 }
 a:link
 {
-    color: var(--colorBaseFont);
+    color: var(--colorContact);
 }
-
+*
+{
+    box-sizing: border-box;
+}
 body
 {
     background-color: #dad3d3;
@@ -37,7 +41,7 @@ body
     font-family:  Montserrat, sans-serif;
     margin: auto;
     max-width: 1100px;
-    padding: 0 15%;
+    padding: 0 10%;
 }
 
 
@@ -102,7 +106,7 @@ body
     align-items: center;
     margin-bottom: 10%;
     margin-top: 10%;
-    font-size: 1.7rem;
+    font-size: 1.25rem;
 }
 .image-profile-header
 {
@@ -127,6 +131,7 @@ body
 .projects
 {
     display: flex;
+    flex-direction: row;
     align-items: flex-start;
     flex-wrap: wrap;
     position: relative;
@@ -137,9 +142,11 @@ body
     border: none;
     border-radius: 3px;
     color: #dad3d3;
-    display: inline-block;
+    float: left;
+    margin: 1%;
     padding: 1rem;
     text-align: left;
+    width: 48%;   
 }
 
 .job-card-video
@@ -162,7 +169,7 @@ body
     background-color: rgba(30, 30, 30, .8);
     display: flex;
     width: 100%;
-    font-size: 1rem;
+    font-size: .6rem;
     padding: .2rem;
     position: absolute;
     text-align: left;
@@ -181,9 +188,34 @@ body
     margin-right: .5em;
     height: 1.5em;
 }
+/*-----------------------Titre et description du jeu----------------------*/
+.project-description
+{
+    margin: 0 2em;
+}
+.project-description small, p
+{
+    font-size: 1.5em;
+}
+
+.clickable-card-header
+{
+    align-items: center;
+    color: var(--colorContact);
+    display: flex;
+    font-size: 3em;
+    justify-content: space-between;
+    margin: .1em 0px;
+
+}
+.svg-inline--fa
+{
+    height: 1.25em;
+}
+
 /* --------------------- Responsive Phone ------------------------*/
 
-@media(max-width : 800px)
+@media(max-width : 950px)
 {
     .content-wrapper, .header, .main-title h1, .presentation, .content-project, .projects
     {        
@@ -194,8 +226,6 @@ body
     }
     .header
     {
-        padding: 0;
-        margin: 0;
         position: relative;
     }
     .main-title h1 
@@ -224,14 +254,12 @@ body
     }     
     .job-card
     {
-        margin: 1rem;
         font-size: 1.125rem;
         width: calc(100%);
     }
     .job-card-video
     {
         position: relative;
-        margin-left: -24px 0 0 -24px;
         width: calc(100%);
         display: inline-flex;
         border-radius: 0 4px;
@@ -246,4 +274,13 @@ body
         margin-right: .5em;
         height: 1.5em;
     }
+    .project-description small, p
+    {
+        font-size: 1em;
+    }
+    .clickable-card-header
+    {
+        font-size: 1.75em;   
+    }
+    
 }
