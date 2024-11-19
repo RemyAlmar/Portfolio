@@ -1,12 +1,4 @@
 import * as data from './data.js';
-export class Data
-{    
-    constructor(className = "", content)
-    {
-        this.className = className; // Classe CSS pour le SVG
-        this.content = content;
-    }
-}
 //#region Fonction Utilitaire
 export function CreateIcon(iconData) {
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -28,32 +20,24 @@ export function CreateDiv(divData)
 {
     const div = document.createElement('div');
     div.className = divData.className;
-    if(div.content)
-    {
-        divData.content.forEach(child => {
+        divData.content.forEach(child => 
+        {
             div.appendChild(child);
         });
-    }
     return div;
 } 
-export function CreateText(textData)
+export function CreateText(textData, textFormat)
 {
-    const text = document.createElement('p');
+    const text = document.createElement(`${textFormat}`);
     text.className = textData.className;
     text.textContent = textData.content;
     return text;
-}
-export function CreateTitle(titleData)
-{
-    const title = document.createElement(titleData.content);
-    title.className = titleData.className;
-    return title;
 }
 export function CreateSourceVideo(videoName, formatVideo = 'mp4', path = '.')
 {
     const source = document.createElement('source');
     source.src = `${path}/${videoName}.${formatVideo}`;
-    source.type = `${videoName}/${formatVideo}`;
+    source.type = `video/${formatVideo}`;
     return source;
 }
 export function CreateVideo(videoName, path = '.', autoplay = true, muted = true, loop = true, playsInline = true)
@@ -75,20 +59,59 @@ export function CreateVideo(videoName, path = '.', autoplay = true, muted = true
 }
 //#endregion
 
-export function CreateCard(data)
-{    
+export function CreateCard(_data)
+{  
+    const roleData = new data.Data("", _data.selfRole);
+    const role = CreateText(roleData, 'small');
+    const textDesData = new data.Data("", _data.description);
+    const textDescription = CreateText(textDesData, 'p');
+    const childDesDiv = [role, textDescription];
+    const descriptionDivData = new data.Data("project-description", childDesDiv);
+    const descriptionDiv = CreateDiv(descriptionDivData);
+
+    const toolsIcon = CreateIcon(data.toolsIconData);
+    const toolsData = new data.Data("", _data.device);
+    const toolsText = CreateText(toolsData, 'p');
+    const childToolsSize = [toolsIcon, toolsText];
+    const divToolsSizeData = new data.Data("tools-size icon-container", childToolsSize);
+    const divToolsSize = CreateDiv(divToolsSizeData);
+
+    const timeIcon = CreateIcon(data.timeIconData);
+    const timeData = new data.Data("", _data.productionTime);
+    const timeText = CreateText(timeData, 'p');
+    const childTimeSize = [timeIcon, timeText];
+    const divTimeSizeData = new data.Data("time-size icon-container", childTimeSize);
+    const divTimeSize = CreateDiv(divTimeSizeData);
+
+    const teamIcon = CreateIcon(data.teamIconData);
+    const teamData = new data.Data("", _data.teamMate);
+    const teamText = CreateText(teamData, 'p');
+    const childTeamSize = [teamIcon, teamText];
+    const divTeamSizeData = new data.Data("team-size icon-container", childTeamSize);
+    const divTeamSize = CreateDiv(divTeamSizeData);
     // TODO continuer à ajouter les enfants de main.js
-    const videoAddInfoDivData = new Data("video-additional-info");
-    const videoAddInfoDiv = CreateDiv(videoAddInfoDivData);
+
+    const chevronIcon = CreateIcon(data.chevronIconData);
+    const titleData = new data.Data("clickable-card-header", _data.titleGame);
+    const titleGame = CreateText(titleData, 'h3');
+    titleGame.appendChild(chevronIcon);
+
+    const childPTD = [titleGame];
+    const projectTitleData = new data.Data("project-Title", childPTD);
+    const projectTitle = CreateDiv(projectTitleData);
+    // TODO continuer à ajouter les enfants de main.js
     
-    const video = CreateVideo(data.videoName);
-
+    const childInfo = [projectTitle, divTeamSize, divTimeSize, divToolsSize];
+    const videoAddInfoDivData = new data.Data("video-additional-info", childInfo);
+    const videoAddInfoDiv = CreateDiv(videoAddInfoDivData);
+    const video = CreateVideo(_data.videoSrc);
+    
     const videoDivChilds = [video, videoAddInfoDiv];
-    const videoDivData = new Data("job-card-video", videoDivChilds);
+    const videoDivData = new data.Data("job-card-video", videoDivChilds);
     const videoDiv = CreateDiv(videoDivData);
-
-    const mainDivChilds = [videoDiv];
-    const mainDivData = new Data("job-card", mainDivChilds); 
+    
+    const mainDivChilds = [videoDiv, descriptionDiv];
+    const mainDivData = new data.Data("job-card", mainDivChilds); 
     const mainDiv = CreateDiv(mainDivData);
 
     return mainDiv;
