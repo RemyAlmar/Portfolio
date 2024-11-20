@@ -28,7 +28,7 @@ body, html
 {
     background-color: var(--pageBackgroundColor);
     color : var(--colorBaseFont);
-    font-family:  Montserrat, sans-serif;
+    font-family: sans-serif;
     margin: auto;
     min-width: none;
 }
@@ -42,7 +42,6 @@ body, html
 }
 
 /* ------------------- Head Section - Title And Contact --------------------------*/
-
 .header
 {
     align-items: center;
@@ -93,7 +92,6 @@ body, html
 {
     color: var(--colorHover);    
 }
-
 /* ------------------- Presentation & Picture Profile --------------------------*/
 
 .presentation

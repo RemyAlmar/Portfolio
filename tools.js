@@ -57,6 +57,16 @@ export function CreateVideo(videoName, path = '.', autoplay = true, muted = true
     video.appendChild(fallBackText);
     return video;
 }
+export function CreateDivIconText(iconData, _data, textFormat, divClassName)
+{    
+    const toolsIcon = CreateIcon(iconData);
+    const toolsData = new data.Data("", _data);
+    const toolsText = CreateText(toolsData, textFormat);
+    const childToolsSize = [toolsIcon, toolsText];
+    const divToolsSizeData = new data.Data(divClassName, childToolsSize);
+    const divToolsSize = CreateDiv(divToolsSizeData);
+    return divToolsSize;
+}
 //#endregion
 
 export function CreateCard(_data)
@@ -69,39 +79,19 @@ export function CreateCard(_data)
     const descriptionDivData = new data.Data("project-description", childDesDiv);
     const descriptionDiv = CreateDiv(descriptionDivData);
 
-    const toolsIcon = CreateIcon(data.toolsIconData);
-    const toolsData = new data.Data("", _data.device);
-    const toolsText = CreateText(toolsData, 'p');
-    const childToolsSize = [toolsIcon, toolsText];
-    const divToolsSizeData = new data.Data("tools-size icon-container", childToolsSize);
-    const divToolsSize = CreateDiv(divToolsSizeData);
-
-    const timeIcon = CreateIcon(data.timeIconData);
-    const timeData = new data.Data("", _data.productionTime);
-    const timeText = CreateText(timeData, 'p');
-    const childTimeSize = [timeIcon, timeText];
-    const divTimeSizeData = new data.Data("time-size icon-container", childTimeSize);
-    const divTimeSize = CreateDiv(divTimeSizeData);
-
-    const teamIcon = CreateIcon(data.teamIconData);
-    const teamData = new data.Data("", _data.teamMate);
-    const teamText = CreateText(teamData, 'p');
-    const childTeamSize = [teamIcon, teamText];
-    const divTeamSizeData = new data.Data("team-size icon-container", childTeamSize);
-    const divTeamSize = CreateDiv(divTeamSizeData);
-    // TODO continuer à ajouter les enfants de main.js
+    const divTools = CreateDivIconText(data.toolsIconData, _data.device, 'p', "tools-size icon-container");
+    const divTime = CreateDivIconText(data.timeIconData, _data.productionTime, 'p', "time-size icon-container"); 
+    const divTeam = CreateDivIconText(data.teamIconData, _data.teamMate, 'p', "team-size icon-container"); 
 
     const chevronIcon = CreateIcon(data.chevronIconData);
     const titleData = new data.Data("clickable-card-header", _data.titleGame);
     const titleGame = CreateText(titleData, 'h3');
     titleGame.appendChild(chevronIcon);
-
     const childPTD = [titleGame];
     const projectTitleData = new data.Data("project-Title", childPTD);
     const projectTitle = CreateDiv(projectTitleData);
-    // TODO continuer à ajouter les enfants de main.js
     
-    const childInfo = [projectTitle, divTeamSize, divTimeSize, divToolsSize];
+    const childInfo = [projectTitle, divTeam, divTime, divTools];
     const videoAddInfoDivData = new data.Data("video-additional-info", childInfo);
     const videoAddInfoDiv = CreateDiv(videoAddInfoDivData);
     const video = CreateVideo(_data.videoSrc);
