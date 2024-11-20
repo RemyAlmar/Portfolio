@@ -71,18 +71,6 @@ export function CreateDivIconText(iconData, _data, textFormat, divClassName)
 
 export function CreateCard(_data)
 {  
-    const roleData = new data.Data("", _data.selfRole);
-    const role = CreateText(roleData, 'small');
-    const textDesData = new data.Data("", _data.description);
-    const textDescription = CreateText(textDesData, 'p');
-    const childDesDiv = [role, textDescription];
-    const descriptionDivData = new data.Data("project-description", childDesDiv);
-    const descriptionDiv = CreateDiv(descriptionDivData);
-
-    const divTools = CreateDivIconText(data.toolsIconData, _data.device, 'p', "tools-size icon-container");
-    const divTime = CreateDivIconText(data.timeIconData, _data.productionTime, 'p', "time-size icon-container"); 
-    const divTeam = CreateDivIconText(data.teamIconData, _data.teamMate, 'p', "team-size icon-container"); 
-
     const chevronIcon = CreateIcon(data.chevronIconData);
     const titleData = new data.Data("clickable-card-header", _data.titleGame);
     const titleGame = CreateText(titleData, 'h3');
@@ -90,8 +78,23 @@ export function CreateCard(_data)
     const childPTD = [titleGame];
     const projectTitleData = new data.Data("project-Title", childPTD);
     const projectTitle = CreateDiv(projectTitleData);
+
+    const divTools = CreateDivIconText(data.toolsIconData, _data.device, 'p', "tools-size icon-container");
+    const divTime = CreateDivIconText(data.timeIconData, _data.productionTime, 'p', "time-size icon-container"); 
+    const divTeam = CreateDivIconText(data.teamIconData, _data.teamMate, 'p', "team-size icon-container"); 
+    const childDivIcon = [divTeam, divTime, divTools,];
+    const divIconData = new data.Data("icon-description", childDivIcon);
+    const divIcon = CreateDiv(divIconData)
+
+    const roleData = new data.Data("", _data.selfRole);
+    const role = CreateText(roleData, 'p');
+    const textDesData = new data.Data("", _data.description);
+    const textDescription = CreateText(textDesData, 'p');
+    const childDesDiv = [role, textDescription];
+    const descriptionDivData = new data.Data("project-description", childDesDiv);
+    const descriptionDiv = CreateDiv(descriptionDivData);
     
-    const childInfo = [projectTitle, divTeam, divTime, divTools];
+    const childInfo = [projectTitle, divIcon, descriptionDiv];
     const videoAddInfoDivData = new data.Data("video-additional-info", childInfo);
     const videoAddInfoDiv = CreateDiv(videoAddInfoDivData);
     const video = CreateVideo(_data.videoSrc);
@@ -100,7 +103,7 @@ export function CreateCard(_data)
     const videoDivData = new data.Data("job-card-video", videoDivChilds);
     const videoDiv = CreateDiv(videoDivData);
     
-    const mainDivChilds = [videoDiv, descriptionDiv];
+    const mainDivChilds = [videoDiv];
     const mainDivData = new data.Data("job-card", mainDivChilds); 
     const mainDiv = CreateDiv(mainDivData);
 

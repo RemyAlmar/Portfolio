@@ -155,20 +155,14 @@ body, html
 {
     width: 100%;
     position: relative;
-    z-index: 0;
 }
 .video-additional-info
 {
-    align-items: center;
     background-color: var(--pageBandColor);
-    display: flex;
     width: 100%;
-    font-size: .6rem;
+    font-size: 18px;
     padding: 0 10px;
     position: absolute;
-    text-align: left;
-    bottom: 0;
-    z-index: 1;
 }
 
 .video-additional-info div
@@ -186,6 +180,9 @@ body, html
 .project-description
 {
     margin: 0 2em;
+    display: flex;
+    flex-direction: column;
+    
 }
 .project-description small, p
 {
@@ -198,7 +195,7 @@ body, html
     color: var(--colorContact);
     display: flex;
     font-size: 3em;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: .1em 0px;
 
 }
@@ -239,9 +236,28 @@ body, html
         color: var(--colorHover);
         text-decoration: underline;
 }
+
+
+
+
+
+/* Bande d'information */
+.video-additional-info {
+    height: 70%;
+    bottom: -55%;
+    transition: bottom 0.3s ease-in-out;
+    overflow: hidden; /* Cache les éléments débordants */
+}
+
+/* Affichage de la bande au survol */
+.job-card:hover .video-additional-info {
+    bottom: 0%; /* Fait remonter la bande */
+}
+
+
 /* --------------------- Responsive Phone ------------------------*/
 
-@media(max-width : 800px)
+@media(max-width : 1120px)
 {
     .content-wrapper, .header, .main-title h1, .presentation, .content-project
     {        
