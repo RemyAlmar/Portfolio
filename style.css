@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 :root
 {
     --colorBaseFont: #f7f7f7;
@@ -24,13 +25,22 @@ a:link
 {
     color: var(--colorContact);
 }
-body, html
+
+*
+{
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body
 {
     background-color: var(--pageBackgroundColor);
     color : var(--colorBaseFont);
-    font-family: sans-serif;
-    margin: auto;
-    min-width: none;
+    font-size: large;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+    overflow-x: hidden;
 }
 .content-wrapper
 {
@@ -42,7 +52,7 @@ body, html
 }
 
 /* ------------------- Head Section - Title And Contact --------------------------*/
-.header
+.navBar
 {
     align-items: center;
     background-color: var(--pageBandColor);
@@ -54,24 +64,24 @@ body, html
     top: 0;
     z-index: 5;
 }
-.main-title
+.navBar-Title
 {
     font-size: 1rem;
     margin-bottom: 1em;
 }
-.main-title h1 
+.navBar-Title h1 
 {
     margin: 0 0 0 0;
     color: var(--colorMainTitle);
     display: flex;
     flex-direction: column;
 }
-.main-title a
+.navBar-Title a
 {
     text-decoration: none;
     color: var(--colorMainTitle);
 }
-.main-title small
+.navBar-Title small
 {
     font-size: 1.2rem;
     font-weight: 400;
@@ -84,7 +94,7 @@ body, html
 }
 .link
 {
-    font-size: 2rem;
+    font-size: 2em;
     margin: 0 .25rem;
     width: 3rem;
 }
