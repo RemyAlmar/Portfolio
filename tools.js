@@ -1,6 +1,6 @@
 import * as data from './data.js';
 //#region Fonction Utilitaire
-export function CreateIcon(iconData) {
+export function CreateIcon(iconData, color = 'currentColor') {
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('class', iconData.className);
     svg.setAttribute('aria-hidden', 'true');
@@ -10,7 +10,7 @@ export function CreateIcon(iconData) {
     svg.setAttribute('viewBox', '0 0 512 512');
 
     const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    path.setAttribute('fill', 'currentColor');
+    path.setAttribute('fill', color);
     path.setAttribute('d', iconData.content);
 
     svg.appendChild(path);
@@ -57,12 +57,17 @@ export function CreateVideo(videoName, path = '.', autoplay = true, muted = true
     video.appendChild(fallBackText);
     return video;
 }
-export function CreateDivIconText(iconData, _data, textFormat, divClassName)
+export function CreateDivIconText(iconData, iconColor, _data, textFormat, divClassName, reverseOrder = false)
 {    
-    const toolsIcon = CreateIcon(iconData);
+    const toolsIcon = CreateIcon(iconData, iconColor);
     const toolsData = new data.Data("", _data);
     const toolsText = CreateText(toolsData, textFormat);
-    const childToolsSize = [toolsIcon, toolsText];
+    let childToolsSize = [toolsIcon, toolsText];
+    if(reverseOrder)
+    {
+        childToolsSize = childToolsSize.reverse();
+    }
+
     const divToolsSizeData = new data.Data(divClassName, childToolsSize);
     const divToolsSize = CreateDiv(divToolsSizeData);
     return divToolsSize;
@@ -71,43 +76,41 @@ export function CreateDivIconText(iconData, _data, textFormat, divClassName)
 
 export function CreateCard(_data)
 {  
+    /*
     const chevronIcon = CreateIcon(data.chevronIconData);
-    const titleData = new data.Data("clickable-card-header", _data.titleGame);
+    const titleData = new data.Data("TitleGame", _data.titleGame);
     const titleGame = CreateText(titleData, 'h3');
-    titleGame.appendChild(chevronIcon);
-    const childPTD = [titleGame];
-    const projectTitleData = new data.Data("project-Title", childPTD);
-    const projectTitle = CreateDiv(projectTitleData);
+    titleGame.setAttribute('colorGame', _data.color);
+    const childPTD = [titleGame, chevronIcon];*/
+    const divTitle = CreateDivIconText(data.chevronIconData, _data.color, _data.titleGame, 'h3', "ProjectTitleContainer", true);
+    const childPTD = [divTitle];
+    const projectTitleData = new data.Data("ProjectTitleContainer", childPTD);
+    const divProjectTitle = CreateDiv(projectTitleData);
 
-    const divTools = CreateDivIconText(data.toolsIconData, _data.device, 'p', "tools-size icon-container");
-    const divTime = CreateDivIconText(data.timeIconData, _data.productionTime, 'p', "time-size icon-container"); 
-    const divTeam = CreateDivIconText(data.teamIconData, _data.teamMate, 'p', "team-size icon-container"); 
-    const childDivIcon = [divTeam, divTime, divTools,];
-    const divIconData = new data.Data("icon-description", childDivIcon);
+    const divTools = CreateDivIconText(data.toolsIconData, _data.color, _data.device, 'p', "IconContainer");
+    const divTime = CreateDivIconText(data.timeIconData, _data.color, _data.productionTime, 'p', "IconContainer"); 
+    const divTeam = CreateDivIconText(data.teamIconData, _data.color, _data.teamMate, 'p', "IconContainer"); 
+    const childDivIcon = [divTeam, divTime, divTools];
+    const divIconData = new data.Data("IconsContainer", childDivIcon);
     const divIcon = CreateDiv(divIconData)
 
     const roleData = new data.Data("", _data.selfRole);
     const role = CreateText(roleData, 'p');
     const textDesData = new data.Data("", _data.description);
     const textDescription = CreateText(textDesData, 'p');
-    const childDesDiv = [role, textDescription];
-    const descriptionDivData = new data.Data("project-description", childDesDiv);
-    const descriptionDiv = CreateDiv(descriptionDivData);
+    const childDesDiv = [divIcon, role, textDescription];
+    const divDescriptionData = new data.Data("DescriptionContainer", childDesDiv);
+    const divDescription = CreateDiv(divDescriptionData);
     
-    const childInfo = [projectTitle, divIcon, descriptionDiv];
-    const videoAddInfoDivData = new data.Data("video-additional-info", childInfo);
-    const videoAddInfoDiv = CreateDiv(videoAddInfoDivData);
+    const childInfo = [divProjectTitle, divDescription];
+    const cardInfoData = new data.Data("CardInfo", childInfo);
+    const divCardInfo = CreateDiv(cardInfoData);
     const video = CreateVideo(_data.videoSrc);
     
-    const videoDivChilds = [video, videoAddInfoDiv];
-    const videoDivData = new data.Data("job-card-video", videoDivChilds);
+    const videoDivChilds = [video, divCardInfo];
+    const videoDivData = new data.Data("GameCard", videoDivChilds);
     const videoDiv = CreateDiv(videoDivData);
-    
-    const mainDivChilds = [videoDiv];
-    const mainDivData = new data.Data("job-card", mainDivChilds); 
-    const mainDiv = CreateDiv(mainDivData);
-
-    return mainDiv;
+    return videoDiv;
 }
 
 

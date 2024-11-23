@@ -10,15 +10,15 @@
 </head>
 
 <body>
-    <header class="navBar">
-        <div class="navBar-Title">
+    <header class="NavBar">
+        <div id="navBarTitle">
             <h1>
                 <a href="#home">ALMAR Rémy</a>
                 <small>Gameplay Programmer / Animator</small>
             </h1>
         </div>
-        <div class="contact-header">
-            <a class="link" href="https://www.linkedin.com/in/r%C3%A9my-almar-9b6b74184/" target="_blank"
+        <div class="HorizontalList">
+            <a class="Link" href="https://www.linkedin.com/in/r%C3%A9my-almar-9b6b74184/" target="_blank"
                 title="LinkedIn">
                 <svg class="svg-inline--fa fa-linkedin link-icon" aria-hidden="true" focusable="false" data-prefix="fab"
                     data-icon="linkedin" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
@@ -29,7 +29,7 @@
                     </path>
                 </svg>
             </a>
-            <a class="link" href="https://github.com/RemyAlmar" target="_blank" title="Github"><svg
+            <a class="Link" href="https://github.com/RemyAlmar" target="_blank" title="Github"><svg
                     class="svg-inline--fa fa-github link-icon" aria-hidden="true" focusable="false" data-prefix="fab"
                     data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"
                     data-v-7f29b621="">
@@ -39,9 +39,8 @@
                 </svg></a>
         </div>
     </header>
-    <div class="presentation">
-        <img class="image-profile-header" src="https://static.licdn.com/aero-v1/sc/h/akt4ae504epesldzj74dzred8">
-        <p id="fast-description">Student at ESMA in Toulouse, I like working on all kinds of projects in which my
+    <div id="presentation">
+        <p>Student at ESMA in Toulouse, I like working on all kinds of projects in which my
             contribution can be useful.
             <br>I like learning new things, especially about programming and animation, these two professions are those
             in
@@ -49,21 +48,14 @@
             <br>Below you can see some projects I have worked on.
         </p>
     </div>
-    <div class="content-wrapper">
-        <div class="content-project">
-            <h2 class"title-subject">Projects</h2>
-
-            <div class="projects" id="card-container">
-            </div>
-
-        </div>
-        <footer>
-            <div class="contact-footer">
-                <h4>Contact</h4>
-                <p>Mail : <a href="mailto:r.almar1997@gmail.com" id="mail">r.almar1997@gmail.com</a></p>
-            </div>
-        </footer>
+    <div class="CardArray" id="project">
     </div>
+    <footer>
+        <div class="VerticalList" id="contact">
+            <h4>Contacts</h4>
+            <a href="mailto:r.almar1997@gmail.com" id="mail">r.almar1997@gmail.com</a>
+        </div>
+    </footer>
     <script type="module" src="main.js"></script>
 </body>
 

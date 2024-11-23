@@ -2,30 +2,28 @@
 :root
 {
     --colorBaseFont: #f7f7f7;
-    --colorContact: #e29a53;
+    --colorContact: #02f948;
     --colorMainTitle: #ffd560;
     --colorHover: #87bee2;
     --pageBackgroundColor: #131313;
-    --pageBandColor: rgba(0, 0, 0, 0.95);
+    --pageBandColor: rgb(0, 0, 0);
 }
-svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa 
+svg:not(:root)
 {
     overflow: visible;
-    box-sizing: content-box;
 }
-svg:not(:root) 
-{
-    overflow-clip-margin: content-box;
+a
+{    
+    text-decoration: none;
 }
 a:visited 
 {
     color: var(--colorContact);
 }
-a:link
+a:Link
 {
     color: var(--colorContact);
 }
-
 *
 {
     font-family: 'Poppins', sans-serif;
@@ -42,17 +40,9 @@ body
     padding: 0;
     overflow-x: hidden;
 }
-.content-wrapper
-{
-    align-items: center;
-    display: block;
-    margin: auto;
-    max-width: 1100px;
-    padding: 0 10px;
-}
 
 /* ------------------- Head Section - Title And Contact --------------------------*/
-.navBar
+.NavBar
 {
     align-items: center;
     background-color: var(--pageBandColor);
@@ -64,157 +54,163 @@ body
     top: 0;
     z-index: 5;
 }
-.navBar-Title
+#navBarTitle
 {
-    font-size: 1rem;
+    font-size: 1em;
     margin-bottom: 1em;
 }
-.navBar-Title h1 
+#navBarTitle h1 
 {
     margin: 0 0 0 0;
     color: var(--colorMainTitle);
     display: flex;
     flex-direction: column;
 }
-.navBar-Title a
+#navBarTitle a
 {
     text-decoration: none;
     color: var(--colorMainTitle);
 }
-.navBar-Title small
+#navBarTitle small
 {
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1;
     margin-top: 4px;
 }
-.contact-header
+.HorizontalList
 {
     display: flex;
 }
-.link
+.Link
 {
     font-size: 2em;
     margin: 0 .25rem;
     width: 3rem;
 }
-:hover.link
+:hover.Link
 {
     color: var(--colorHover);    
 }
-/* ------------------- Presentation & Picture Profile --------------------------*/
+/* -------------------Presentation & Picture Profile --------------------------*/
 
-.presentation
+#presentation
 {
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-align: center;
     margin: 2% 20%;
     font-size: 1rem;
-}
-.image-profile-header
-{
-    align-items: center;
-    justify-content: center;
-    border: 3px solid #661212;
-    border-radius: 50%;
-    margin: 2rem 2rem 2rem 2rem;
-    width: 20rem;
-    max-width: 256px;
-    filter: grayscale(80%);
 }
 
 /* ----------------------------- Project experiences ---------------------------------*/
 
-.content-project h2
+#project h2
 {
     font-size: 2rem;
     color: var(--colorMainTitle);
 }
 
-.projects
+.CardArray
 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #000;
+    /*
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    position: relative;*/
+}
+.CardArray video
+{
+    width: 100%;
     position: relative;
 }
-.job-card
+.GameCard
 {
-    flex: 1 1 25rem;
+    align-items: flex-end;
+    display: flex;
+    opacity: .5;
+    transition: .3s;
+    width: 50%;
+    overflow: hidden;
+/*
     background-color: var(--pageContentBGColor);
     border: none;
     border-radius: 3px;
     color: #dad3d3;
-    margin: 10px;
-    padding: 1rem;
     text-align: left;
-}
-
-.job-card-video
-{
-    position: relative;
     width: calc(100%);
     display: inline-flex;
-    border-radius: 3px;
+    */
+}
+
+.CardInfo
+{
+    width: 50%;
+    background-color: var(--pageBandColor);
+    height: 15vh;
+    font-size: 18px;
+    position: absolute;
+    transition: height .2s ease-in-out;
     overflow: hidden;
 }
-.projects video
-{
-    width: 100%;
-    position: relative;
-}
-.video-additional-info
-{
-    background-color: var(--pageBandColor);
-    width: 100%;
-    font-size: 18px;
-    padding: 0 10px;
-    position: absolute;
-}
 
-.video-additional-info div
-{
-    margin: 0 10px;
-    display: flex;
-    align-items: center;
+/* Affichage de la bande au survol */
+.GameCard:hover .CardInfo {
+    height: 80%;
+    max-height: 80%; /* Fait remonter la bande */
 }
-.icon
+.ProjectTitleContainer
 {
-    margin-right: .5em;
-    height: 1em;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-transform: uppercase;
+    background-color: #c00303;
+}
+.IconsContainer
+{
+    display: flex;
+    background-color: #87bee2;
+    gap: 20px;
+}
+.IconContainer
+{
+    display: flex;
+    background-color: #87bee2;
+    gap: 5px;
+}
+.Icon
+{
+    height: 2em;
 }
 /*-----------------------Titre et description du jeu----------------------*/
-.project-description
+.DescriptionContainer
 {
-    margin: 0 2em;
-    display: flex;
-    flex-direction: column;
-    
-}
-.project-description small, p
-{
-    font-size: 1.5em;
+    display: block !important;
+    overflow: auto;
+    max-height: 50%;
+    margin-top: 30px;
 }
 
-.clickable-card-header
+.TitleGame
 {
-    align-items: center;
     color: var(--colorContact);
     display: flex;
+    align-items: center;
     font-size: 3em;
     justify-content: space-evenly;
     margin: .1em 0px;
 
 }
-.svg-inline--fa
-{
-    height: 1.25em;
-}
 
-.contact-footer
+.VerticalList
 {
     align-items: center;
     display: flex;
@@ -227,17 +223,13 @@ body
 
 }
 
-.contact-footer h4
+.VerticalList h4
 {
     color: var(--colorBaseFont);
-    font-size: xx-large;
+    font-size: large;
     margin: 0;
 }
-.contact-footer a
-{
-    text-decoration: none;
-}
-.contact-footer p
+.VerticalList p
 {
         font-size: 1.5rem;        
 }
@@ -248,28 +240,11 @@ body
 }
 
 
-
-
-
-/* Bande d'information */
-.video-additional-info {
-    height: 70%;
-    bottom: -55%;
-    transition: bottom 0.3s ease-in-out;
-    overflow: hidden; /* Cache les éléments débordants */
-}
-
-/* Affichage de la bande au survol */
-.job-card:hover .video-additional-info {
-    bottom: 0%; /* Fait remonter la bande */
-}
-
-
 /* --------------------- Responsive Phone ------------------------*/
 
 @media(max-width : 1120px)
 {
-    .content-wrapper, .header, .main-title h1, .presentation, .content-project
+    .NavBar, #navBarTitle h1, #project
     {        
         display: flex;
         flex-direction: column;
@@ -281,59 +256,41 @@ body
         position: relative;
         margin: auto;
     }
-    .main-title h1 
+    #navBarTitle h1 
     {              
         margin: 1rem 0 1rem 0;
     }
-    .main-title small
+    #navBarTitle small
     {
         flex-wrap: wrap;
         text-align: center;
     }
-    .link
+    .Link
     {
         margin: 0 1rem 1rem 0;
-    }
-    .image-profile-header
-    {
-        width: 10rem;
-        margin: .5rem;
-    }  
-    .presentation
+    } 
+    #presentation
     {
         font-size: 1.3rem;
         margin-bottom: 2rem;
         text-align: center;
     }     
-    .job-card
+    .GameCard
     {
         font-size: 1.125rem;
         width: calc(100%);
-    }
-    .job-card-video
-    {
         position: relative;
-        width: calc(100%);
         display: inline-flex;
         border-radius: 0 4px;
         overflow: hidden;
     }
-    .video-additional-info
-    {
-        font-size: .7em;
-    }
-    .icon
+    .Icon
     {
         margin-right: .5em;
         height: 1.5em;
     }
-    .project-description small, p
+    .DescriptionContainer small, p
     {
         font-size: 1em;
     }
-    .clickable-card-header
-    {
-        font-size: 1.75em;   
-    }
-
 }
