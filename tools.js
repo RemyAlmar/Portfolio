@@ -76,12 +76,6 @@ export function CreateDivIconText(iconData, iconColor, _data, textFormat, divCla
 
 export function CreateCard(_data)
 {  
-    /*
-    const chevronIcon = CreateIcon(data.chevronIconData);
-    const titleData = new data.Data("TitleGame", _data.titleGame);
-    const titleGame = CreateText(titleData, 'h3');
-    titleGame.setAttribute('colorGame', _data.color);
-    const childPTD = [titleGame, chevronIcon];*/
     const divTitle = CreateDivIconText(data.chevronIconData, _data.color, _data.titleGame, 'h3', "ProjectTitleContainer", true);
     const childPTD = [divTitle];
     const projectTitleData = new data.Data("ProjectTitleContainer", childPTD);
