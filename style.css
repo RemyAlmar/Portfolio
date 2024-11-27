@@ -169,6 +169,7 @@ body
 .Icon
 {
     height: 2em;
+    overflow: visible;
 }
 /*-----------------------Titre et description du jeu----------------------*/
 .DescriptionContainer
