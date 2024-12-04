@@ -48,9 +48,9 @@ export const cardsData = [
         productionTime: '3 months',
         device: 'C#, Unity',
         titleGame: 'Shiin',
-        selfRole: 'All',
-        description: 'A 2D platformer where you play as ninja.',
-        color: 'red'
+        selfRole: 'All', 
+        description: 'A 2D platformer where you play as ninja. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint consectetur sit officiis nostrum maiores error rerum veniam, quo ipsa sapiente sunt! Deserunt corrupti, magnam a odit reiciendis fugiat, eius consequatur maxime nisi esse sequi quis, earum laboriosam! Perferendis voluptas maxime iste ex, labore dolorem quod a quam perspiciatis distinctio nostrum odio inventore eum ipsam? Quibusdam corporis, consectetur facilis minima voluptas nobis obcaecati, rem, ut eaque nam earum quam accusantium quis? Expedita eaque obcaecati nesciunt quos molestiae ad tenetur, quae exercitationem a optio accusamus autem dolor, perferendis pariatur, aliquid asperiores quasi ullam repudiandae vel dolorum. In, vitae! Hic tempore, incidunt, expedita consequuntur veritatis beatae, temporibus praesentium quaerat libero dolorum doloribus. Assumenda autem ratione voluptate consequuntur cupiditate consequatur. Esse quis, nihil obcaecati beatae possimus unde iure asperiores, rem, amet iste nulla ipsum. Doloremque soluta recusandae aut id itaque nam aliquid culpa tenetur? Corporis ullam ad totam a similique nam, maxime, modi dignissimos distinctio cum quaerat pariatur rem beatae? Magni, provident, itaque ad facilis velit voluptates vel quas quasi nulla temporibus aliquam hic doloremque perspiciatis voluptatem omnis voluptas expedita natus ut minus modi inventore assumenda quos. Amet quisquam non praesentium maiores. Magnam voluptate error suscipit quod est temporibus ratione enim, reprehenderit totam, corrupti, ad quo quaerat doloremque? Quos dolore veniam omnis temporibus architecto praesentium! Laborum dolorem culpa est vero. Ipsum similique, nemo quia beatae voluptatum ex ducimus impedit perferendis asperiores incidunt corporis maiores porro numquam. Amet consectetur corrupti libero similique voluptatum eligendi vitae repellendus recusandae, molestias necessitatibus beatae. Dolor autem ducimus voluptates eius.',
+        color: 'red' 
     },
     {
         videoSrc: 'ExtraitVideo',
@@ -59,8 +59,8 @@ export const cardsData = [
         productionTime: '2 months',
         device: 'Blueprint, UE5',
         titleGame: 'Oculi',
-        selfRole: 'UX, Developer, Animator',
-        description: 'A psychological horror game.',
+        selfRole: 'UX, Developer, Animator', 
+        description: 'A psychological horror game. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint consectetur sit officiis nostrum maiores error rerum veniam, quo ipsa sapiente sunt! Deserunt corrupti, magnam a odit reiciendis fugiat, eius consequatur maxime nisi esse sequi quis, earum laboriosam! Perferendis voluptas maxime iste ex, labore dolorem quod a quam perspiciatis distinctio nostrum odio inventore eum ipsam? Quibusdam corporis, consectetur facilis minima voluptas nobis obcaecati, rem, ut eaque nam earum quam accusantium quis? Expedita eaque obcaecati nesciunt quos molestiae ad tenetur, quae exercitationem a optio accusamus autem dolor, perferendis pariatur, aliquid asperiores quasi ullam repudiandae vel dolorum. In, vitae! Hic tempore, incidunt, expedita consequuntur veritatis beatae, temporibus praesentium quaerat libero dolorum doloribus. Assumenda autem ratione voluptate consequuntur cupiditate consequatur. Esse quis, nihil obcaecati beatae possimus unde iure asperiores, rem, amet iste nulla ipsum. Doloremque soluta recusandae aut id itaque nam aliquid culpa tenetur? Corporis ullam ad totam a similique nam, maxime, modi dignissimos distinctio cum quaerat pariatur rem beatae? Magni, provident, itaque ad facilis velit voluptates vel quas quasi nulla temporibus aliquam hic doloremque perspiciatis voluptatem omnis voluptas expedita natus ut minus modi inventore assumenda quos. Amet quisquam non praesentium maiores. Magnam voluptate error suscipit quod est temporibus ratione enim, reprehenderit totam, corrupti, ad quo quaerat doloremque? Quos dolore veniam omnis temporibus architecto praesentium! Laborum dolorem culpa est vero. Ipsum similique, nemo quia beatae voluptatum ex ducimus impedit perferendis asperiores incidunt corporis maiores porro numquam. Amet consectetur corrupti libero similique voluptatum eligendi vitae repellendus recusandae, molestias necessitatibus beatae. Dolor autem ducimus voluptates eius.',
         color: 'blue'
     }
 ];

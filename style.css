@@ -120,7 +120,7 @@ body
     position: relative;
     flex-direction: column;
     opacity: .5;
-    transition: opacity 1s;
+    transition: opacity .5s;
     overflow: hidden;
 }
 
@@ -132,13 +132,13 @@ body
     font-size: clamp(15px, 1vw, 25px);
     position: absolute;
     top: 82%;
-    transition: translate .2s ease-in-out;
-    overflow: hidden;
+    transition: top .2s ease-in-out;
+    overflow:hidden;
 }
 
 /* Affichage de la bande au survol */
 .GameCard:hover .CardInfo {
-    translate: 0 -100%;
+    top: 18%;
 }
 /* Affichage de la bande au survol */
 .GameCard:hover{
@@ -146,6 +146,7 @@ body
 }
 .ProjectTitleContainer
 {
+    padding: 0 1%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -175,8 +176,8 @@ body
 .DescriptionContainer
 {
     display: block !important;
-    overflow: auto;
-    max-height: 50%;
+    height: 40%;
+    overflow: scroll;
     margin-top: 30px;
 }
 
