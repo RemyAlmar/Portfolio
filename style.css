@@ -20,20 +20,17 @@ a:Link
 {
     color: var(--colorContact);
 }
-*
-{
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
-}
 
 body
 {
     background-color: var(--pageBackgroundColor);
     color : var(--colorBaseFont);
+    font-family: 'Poppins', sans-serif;
     font-size: large;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 /* ------------------- Head Section - Title And Contact --------------------------*/
@@ -126,19 +123,19 @@ body
 
 .CardInfo
 {
-    width: 100%;
     align-self: center;
     background-color: var(--pageBandColor);
     font-size: clamp(15px, 1vw, 25px);
+    height: 100%;
     position: absolute;
     top: 82%;
     transition: top .2s ease-in-out;
-    overflow:hidden;
+    width: 100%;
 }
 
 /* Affichage de la bande au survol */
 .GameCard:hover .CardInfo {
-    top: 18%;
+    top: 10%;
 }
 /* Affichage de la bande au survol */
 .GameCard:hover{
@@ -146,7 +143,7 @@ body
 }
 .ProjectTitleContainer
 {
-    padding: 0 1%;
+    padding: 0 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -157,14 +154,13 @@ body
 {
     display: flex;
     font-size: clamp(15px, 2em, 50%);
-    background-color: #87bee2;
+    background-color: #292929;
     gap: 30px;
 }
 .IconContainer
 {
     display: flex;
     align-items: center;
-    background-color: #87bee2;
     gap: 10px;
 }
 .Icon
@@ -175,10 +171,7 @@ body
 /*-----------------------Titre et description du jeu----------------------*/
 .DescriptionContainer
 {
-    display: block !important;
-    height: 40%;
-    overflow: scroll;
-    margin-top: 30px;
+    padding: 1rem 2rem 0 2rem;
 }
 
 .TitleGame
@@ -220,8 +213,23 @@ body
         color: var(--colorHover);
         text-decoration: underline;
 }
+.Scrollable {
+    overflow-y: auto;
+    box-sizing: border-box;
+    height: 60%;
+}
 
+.Scrollable::-webkit-scrollbar {
+    width: 2px;
+}
 
+.Scrollable::-webkit-scrollbar-track {
+    display: none;
+}
+
+.Scrollable::-webkit-scrollbar-thumb { 
+    background-color: #1d1d1d;
+}
 /* --------------------- Responsive Phone ------------------------*/
 /*
 @media(max-width : 1120px)

@@ -93,7 +93,7 @@ export function CreateCard(_data)
     const textDesData = new data.Data("", _data.description);
     const textDescription = CreateText(textDesData, 'p');
     const childDesDiv = [divIcon, role, textDescription];
-    const divDescriptionData = new data.Data("DescriptionContainer", childDesDiv);
+    const divDescriptionData = new data.Data("DescriptionContainer Scrollable", childDesDiv);
     const divDescription = CreateDiv(divDescriptionData);
     
     const childInfo = [divProjectTitle, divDescription];
