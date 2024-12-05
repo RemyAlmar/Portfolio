@@ -1,191 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 :root
 {
     --colorBaseFont: #f7f7f7;
+    --colorContact: #02f948;
     --colorMainTitle: #ffd560;
-    --pageBackgroundColor: #1b1b1b;
+    --colorHover: #87bee2;
+    --pageBackgroundColor: #131313;
+    --pageBandColor: rgb(0, 0, 0);
 }
-svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa 
-{
-    overflow: visible;
-    box-sizing: content-box;
-}
-svg:not(:root) 
-{
-    overflow-clip-margin: content-box;
+a
+{    
+    text-decoration: none;
 }
 a:visited 
 {
-    color: var(--colorBaseFont);
+    color: var(--colorContact);
 }
-a:link
+a:Link
 {
-    color: var(--colorBaseFont);
+    color: var(--colorContact);
+}
+*
+{
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 body
 {
-    background-color: #dad3d3;
-    margin: auto;
-    min-width: none;
-}
-.content-wrapper
-{
-    align-items: center;
     background-color: var(--pageBackgroundColor);
     color : var(--colorBaseFont);
-    display: block;
-    font-family:  Montserrat, sans-serif;
-    margin: auto;
-    max-width: 1100px;
-    padding: 0 15%;
+    font-size: large;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
-
 /* ------------------- Head Section - Title And Contact --------------------------*/
-
-.header
+.NavBar
 {
-    background-color: #535353;
+    align-items: center;
+    background-color: var(--pageBandColor);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 32px 16px 0 16px;
-    margin: -32px -16px 16px -16px;
+    justify-content: space-around;
+    padding: 12px 16px 0 16px;
     position: sticky;
     top: 0;
     z-index: 5;
 }
-.main-title
+#navBarTitle
 {
-    background-color: #7c01b9;
-    font-size: 1.3rem;
+    font-size: 1em;
     margin-bottom: 1em;
 }
-.main-title h1 
+#navBarTitle h1 
 {
     margin: 0 0 0 0;
     color: var(--colorMainTitle);
     display: flex;
     flex-direction: column;
 }
-.main-title a
+#navBarTitle a
 {
     text-decoration: none;
     color: var(--colorMainTitle);
 }
-.main-title small
+#navBarTitle small
 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 400;
     line-height: 1;
     margin-top: 4px;
 }
-.contact-header
-{
-    background-color: aquamarine;
-    display: flex;
-}
-.link
-{
-    color: #813535;
-    font-size: 3em;
-    margin: 0 .5rem;
-    width: 1em;
-}
-
-/* ------------------- Presentation & Picture Profile --------------------------*/
-
-.presentation
+.HorizontalList
 {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 10%;
-    margin-top: 10%;
-    font-size: 1.7rem;
 }
-.image-profile-header
+.Link
 {
-    align-items: center;
+    font-size: 2em;
+    margin: 0 .25rem;
+    width: 3rem;
+}
+:hover.Link
+{
+    color: var(--colorHover);    
+}
+/* -------------------Presentation & Picture Profile --------------------------*/
+
+#presentation
+{
+    display: flex;
     justify-content: center;
-    background-color: #ffffff;
-    border: 3px solid #661212;
-    border-radius: 50%;
-    margin: 2rem 2rem 2rem 2rem;
-    width: 20em;
-    max-width: 248px;
-    filter: grayscale(80%);
+    text-align: center;
+    margin: 5% auto;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    width: clamp(400px, 50%, 900px)
 }
 
 /* ----------------------------- Project experiences ---------------------------------*/
-
-.content-project h2
+.CardArray
 {
-    font-size: 2rem;
+    display: grid;
+    gap: clamp(5px, 1%, 20px);
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, clamp(550px, 800px, 50%));
+    margin: clamp(5px, 5%, 20px);
+    flex-wrap: wrap;
 }
-
-.projects
+.CardArray video
+{
+    width: 100%;
+    position: relative;
+}
+.GameCard
 {
     display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
     position: relative;
-}
-.job-card
-{
-    background-color: #661212;
-    border: none;
-    border-radius: 3px;
-    color: #dad3d3;
-    display: inline-block;
-    padding: 1rem;
-    text-align: left;
-}
-
-.job-card-video
-{
-    position: relative;
-    width: calc(100%);
-    display: inline-flex;
-    border-radius: 3px;
+    flex-direction: column;
+    opacity: .5;
+    transition: opacity .5s;
     overflow: hidden;
 }
-.projects video
+
+.CardInfo
 {
     width: 100%;
-    position: relative;
-    z-index: 0;
-}
-.video-additional-info
-{
-    align-items: center;
-    background-color: rgba(30, 30, 30, .8);
-    display: flex;
-    width: 100%;
-    font-size: 1rem;
-    padding: .2rem;
+    align-self: center;
+    background-color: var(--pageBandColor);
+    font-size: clamp(15px, 1vw, 25px);
     position: absolute;
-    text-align: left;
-    bottom: 0;
-    z-index: 1;
+    top: 82%;
+    transition: top .2s ease-in-out;
+    overflow:hidden;
 }
 
-.video-additional-info div
+/* Affichage de la bande au survol */
+.GameCard:hover .CardInfo {
+    top: 18%;
+}
+/* Affichage de la bande au survol */
+.GameCard:hover{
+    opacity: 1;
+}
+.ProjectTitleContainer
 {
-    margin: 0 1em;
+    padding: 0 1%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    background-color: #c00303;
 }
-.icon
+.IconsContainer
 {
-    margin-right: .5em;
-    height: 1.5em;
+    display: flex;
+    font-size: clamp(15px, 2em, 50%);
+    background-color: #87bee2;
+    gap: 30px;
 }
-/* --------------------- Responsive Phone ------------------------*/
+.IconContainer
+{
+    display: flex;
+    align-items: center;
+    background-color: #87bee2;
+    gap: 10px;
+}
+.Icon
+{
+    height: 2em;
+    overflow: visible;
+}
+/*-----------------------Titre et description du jeu----------------------*/
+.DescriptionContainer
+{
+    display: block !important;
+    height: 40%;
+    overflow: scroll;
+    margin-top: 30px;
+}
 
-@media(max-width : 800px)
+.TitleGame
 {
-    .content-wrapper, .header, .main-title h1, .presentation, .content-project, .projects
+    color: var(--colorContact);
+    display: flex;
+    align-items: center;
+    font-size: 3em;
+    justify-content: space-evenly;
+    margin: .1em 0px;
+
+}
+
+.VerticalList
+{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: .7rem;
+    justify-content: center;
+    margin: 25px 0 0 0;
+    padding: 25px;
+    color: var(--colorContact);
+
+}
+
+.VerticalList h4
+{
+    color: var(--colorBaseFont);
+    font-size: large;
+    margin: 0;
+}
+.VerticalList p
+{
+        font-size: 1.5rem;        
+}
+:hover#mail 
+{
+        color: var(--colorHover);
+        text-decoration: underline;
+}
+
+
+/* --------------------- Responsive Phone ------------------------*/
+/*
+@media(max-width : 1120px)
+{
+    .NavBar, #navBarTitle h1, #project
     {        
         display: flex;
         flex-direction: column;
@@ -194,56 +235,44 @@ body
     }
     .header
     {
-        padding: 0;
-        margin: 0;
         position: relative;
+        margin: auto;
     }
-    .main-title h1 
+    #navBarTitle h1 
     {              
         margin: 1rem 0 1rem 0;
     }
-    .main-title small
+    #navBarTitle small
     {
         flex-wrap: wrap;
         text-align: center;
     }
-    .link
+    .Link
     {
         margin: 0 1rem 1rem 0;
-    }
-    .image-profile-header
-    {
-        width: 10rem;
-        margin: .5rem;
-    }  
-    .presentation
+    } 
+    #presentation
     {
         font-size: 1.3rem;
         margin-bottom: 2rem;
         text-align: center;
     }     
-    .job-card
+    .GameCard
     {
-        margin: 1rem;
         font-size: 1.125rem;
         width: calc(100%);
-    }
-    .job-card-video
-    {
         position: relative;
-        margin-left: -24px 0 0 -24px;
-        width: calc(100%);
         display: inline-flex;
         border-radius: 0 4px;
         overflow: hidden;
     }
-    .video-additional-info
-    {
-        font-size: .7em;
-    }
-    .icon
+    .Icon
     {
         margin-right: .5em;
         height: 1.5em;
     }
-}
+    .DescriptionContainer small, p
+    {
+        font-size: 1em;
+    }
+}*/
