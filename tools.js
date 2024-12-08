@@ -20,6 +20,7 @@ export function CreateDiv(divData)
 {
     const div = document.createElement('div');
     div.className = divData.className;
+    if(divData.content != null)
         divData.content.forEach(child => 
         {
             div.appendChild(child);
@@ -86,7 +87,7 @@ export function CreateCard(_data)
 {  
     const divTitle = CreateDivIconText(data.chevronIconData, _data.color, _data.titleGame, 'h3', "ProjectTitleContainer", "ImportantText", true);
     const childPTD = [divTitle];
-    const projectTitleData = new data.Data("ProjectTitleContainer", childPTD);
+    const projectTitleData = new data.Data("BandProjectTitleContainer", childPTD);
     const divProjectTitle = CreateDiv(projectTitleData);
 
     const divTools = CreateDivIconText(data.toolsIconData, _data.color, _data.device, 'p', "IconContainer");
@@ -119,5 +120,34 @@ export function CreateCard(_data)
     return videoDiv;
 }
 
+export function DisplayMainPage(parent = "body")
+{
+    //Creation des textes de la présentation
+    const parcoursData = new data.Data("none", data.presentation.parcours);
+    const passionData = new data.Data("none", data.presentation.passion);
+    const lookThatData = new data.Data("none", data.presentation.lookThat);
+    const parcours = CreateText(parcoursData, 'p');
+    const passion = CreateText(passionData, 'p');
+    const lookThat = CreateText(lookThatData, 'p');
+    let childs = [parcours, passion, lookThat];
+    //*Ajout des enfants à la présentation
+    const presentationData = new data.Data("", childs);
+    const presentation = CreateDiv(presentationData);
+    presentation.id = 'presentation';
+    
+    //Initialisation des cartes
+    let cardChilds = []; 
+    data.cardsData.forEach(_data => {
+        cardChilds.push(CreateCard(_data));
+    });
+    //Ajout des cartes au parent
+    const cardArrayData = new data.Data("CardArray", cardChilds);
+    const cardArray = CreateDiv(cardArrayData);
+    cardArray.id = 'project';
+
+    //Ajout des div au container parent
+    parent.appendChild(presentation);
+    parent.appendChild(cardArray);
+}
 
 //svg-inline--fa fa-users icon  nomClasse User Icon

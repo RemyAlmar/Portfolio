@@ -1,9 +1,10 @@
+import * as tools from './tools.js';
 export class Data
 {    
-    constructor(className = "", content = null)
+    constructor(_className = "", _content = null)
     {
-        this.className = className; // Classe CSS pour le SVG
-        this.content = content;
+        this.className = _className;
+        this.content = _content;
     }
 }
 
@@ -40,6 +41,12 @@ export const listNavBarData = [
         anchor: '#contact'
     }
 ]
+export const presentation = {
+    parcours: 'Student at ESMA in Toulouse, I like working on all kinds of projects in which my contribution can be useful.',
+    passion: 'I like learning new things, especially about programming and animation, these two professions are those in which I would like to flourish.',
+    lookThat: 'Below you can see some projects I have worked on.',
+};
+
 export const cardsData = [
     {
         videoSrc: 'ExtraitVideo',
@@ -49,7 +56,7 @@ export const cardsData = [
         device: 'C#, Unity',
         titleGame: 'Shiin',
         selfRole: 'All', 
-        description: 'A 2D platformer where you play as ninja. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint consectetur sit officiis nostrquod est temporibus ratione enim, reprehenderit totam, corrupti, ad quo quaerat doloremque? Quos dolore veniam omnis temporibus architecto praesentium! Laborum dolorem culpa est vero. Ipsum similique, nemo quia beatae voluptatum ex ducimus impedit perferendis asperiores incidunt corporis maiores porro numquam. Amet consectetur corrupti libero similique voluptatum eligendi vitae repellendus recusandae, molestias necessitatibus beatae. Dolor autem ducimus voluptates eius. Papo',
+        description: 'A 2D platformer where you play as ninja. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint consectetur sit officiis nostrquod est temporibus ratione enim, reprehenderit totam, corrupti, ad quo quaerat doloremque? Quos dolore veniam omnis temporibus architecto praesentium! Laborum dolorem culpa est vero. Ipsum similique, nemo quia beatae voluptatum ex ducimus impedit perferendis asperiores incidunt corporis maiores porro numquam. Amet consectetur corrupti libero similique voluptatum eligendi vitae repellendus recusandae, molestias necessitatibus beatae. Dolor autem ducimus voluptates eius. Papo poadpda Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint consectetur sit officiis nostrquod est temporibus ratione enim, reprehenderit totam, corrupti, ad quo quaerat doloremque? Quos dolore veniam omnis temporibus architecto praesentium! Laborum dolorem culpa est vero. Ipsum similique, nemo quia beatae voluptatum ex ducimus impedit perferendis asperiores incidunt corporis maiores porro numquam. Amet consectetur corrupti libero similique voluptatum eligendi vitae repellendus recusandae, molestias necessitatibus beatae. Dolor autem ducimus voluptates eius. Papo papou',
         textColor: '#deae00',
         BgColor: '#600c0c',
     },
@@ -66,3 +73,13 @@ export const cardsData = [
         BgColor: '#174204',
     }
 ];
+
+export class cardDetail
+{
+    constructor(_title, _content)
+    {
+        this.title = tools.CreateText(_title, 'h2'),
+        this.content = _content;
+    }
+    
+}
