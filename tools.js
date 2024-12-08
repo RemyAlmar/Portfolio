@@ -26,11 +26,12 @@ export function CreateDiv(divData)
         });
     return div;
 } 
-export function CreateText(textData, textFormat)
+export function CreateText(textData, textFormat, _color = 'currentColor')
 {
     const text = document.createElement(`${textFormat}`);
     text.className = textData.className;
     text.textContent = textData.content;
+    text.style.color = _color;
     return text;
 }
 export function CreateSourceVideo(videoName, formatVideo = 'mp4', path = '.')
@@ -57,10 +58,17 @@ export function CreateVideo(videoName, path = '.', autoplay = true, muted = true
     video.appendChild(fallBackText);
     return video;
 }
-export function CreateDivIconText(iconData, iconColor, _data, textFormat, divClassName, reverseOrder = false)
+export function SetColorToClassElement(parent, _color, className ="none")
+{
+    let childs = parent.getElementsByClassName(className);
+    Array.from(childs).forEach(child => {
+       child.style.color =  _color;
+    });
+}
+export function CreateDivIconText(iconData, iconColor, _data, textFormat, divClassName, textClassName = "none", reverseOrder = false)
 {    
     const toolsIcon = CreateIcon(iconData, iconColor);
-    const toolsData = new data.Data("", _data);
+    const toolsData = new data.Data(textClassName, _data);
     const toolsText = CreateText(toolsData, textFormat);
     let childToolsSize = [toolsIcon, toolsText];
     if(reverseOrder)
@@ -76,7 +84,7 @@ export function CreateDivIconText(iconData, iconColor, _data, textFormat, divCla
 
 export function CreateCard(_data)
 {  
-    const divTitle = CreateDivIconText(data.chevronIconData, _data.color, _data.titleGame, 'h3', "ProjectTitleContainer", true);
+    const divTitle = CreateDivIconText(data.chevronIconData, _data.color, _data.titleGame, 'h3', "ProjectTitleContainer", "ImportantText", true);
     const childPTD = [divTitle];
     const projectTitleData = new data.Data("ProjectTitleContainer", childPTD);
     const divProjectTitle = CreateDiv(projectTitleData);
@@ -99,11 +107,15 @@ export function CreateCard(_data)
     const childInfo = [divProjectTitle, divDescription];
     const cardInfoData = new data.Data("CardInfo", childInfo);
     const divCardInfo = CreateDiv(cardInfoData);
+    divCardInfo.style.backgroundColor = _data.BgColor;
+    SetColorToClassElement(divCardInfo, _data.textColor,"ImportantText");
+    
     const video = CreateVideo(_data.videoSrc);
     
     const videoDivChilds = [video, divCardInfo];
     const videoDivData = new data.Data("GameCard", videoDivChilds);
     const videoDiv = CreateDiv(videoDivData);
+    videoDiv.classList.add(_data.titleGame);
     return videoDiv;
 }
 

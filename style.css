@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 :root
 {
-    --colorBaseFont: #f7f7f7;
+    --colorBaseFont: #ffffff;
     --colorContact: #02f948;
     --colorMainTitle: #ffd560;
     --colorHover: #87bee2;
     --pageBackgroundColor: #131313;
     --pageBandColor: rgb(0, 0, 0);
+    
+    --colorBgShiin: #600c0c;
+    --colorShiin: #deae00;
+    --colorBgOculi: #174204;
+    --colorOculi: #3cc800;
 }
 a
 {    
@@ -41,7 +46,7 @@ body
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 12px 16px 0 16px;
+    padding: 1em 5em 0 5em;
     position: sticky;
     top: 0;
     z-index: 5;
@@ -135,7 +140,7 @@ body
 
 /* Affichage de la bande au survol */
 .GameCard:hover .CardInfo {
-    top: 10%;
+    top: 18%;
 }
 /* Affichage de la bande au survol */
 .GameCard:hover{
@@ -171,18 +176,7 @@ body
 /*-----------------------Titre et description du jeu----------------------*/
 .DescriptionContainer
 {
-    padding: 1rem 2rem 0 2rem;
-}
-
-.TitleGame
-{
-    color: var(--colorContact);
-    display: flex;
-    align-items: center;
-    font-size: 3em;
-    justify-content: space-evenly;
-    margin: .1em 0px;
-
+    padding: 1rem 2rem;
 }
 
 .VerticalList
