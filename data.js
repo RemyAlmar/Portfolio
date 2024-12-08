@@ -80,6 +80,5 @@ export class cardDetail
     {
         this.title = tools.CreateText(_title, 'h2'),
         this.content = _content;
-    }
-    
+    }    
 }

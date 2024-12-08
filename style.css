@@ -96,8 +96,8 @@ body
     justify-content: center;
     text-align: center;
     margin: 5% auto;
-    font-size: clamp(1.5rem, 2vw, 2rem);
-    width: clamp(400px, 60%, 885px)
+    font-size: clamp(.8rem, 2vw, 1.5rem);
+    width: clamp(400px, 70%, 885px)
 }
 
 /* ----------------------------- Project experiences ---------------------------------*/
