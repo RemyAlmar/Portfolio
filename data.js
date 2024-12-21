@@ -74,11 +74,23 @@ export const cardsData = [
     }
 ];
 
-export class cardDetail
-{
-    constructor(_title, _content)
+export const cardsDetailData = [
     {
-        this.title = tools.CreateText(_title, 'h2'),
-        this.content = _content;
-    }    
-}
+        titleGame: 'Shiin',
+        videoSrc: 'ExtraitVideo',
+        videoPath: '',
+        aboutText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        problemText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        solutionText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        learnedText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+    },
+    {
+        titleGame: 'Oculi',
+        videoSrc: 'ExtraitVideo',
+        videoPath: '',
+        aboutText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        problemText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        solutionText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        learnedText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+    }
+];

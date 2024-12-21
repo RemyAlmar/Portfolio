@@ -40,7 +40,7 @@ body
     color : var(--colorBaseFont);
     font-family: 'Poppins', sans-serif;
     font-size: large;
-    margin: 0;
+    margin: auto;
     padding: 0;
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -54,7 +54,7 @@ body
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 1em 5em 0 5em;
+    padding: 1% 5% 0 5%;
     position: sticky;
     top: 0;
     z-index: 5;
@@ -233,10 +233,11 @@ body
 
 
 /*---------------------- Project Container -----------------------*/
-
 .ProjectContainer{
     background-color: #87bee2;
-    width: 80%;
+    width: 60%;
+    min-width: 300px;
+    max-width: 1400px;
     padding: 1em;
 }
 .BackButton{
@@ -270,14 +271,30 @@ body
 .GameInfo{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     gap: 1%;
 }
-.GameInfo section{
+
+.Section{
     flex: 1 1 300px;
     background-color: #600c0c;
-    max-width: 100%;
-    padding: 0 1em 1em 1em;
+    padding: 1em;
+}
+.SubjectContent {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+.Pictures{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5%;
+    justify-content: space-between;
+    background-color: #0c3d60;
+}
+.Pictures *{
+    flex: 1 1 150px;
+    width: 5%;
 }
 /* --------------------- Responsive Phone ------------------------*/
 /*
