@@ -1,4 +1,3 @@
-import * as tools from './tools.js';
 export class Data
 {    
     constructor(_className = "", _content = null)
@@ -74,23 +73,65 @@ export const cardsData = [
     }
 ];
 
+const titleBlocData = {
+    titleProblem: 'Problem encountered during development',
+    titleSolution: 'Solution',
+    conclusionTitle: 'What I learned',
+}
+export const EProjectName = 
+{
+    SHIIN: 0,
+    OCULI: 1,
+    VOIDFISHER: 2,
+}
+export let currentProjectName = EProjectName.SHIIN;
 export const cardsDetailData = [
     {
         titleGame: 'Shiin',
         videoSrc: 'ExtraitVideo',
         videoPath: '',
+        titleAbout: 'About',
+        titleProjectInfo: 'Project Info',
         aboutText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        titleProblemText: 'Problem encountered during development',
         problemText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        problemExample:['LogoESMA', 'LogoESMA'],
         solutionText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        solutionExample:['LogoESMA', 'LogoESMA'],
         learnedText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
     },
     {
         titleGame: 'Oculi',
         videoSrc: 'ExtraitVideo',
         videoPath: '',
+        titleAbout: 'About',
+        titleProjectInfo: 'Project Info',
         aboutText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        titleProblemText: 'Problem encountered during development',
         problemText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        problemExample:['LogoESMA', 'LogoESMA'],
         solutionText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        solutionExample:['LogoESMA', 'LogoESMA'],
         learnedText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
     }
 ];
+
+export let blocContentData = 
+    {
+        bloc:[
+            {
+                title: titleBlocData.titleProblem,
+                text: cardsDetailData[currentProjectName].problemText,
+                img: cardsDetailData[currentProjectName].problemExample,
+            },
+            {
+                title: titleBlocData.titleSolution,
+                text: cardsDetailData[currentProjectName].solutionText,
+                img: cardsDetailData[currentProjectName].solutionExample,
+            },
+            {
+                title: titleBlocData.conclusionTitle,
+                text: cardsDetailData[currentProjectName].learnedText,
+            },
+        ]
+    }
