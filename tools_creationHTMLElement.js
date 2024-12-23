@@ -49,16 +49,25 @@ export function CreateSourceVideo(videoName, formatVideo = 'mp4', path = 'Video'
     source.type = `video/${formatVideo}`;
     return source;
 }
-export function CreateVideo(videoName, path = 'Video', autoplay = true, muted = true, loop = true, playsInline = true)
-{
-    const video = document.createElement('video');
+export function ResetVideoParam(video, autoplay = true, muted = true, loop = true, playsInline = true)
+{    
     video.autoplay = autoplay;
     video.muted = muted;
     video.loop = loop;
     video.playsInline = playsInline;
+}
+export function CreateVideo(videoName, path = 'Video', autoplay = true, muted = true, loop = true, playsInline = true)
+{
+    const video = document.createElement('video');
+    ResetVideoParam(video, autoplay, muted, loop, playsInline);
+    window.addEventListener('animationend', () => {
+        ResetVideoParam(video);  
+        video.play(); 
+    })
 
     const sourceMp4 = CreateSourceVideo(videoName, 'mp4', path);
     const sourceWebm = CreateSourceVideo(videoName, 'webm', path);
+
 
     video.appendChild(sourceMp4);
     video.appendChild(sourceWebm);

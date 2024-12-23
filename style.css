@@ -110,6 +110,7 @@ body
 /*------------------------------ Content ---------------------------------------------*/
 #content{
     justify-items: center;
+    transition: opacity 1s;
 }
 /* ----------------------------- Project experiences ---------------------------------*/
 .CardArray
@@ -233,9 +234,19 @@ body
 
 
 /*---------------------- Project Container -----------------------*/
+.GlobalContainer{
+    background-color: #87bee2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    min-width: 300px;
+    max-width: 1400px;
+    padding: 1em;
+}
+
 .ProjectContainer{
     background-color: #87bee2;
-    width: 60%;
+    width: 70%;
     min-width: 300px;
     max-width: 1400px;
     padding: 1em;
@@ -246,6 +257,7 @@ body
     font-size: clamp(15px, 1vw, 25px);
     justify-content: center;
     width: fit-content;
+    height: fit-content;
     padding: 0 1.5em;
     position: sticky;
     top: 90%;
@@ -295,6 +307,65 @@ body
 .Pictures *{
     flex: 1 1 150px;
     width: 5%;
+}
+
+
+/*---------------------- Animation --------------------------*/
+.DisplayAnimationPage
+{
+    animation: fadeIn 1s forwards;
+}
+
+.HiddenAnimationPage
+{
+    animation: fadeOut 1s forwards;
+}
+
+.FadeInOutAnimation
+{
+    animation: fadeInOut 1s forwards;
+}
+.FadeInAnimation{
+    animation: fadeIn 1s forwards;
+}
+.FadeOutAnimation{
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeInOut {
+    0%{
+        opacity: 1;
+    } 25% {
+        opacity: 0;
+    } 75% {
+        opacity: 0;
+    } 100%{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    25%
+    {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
 }
 /* --------------------- Responsive Phone ------------------------*/
 /*

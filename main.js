@@ -1,6 +1,17 @@
 import * as tools from './tools.js';
 
 let container = document.getElementById('content');
-let _divSubjectContent = tools.CreateGameDetails(0);
-container.appendChild(_divSubjectContent);
-// tools.DisplayMainPage(container);
+const divMain = tools.DisplayMainPage();
+const detailledCards = tools.CreateAllGameDetails();
+container.appendChild(divMain);
+window.addEventListener('clickInfoBubble', (event) =>
+{
+    //container.replaceChildren(detailledCards[event.detail.projectName]);
+    tools.FadeOutAnimation(container, detailledCards[event.detail.projectName]);
+});
+window.addEventListener('backToMainPage', () =>
+{
+    console.log("Element supprimé");
+    //container.replaceChildren(divMain)
+    tools.FadeOutAnimation(container,divMain);
+});

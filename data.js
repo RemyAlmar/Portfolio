@@ -22,6 +22,12 @@ export const chevronIconData = new Data("SVG Icon", chevronSVG);
 export const linkedinIconData = new Data("SVG Link Icon", linkedinSVG);
 export const githubIconData = new Data("SVG Link Icon", githubSVG);
 
+export const EProjectName = 
+{
+    SHIIN: 0,
+    OCULI: 1,
+    VOIDFISHER: 2,
+}
 export const listNavBarData = [
     {
         text: 'Home',
@@ -54,6 +60,7 @@ export const cardsData = [
         productionTime: '3 months',
         device: 'C#, Unity',
         titleGame: 'Shiin',
+        projectName: EProjectName.SHIIN,
         selfRole: 'All', 
         description: 'A 2D platformer where you play as ninja. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint consectetur sit officiis nostrquod est temporibus ratione enim, reprehenderit totam, corrupti, ad quo quaerat doloremque? Quos dolore veniam omnis temporibus architecto praesentium! Laborum dolorem culpa est vero. Ipsum similique, nemo quia beatae voluptatum ex ducimus impedit perferendis asperiores incidunt corporis maiores porro numquam. Amet consectetur corrupti libero similique voluptatum eligendi vitae repellendus recusandae, molestias necessitatibus beatae. Dolor autem ducimus voluptates eius. Papo poadpda Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint consectetur sit officiis nostrquod est temporibus ratione enim, reprehenderit totam, corrupti, ad quo quaerat doloremque? Quos dolore veniam omnis temporibus architecto praesentium! Laborum dolorem culpa est vero. Ipsum similique, nemo quia beatae voluptatum ex ducimus impedit perferendis asperiores incidunt corporis maiores porro numquam. Amet consectetur corrupti libero similique voluptatum eligendi vitae repellendus recusandae, molestias necessitatibus beatae. Dolor autem ducimus voluptates eius. Papo papou',
         textColor: '#deae00',
@@ -66,6 +73,7 @@ export const cardsData = [
         productionTime: '2 months',
         device: 'Blueprint, UE5',
         titleGame: 'Oculi',
+        projectName: EProjectName.OCULI,
         selfRole: 'UX, Developer, Animator', 
         description: 'A psychological horror game.',
         textColor: '#3cc800',
@@ -77,12 +85,6 @@ const titleBlocData = {
     titleProblem: 'Problem encountered during development',
     titleSolution: 'Solution',
     conclusionTitle: 'What I learned',
-}
-export const EProjectName = 
-{
-    SHIIN: 0,
-    OCULI: 1,
-    VOIDFISHER: 2,
 }
 export let currentProjectName = EProjectName.SHIIN;
 export const cardsDetailData = [

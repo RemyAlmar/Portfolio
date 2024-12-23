@@ -3,18 +3,24 @@ import * as elem from './tools_creationHTMLElement.js'
 
 export function CreateCard(_data)
 {  
-    const divTitle = elem.CreateDivIconText(data.chevronIconData, _data.color, _data.titleGame, 'h3', "ProjectTitleContainer", "ImportantText", true);
-    const childPTD = [divTitle];
-    const projectTitleData = new data.Data("BandProjectTitleContainer", childPTD);
-    const divProjectTitle = elem.CreateDiv(projectTitleData);
+    /*---------------------------- Creation de la bande avec le titre ---------------------------------*/
+    const infoBubble = elem.CreateIcon(data.chevronIconData);
+    const titleGameData = new data.Data("ImportantText", _data.titleGame);
+    const titleGame = elem.CreateText(titleGameData, 'h3');
+    let childToolsSize = [titleGame, infoBubble];
 
+    const divProjectTitleContainerData = new data.Data("ProjectTitleContainer", childToolsSize);
+    const divProjectTitleContainer = elem.CreateDiv(divProjectTitleContainerData);
+
+    /*---------------------------- Creation des Icones ---------------------------------*/
     const divTools = elem.CreateDivIconText(data.toolsIconData, _data.color, _data.device, 'p', "IconContainer");
     const divTime = elem.CreateDivIconText(data.timeIconData, _data.color, _data.productionTime, 'p', "IconContainer"); 
     const divTeam = elem.CreateDivIconText(data.teamIconData, _data.color, _data.teamMate, 'p', "IconContainer"); 
     const childDivIcon = [divTeam, divTime, divTools];
     const divIconData = new data.Data("IconsContainer", childDivIcon);
-    const divIcon = elem.CreateDiv(divIconData)
+    const divIcon = elem.CreateDiv(divIconData);
 
+    /*---------------------------- Creation des Infos ---------------------------------*/
     const roleData = new data.Data("", _data.selfRole);
     const role = elem.CreateText(roleData, 'p');
     const textDesData = new data.Data("", _data.description);
@@ -23,23 +29,32 @@ export function CreateCard(_data)
     const divDescriptionData = new data.Data("DescriptionContainer Scrollable", childDesDiv);
     const divDescription = elem.CreateDiv(divDescriptionData);
     
-    const childInfo = [divProjectTitle, divDescription];
+    const childInfo = [divProjectTitleContainer, divDescription];
     const cardInfoData = new data.Data("CardInfo", childInfo);
     const divCardInfo = elem.CreateDiv(cardInfoData);
     divCardInfo.style.backgroundColor = _data.BgColor;
     elem.SetColorToClassElement(divCardInfo, _data.textColor,"ImportantText");
     
+    /*---------------------------- Creation de la div Video ---------------------------------*/
     const video = elem.CreateVideo(_data.videoSrc);
     
     const videoDivChilds = [video, divCardInfo];
     const videoDivData = new data.Data("GameCard", videoDivChilds);
     const videoDiv = elem.CreateDiv(videoDivData);
     videoDiv.classList.add(_data.titleGame);
+
+    infoBubble.addEventListener('click', () => 
+    {
+        console.log("Click");
+        const event = new CustomEvent('clickInfoBubble', {detail: {projectName: _data.projectName}});
+        window.dispatchEvent(event);        
+    });
     return videoDiv;
 }
 
-export function DisplayMainPage(parent = "body")
+export function DisplayMainPage()
 {
+    let divMain;
     //Creation des textes de la présentation
     const parcoursData = new data.Data("none", data.presentation.parcours);
     const passionData = new data.Data("none", data.presentation.passion);
@@ -56,7 +71,8 @@ export function DisplayMainPage(parent = "body")
     //Initialisation des cartes
     let cardChilds = []; 
     data.cardsData.forEach(_data => {
-        cardChilds.push(CreateCard(_data));
+        let _card = CreateCard(_data);
+        cardChilds.push(_card);
     });
     //Ajout des cartes au parent
     const cardArrayData = new data.Data("CardArray", cardChilds);
@@ -64,8 +80,11 @@ export function DisplayMainPage(parent = "body")
     cardArray.id = 'project';
 
     //Ajout des div au container parent
-    parent.appendChild(presentation);
-    parent.appendChild(cardArray);
+    const mainChild = [presentation, cardArray];
+    const divMainData = new data.Data("MainContent", mainChild);
+    divMain = elem.CreateDiv(divMainData);
+
+    return divMain;
 }
 
 export function CreateSection(_index)
@@ -118,21 +137,21 @@ export function CreateGameDetails(_index)
     const divSubjectContent = elem.CreateDiv(divSubjectContentData);
 
     /*---------------- Creation Div About Game --------------------*/
-    let textAboutData = new data.Data("", data.cardsDetailData[_index].aboutText);
-    let textAbout = elem.CreateText(textAboutData, 'p');
+    const textAboutData = new data.Data("", data.cardsDetailData[_index].aboutText);
+    const textAbout = elem.CreateText(textAboutData, 'p');
 
-    let titleSectionAboutData = new data.Data("", data.cardsDetailData[_index].titleAbout);
+    const titleSectionAboutData = new data.Data("", data.cardsDetailData[_index].titleAbout);
     const titleSectionAbout = elem.CreateText(titleSectionAboutData, 'h3');
-    let divAboutChild = [titleSectionAbout, textAbout];
+    const divAboutChild = [titleSectionAbout, textAbout];
     const divAboutData = new data.Data("Section", divAboutChild);
     const divAbout = elem.CreateDiv(divAboutData);
 
     /*---------------- Creation Div Project Info --------------------*/
-    let textProjectData = new data.Data("", data.cardsDetailData[_index].problemText);
-    let textProjectInfo = elem.CreateText(textProjectData, 'p');
-    let titleSectionProjectInfoData = new data.Data("",data.cardsDetailData[_index].titleProjectInfo);
+    const textProjectData = new data.Data("", data.cardsDetailData[_index].problemText);
+    const textProjectInfo = elem.CreateText(textProjectData, 'p');
+    const titleSectionProjectInfoData = new data.Data("",data.cardsDetailData[_index].titleProjectInfo);
     const titleSectionProjectInfo = elem.CreateText(titleSectionProjectInfoData, 'h3');
-    let divProjectInfoChild = [titleSectionProjectInfo, textProjectInfo];
+    const divProjectInfoChild = [titleSectionProjectInfo, textProjectInfo];
     const divProjectInfoData = new data.Data("Section", divProjectInfoChild);
     const divProjectInfo = elem.CreateDiv(divProjectInfoData);
 
@@ -142,11 +161,11 @@ export function CreateGameDetails(_index)
     const divGameInfo = elem.CreateDiv(divGameInfoData);
 
 /*---------------- Creation du titre du jeu ------------------------*/
-    let titleGameBandData = new data.Data("", data.cardsDetailData[_index].titleGame);
-    let titleGameBand = elem.CreateText(titleGameBandData, 'h2', data.cardsData[_index].textColor);
+    const titleGameBandData = new data.Data("", data.cardsDetailData[_index].titleGame);
+    const titleGameBand = elem.CreateText(titleGameBandData, 'h2', data.cardsData[_index].textColor);
 
 /*---------------- Creation de la bande du jeu ------------------------*/
-    let childInfo = [titleGameBand];
+    const childInfo = [titleGameBand];
     const titleBandData = new data.Data("TitleBand", childInfo);
     const divTitleBand = elem.CreateDiv(titleBandData);
    /* divCardInfo.style.backgroundColor = data.cardsData[_index].BgColor;
@@ -157,12 +176,73 @@ export function CreateGameDetails(_index)
     const videoDivData = new data.Data("VideoContainer", videoDivChilds);
     const videoDiv = elem.CreateDiv(videoDivData);
     videoDiv.classList.add(data.cardsDetailData[_index].titleGame);
+
+
+/*---------------- Creation Boutton Retour ----------------------*/
+    const buttonBackTextData = new data.Data("", "Back");
+    const buttonBackText = elem.CreateText(buttonBackTextData, 'p');
+    const divButtonBackChild = [buttonBackText];
+    const divButtonBackData = new data.Data('BackButton', divButtonBackChild);
+    const divButtonBack = elem.CreateDiv(divButtonBackData);
+
+    divButtonBack.addEventListener('click', () => 
+    {
+        console.log("BackToMainMenu");
+        const event = new CustomEvent('backToMainPage');
+        window.dispatchEvent(event);        
+    });
 /*---------------- Creation du container ------------------------*/
-    let divContainerChild = [videoDiv, divGameInfo, divSubjectContent];
-    let divContainerData = new data.Data('ProjectContainer', divContainerChild);
-    const divContainer = elem.CreateDiv(divContainerData)
+    const divProjectContainerChild = [videoDiv, divGameInfo, divSubjectContent, divButtonBack];
+    const divProjectContainerData = new data.Data('ProjectContainer', divProjectContainerChild);
+    const divProjectContainer = elem.CreateDiv(divProjectContainerData);
+
+    const divContainerChilds = [divButtonBack, divProjectContainer];
+    const divContainerData = new data.Data('GlobalContainer', divContainerChilds);
+    const divContainer = elem.CreateDiv(divContainerData);
 
     return divContainer;
+}
+
+export function CreateAllGameDetails()
+{
+    let detailledCards = [];
+    data.cardsData.forEach(_index =>
+    {
+        let detailledCard = CreateGameDetails(_index.projectName);
+        detailledCards.push(detailledCard);
+    }
+    )
+    return detailledCards;
+}
+
+export function FadeInAnimation(_parentContainer)
+{
+    _parentContainer.classList.add('DisplayAnimationPage');
+
+    const handleAnimationEnd = () => {
+        _parentContainer.classList.remove('DisplayAnimationPage');
+        _parentContainer.removeEventListener('animationend', handleAnimationEnd);
+    };
+    _parentContainer.addEventListener('animationend', handleAnimationEnd);
+
+    console.log("Changement de page initié, Out");
+
+}
+export function FadeOutAnimation(_parentContainer, _elementToDisplay)
+{
+    _parentContainer.classList.add('HiddenAnimationPage');
+
+    const handleAnimationEnd = () => {
+        // Remplacement du contenu
+        _parentContainer.replaceChildren(_elementToDisplay);
+        window.scrollTo(0, 0);
+        _parentContainer.classList.remove('HiddenAnimationPage');
+        _parentContainer.removeEventListener('animationend', handleAnimationEnd);
+        FadeInAnimation(_parentContainer);
+    };
+    _parentContainer.addEventListener('animationend', handleAnimationEnd);
+
+    console.log("Changement de page initié, In");
 }
 //svg-inline--fa fa-users icon  nomClasse User Icon
 
