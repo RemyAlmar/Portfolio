@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 :root
 {
-    --colorBaseFont: #f7f7f7;
+    --colorBaseFont: #ffffff;
     --colorContact: #02f948;
     --colorMainTitle: #ffd560;
     --colorHover: #87bee2;
     --pageBackgroundColor: #131313;
     --pageBandColor: rgb(0, 0, 0);
+    
+    --colorBgShiin: #600c0c;
+    --colorShiin: #deae00;
+    --colorBgOculi: #174204;
+    --colorOculi: #3cc800;
 }
 a
 {    
@@ -20,20 +25,25 @@ a:Link
 {
     color: var(--colorContact);
 }
-*
-{
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
-}
 
+video
+{
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+}
 body
 {
     background-color: var(--pageBackgroundColor);
     color : var(--colorBaseFont);
+    font-family: 'Poppins', sans-serif;
     font-size: large;
-    margin: 0;
+    margin: auto;
     padding: 0;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 /* ------------------- Head Section - Title And Contact --------------------------*/
@@ -44,7 +54,7 @@ body
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 12px 16px 0 16px;
+    padding: 1% 5% 0 5%;
     position: sticky;
     top: 0;
     z-index: 5;
@@ -91,14 +101,17 @@ body
 
 #presentation
 {
-    display: flex;
     justify-content: center;
     text-align: center;
     margin: 5% auto;
-    font-size: clamp(1.5rem, 2vw, 2rem);
-    width: clamp(400px, 50%, 900px)
+    font-size: clamp(.8rem, 2vw, 1.5rem);
+    width: clamp(400px, 70%, 885px)
 }
-
+/*------------------------------ Content ---------------------------------------------*/
+#content{
+    justify-items: center;
+    transition: opacity 1s;
+}
 /* ----------------------------- Project experiences ---------------------------------*/
 .CardArray
 {
@@ -109,31 +122,27 @@ body
     margin: clamp(5px, 5%, 20px);
     flex-wrap: wrap;
 }
-.CardArray video
-{
-    width: 100%;
-    position: relative;
-}
 .GameCard
 {
     display: flex;
     position: relative;
     flex-direction: column;
-    opacity: .5;
+    opacity: .8;
+    border-radius: .5rem ;
     transition: opacity .5s;
     overflow: hidden;
 }
 
 .CardInfo
 {
-    width: 100%;
     align-self: center;
-    background-color: var(--pageBandColor);
     font-size: clamp(15px, 1vw, 25px);
+    height: 100%;
     position: absolute;
+    border-radius: .5rem ;
     top: 82%;
     transition: top .2s ease-in-out;
-    overflow:hidden;
+    width: 100%;
 }
 
 /* Affichage de la bande au survol */
@@ -146,25 +155,23 @@ body
 }
 .ProjectTitleContainer
 {
-    padding: 0 1%;
+    padding: 0 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     text-transform: uppercase;
-    background-color: #c00303;
 }
 .IconsContainer
 {
     display: flex;
     font-size: clamp(15px, 2em, 50%);
-    background-color: #87bee2;
+    background-color: #292929;
     gap: 30px;
 }
 .IconContainer
 {
     display: flex;
     align-items: center;
-    background-color: #87bee2;
     gap: 10px;
 }
 .Icon
@@ -175,21 +182,8 @@ body
 /*-----------------------Titre et description du jeu----------------------*/
 .DescriptionContainer
 {
-    display: block !important;
-    height: 40%;
-    overflow: scroll;
-    margin-top: 30px;
-}
-
-.TitleGame
-{
-    color: var(--colorContact);
-    display: flex;
-    align-items: center;
-    font-size: 3em;
-    justify-content: space-evenly;
-    margin: .1em 0px;
-
+    padding: 1rem 2rem;
+    background-color: #000000ac;
 }
 
 .VerticalList
@@ -220,8 +214,159 @@ body
         color: var(--colorHover);
         text-decoration: underline;
 }
+.Scrollable {
+    overflow-y: auto;
+    box-sizing: border-box;
+    height: 60%;
+}
+
+.Scrollable::-webkit-scrollbar {
+    width: 2px;
+}
+
+.Scrollable::-webkit-scrollbar-track {
+    display: none;
+}
+
+.Scrollable::-webkit-scrollbar-thumb { 
+    background-color: #ffffff;
+}
 
 
+/*---------------------- Project Container -----------------------*/
+.GlobalContainer{
+    background-color: #87bee2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    min-width: 300px;
+    max-width: 1400px;
+    padding: 1em;
+}
+
+.ProjectContainer{
+    background-color: #87bee2;
+    width: 70%;
+    min-width: 300px;
+    max-width: 1400px;
+    padding: 1em;
+}
+.BackButton{
+    background-color: #174204;
+    display: flex;
+    font-size: clamp(15px, 1vw, 25px);
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    padding: 0 1.5em;
+    position: sticky;
+    top: 90%;
+    left: 90%;
+    z-index: 15;
+}
+.VideoContainer{
+    position: relative;
+    margin: 1em auto;
+}
+.TitleBand{
+    background-color: #000000ca;
+    box-sizing: border-box;
+    bottom: 0;
+    font-weight: bold;
+    font-size: 1.5rem;
+    height: auto;
+    left: 0;
+    padding: 0 1rem;
+    position: absolute;
+    width: 100%;
+}
+.GameInfo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1%;
+}
+
+.Section{
+    flex: 1 1 300px;
+    background-color: #600c0c;
+    padding: 1em;
+}
+.SubjectContent {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+.Pictures{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5%;
+    justify-content: space-between;
+    background-color: #0c3d60;
+}
+.Pictures *{
+    flex: 1 1 150px;
+    width: 5%;
+}
+
+
+/*---------------------- Animation --------------------------*/
+.DisplayAnimationPage
+{
+    animation: fadeIn 1s forwards;
+}
+
+.HiddenAnimationPage
+{
+    animation: fadeOut 1s forwards;
+}
+
+.FadeInOutAnimation
+{
+    animation: fadeInOut 1s forwards;
+}
+.FadeInAnimation{
+    animation: fadeIn 1s forwards;
+}
+.FadeOutAnimation{
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeInOut {
+    0%{
+        opacity: 1;
+    } 25% {
+        opacity: 0;
+    } 75% {
+        opacity: 0;
+    } 100%{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    25%
+    {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
 /* --------------------- Responsive Phone ------------------------*/
 /*
 @media(max-width : 1120px)

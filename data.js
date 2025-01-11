@@ -1,9 +1,9 @@
 export class Data
 {    
-    constructor(className = "", content = null)
+    constructor(_className = "", _content = null)
     {
-        this.className = className; // Classe CSS pour le SVG
-        this.content = content;
+        this.className = _className;
+        this.content = _content;
     }
 }
 
@@ -14,14 +14,20 @@ export const chevronSVG = "M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-1
 export const linkedinSVG = "M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z";
 export const githubSVG = "M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z";
 
-export const teamIconData = new Data("SVG Icon", teamSVG);
-export const timeIconData = new Data("SVG Icon", timeSVG);
-export const toolsIconData = new Data("SVG Icon", toolsSVG);
+export const teamIconData = new Data("SVG Icon ImportantText", teamSVG);
+export const timeIconData = new Data("SVG Icon ImportantText", timeSVG);
+export const toolsIconData = new Data("SVG Icon ImportantText", toolsSVG);
 export const chevronIconData = new Data("SVG Icon", chevronSVG);
 
 export const linkedinIconData = new Data("SVG Link Icon", linkedinSVG);
 export const githubIconData = new Data("SVG Link Icon", githubSVG);
 
+export const EProjectName = 
+{
+    SHIIN: 0,
+    OCULI: 1,
+    VOIDFISHER: 2,
+}
 export const listNavBarData = [
     {
         text: 'Home',
@@ -40,6 +46,12 @@ export const listNavBarData = [
         anchor: '#contact'
     }
 ]
+export const presentation = {
+    parcours: 'Student at ESMA in Toulouse, I like working on all kinds of projects in which my contribution can be useful.',
+    passion: 'I like learning new things, especially about programming and animation, these two professions are those in which I would like to flourish.',
+    lookThat: 'Below you can see some projects I have worked on.',
+};
+
 export const cardsData = [
     {
         videoSrc: 'ExtraitVideo',
@@ -48,9 +60,11 @@ export const cardsData = [
         productionTime: '3 months',
         device: 'C#, Unity',
         titleGame: 'Shiin',
+        projectName: EProjectName.SHIIN,
         selfRole: 'All', 
-        description: 'A 2D platformer where you play as ninja. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint consectetur sit officiis nostrum maiores error rerum veniam, quo ipsa sapiente sunt! Deserunt corrupti, magnam a odit reiciendis fugiat, eius consequatur maxime nisi esse sequi quis, earum laboriosam! Perferendis voluptas maxime iste ex, labore dolorem quod a quam perspiciatis distinctio nostrum odio inventore eum ipsam? Quibusdam corporis, consectetur facilis minima voluptas nobis obcaecati, rem, ut eaque nam earum quam accusantium quis? Expedita eaque obcaecati nesciunt quos molestiae ad tenetur, quae exercitationem a optio accusamus autem dolor, perferendis pariatur, aliquid asperiores quasi ullam repudiandae vel dolorum. In, vitae! Hic tempore, incidunt, expedita consequuntur veritatis beatae, temporibus praesentium quaerat libero dolorum doloribus. Assumenda autem ratione voluptate consequuntur cupiditate consequatur. Esse quis, nihil obcaecati beatae possimus unde iure asperiores, rem, amet iste nulla ipsum. Doloremque soluta recusandae aut id itaque nam aliquid culpa tenetur? Corporis ullam ad totam a similique nam, maxime, modi dignissimos distinctio cum quaerat pariatur rem beatae? Magni, provident, itaque ad facilis velit voluptates vel quas quasi nulla temporibus aliquam hic doloremque perspiciatis voluptatem omnis voluptas expedita natus ut minus modi inventore assumenda quos. Amet quisquam non praesentium maiores. Magnam voluptate error suscipit quod est temporibus ratione enim, reprehenderit totam, corrupti, ad quo quaerat doloremque? Quos dolore veniam omnis temporibus architecto praesentium! Laborum dolorem culpa est vero. Ipsum similique, nemo quia beatae voluptatum ex ducimus impedit perferendis asperiores incidunt corporis maiores porro numquam. Amet consectetur corrupti libero similique voluptatum eligendi vitae repellendus recusandae, molestias necessitatibus beatae. Dolor autem ducimus voluptates eius.',
-        color: 'red' 
+        description: 'A 2D platformer where you play as ninja. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint consectetur sit officiis nostrquod est temporibus ratione enim, reprehenderit totam, corrupti, ad quo quaerat doloremque? Quos dolore veniam omnis temporibus architecto praesentium! Laborum dolorem culpa est vero. Ipsum similique, nemo quia beatae voluptatum ex ducimus impedit perferendis asperiores incidunt corporis maiores porro numquam. Amet consectetur corrupti libero similique voluptatum eligendi vitae repellendus recusandae, molestias necessitatibus beatae. Dolor autem ducimus voluptates eius. Papo poadpda Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint consectetur sit officiis nostrquod est temporibus ratione enim, reprehenderit totam, corrupti, ad quo quaerat doloremque? Quos dolore veniam omnis temporibus architecto praesentium! Laborum dolorem culpa est vero. Ipsum similique, nemo quia beatae voluptatum ex ducimus impedit perferendis asperiores incidunt corporis maiores porro numquam. Amet consectetur corrupti libero similique voluptatum eligendi vitae repellendus recusandae, molestias necessitatibus beatae. Dolor autem ducimus voluptates eius. Papo papou',
+        textColor: '#deae00',
+        BgColor: '#600c0c',
     },
     {
         videoSrc: 'ExtraitVideo',
@@ -59,8 +73,67 @@ export const cardsData = [
         productionTime: '2 months',
         device: 'Blueprint, UE5',
         titleGame: 'Oculi',
+        projectName: EProjectName.OCULI,
         selfRole: 'UX, Developer, Animator', 
-        description: 'A psychological horror game. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint consectetur sit officiis nostrum maiores error rerum veniam, quo ipsa sapiente sunt! Deserunt corrupti, magnam a odit reiciendis fugiat, eius consequatur maxime nisi esse sequi quis, earum laboriosam! Perferendis voluptas maxime iste ex, labore dolorem quod a quam perspiciatis distinctio nostrum odio inventore eum ipsam? Quibusdam corporis, consectetur facilis minima voluptas nobis obcaecati, rem, ut eaque nam earum quam accusantium quis? Expedita eaque obcaecati nesciunt quos molestiae ad tenetur, quae exercitationem a optio accusamus autem dolor, perferendis pariatur, aliquid asperiores quasi ullam repudiandae vel dolorum. In, vitae! Hic tempore, incidunt, expedita consequuntur veritatis beatae, temporibus praesentium quaerat libero dolorum doloribus. Assumenda autem ratione voluptate consequuntur cupiditate consequatur. Esse quis, nihil obcaecati beatae possimus unde iure asperiores, rem, amet iste nulla ipsum. Doloremque soluta recusandae aut id itaque nam aliquid culpa tenetur? Corporis ullam ad totam a similique nam, maxime, modi dignissimos distinctio cum quaerat pariatur rem beatae? Magni, provident, itaque ad facilis velit voluptates vel quas quasi nulla temporibus aliquam hic doloremque perspiciatis voluptatem omnis voluptas expedita natus ut minus modi inventore assumenda quos. Amet quisquam non praesentium maiores. Magnam voluptate error suscipit quod est temporibus ratione enim, reprehenderit totam, corrupti, ad quo quaerat doloremque? Quos dolore veniam omnis temporibus architecto praesentium! Laborum dolorem culpa est vero. Ipsum similique, nemo quia beatae voluptatum ex ducimus impedit perferendis asperiores incidunt corporis maiores porro numquam. Amet consectetur corrupti libero similique voluptatum eligendi vitae repellendus recusandae, molestias necessitatibus beatae. Dolor autem ducimus voluptates eius.',
-        color: 'blue'
+        description: 'A psychological horror game.',
+        textColor: '#3cc800',
+        BgColor: '#174204',
     }
 ];
+
+const titleBlocData = {
+    titleProblem: 'Problem encountered during development',
+    titleSolution: 'Solution',
+    conclusionTitle: 'What I learned',
+}
+export let currentProjectName = EProjectName.SHIIN;
+export const cardsDetailData = [
+    {
+        titleGame: 'Shiin',
+        videoSrc: 'ExtraitVideo',
+        videoPath: '',
+        titleAbout: 'About',
+        titleProjectInfo: 'Project Info',
+        aboutText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        titleProblemText: 'Problem encountered during development',
+        problemText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        problemExample:['LogoESMA', 'LogoESMA'],
+        solutionText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        solutionExample:['LogoESMA', 'LogoESMA'],
+        learnedText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+    },
+    {
+        titleGame: 'Oculi',
+        videoSrc: 'ExtraitVideo',
+        videoPath: '',
+        titleAbout: 'About',
+        titleProjectInfo: 'Project Info',
+        aboutText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        titleProblemText: 'Problem encountered during development',
+        problemText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        problemExample:['LogoESMA', 'LogoESMA'],
+        solutionText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        solutionExample:['LogoESMA', 'LogoESMA'],
+        learnedText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+    }
+];
+
+export let blocContentData = 
+    {
+        bloc:[
+            {
+                title: titleBlocData.titleProblem,
+                text: cardsDetailData[currentProjectName].problemText,
+                img: cardsDetailData[currentProjectName].problemExample,
+            },
+            {
+                title: titleBlocData.titleSolution,
+                text: cardsDetailData[currentProjectName].solutionText,
+                img: cardsDetailData[currentProjectName].solutionExample,
+            },
+            {
+                title: titleBlocData.conclusionTitle,
+                text: cardsDetailData[currentProjectName].learnedText,
+            },
+        ]
+    }
