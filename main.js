@@ -17,12 +17,12 @@ window.addEventListener('backToMainPage', () =>
     //container.replaceChildren(divMain)
     tools.FadeOutAnimation(container,divMain);
 });
-setTimeout(PlaceBandOnGameCard, 100);
 PlaceBandOnGameCard();
 window.onresize = () => {
     PlaceBandOnGameCard();
 };
 
+setTimeout(PlaceBandOnGameCard, 3000);
 function PlaceBandOnGameCard()
 {
     let gameCards = document.getElementsByClassName('GameCard');
