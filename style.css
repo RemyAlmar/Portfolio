@@ -162,7 +162,7 @@ body
     height: 100%;
     position: absolute;
     border-radius: .1rem .1rem 0 0;
-    top: 15em;
+    top: 80%;
     transition: top .2s ease-in-out;
     width: 100%;
 }
@@ -177,7 +177,7 @@ body
 }
 .ProjectTitleContainer
 {
-    padding: 0 1rem;
+    padding: 0 clamp(.5rem, 1vw, 1rem);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -186,32 +186,33 @@ body
 }
 .ProjectTitleContainer .ImportantText
 {
-    margin: .5em 0;
-    font-size: clamp(.7rem, 5vw, 1.5rem);
+    margin: 0;
+    font-size: clamp(.7rem, 2vw, 1.2rem);
 }
 .IconsContainer
 {
     display: flex;
-    font-size: clamp(15px, 2em, 50%);
+    font-size: clamp(.5em, 2em, 100%);
     background-color: #292929;
-    gap: 30px;
+    gap: clamp(1em, 2vw, 2em);
 }
 .IconContainer
 {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: clamp(.6em, 1vw, 1em);
 }
 .Icon
 {
-    height: 2em;
+    width: clamp(.1em, 5vw, 1.3em);
     overflow: visible;
 }
 /*-----------------------Titre et description du jeu----------------------*/
 .DescriptionContainer
 {
-    padding: 1rem 2rem;
+    padding: 0 1vw 1vw 1vw;
     background-color: #00000099;
+    font-size: clamp(.7rem, 1vw, 1.5rem);
 }
 
 /*--------------------Footer------------------------------*/

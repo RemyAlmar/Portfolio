@@ -98,4 +98,8 @@ export function CreateDivIconText(iconData, iconColor, _data, textFormat, divCla
     return divToolsSize;
 }
 
+export function GetHeightElem(elem)
+{
+    return elem.scrollHeight;
+}
 //#endregion
