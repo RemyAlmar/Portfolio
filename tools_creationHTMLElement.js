@@ -97,4 +97,5 @@ export function CreateDivIconText(iconData, iconColor, _data, textFormat, divCla
     const divToolsSize = CreateDiv(divToolsSizeData);
     return divToolsSize;
 }
+
 //#endregion
