@@ -97,4 +97,20 @@ export function CreateDivIconText(iconData, iconColor, _data, textFormat, divCla
     const divToolsSize = CreateDiv(divToolsSizeData);
     return divToolsSize;
 }
+
+export function GetHeightElem(elem)
+{
+    let margin = parseFloat(window.getComputedStyle(elem).margin);
+    let height = parseFloat(window.getComputedStyle(elem).height);
+    let total = height + margin;
+    return total;
+}
+
+export function SetElemTopByElem(elemToTranslate, otherElem, ElemOffset)
+{
+    let heightOffset = GetHeightElem(ElemOffset);
+    let otherElemHeight = GetHeightElem(otherElem);
+    let finalPos = otherElemHeight - heightOffset;
+    elemToTranslate.style.transform = `translateY(${finalPos}px)`;
+}
 //#endregion
