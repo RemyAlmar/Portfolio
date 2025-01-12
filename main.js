@@ -1,14 +1,11 @@
 import * as tools from './tools.js';
-import { GetHeightElem } from './tools_creationHTMLElement.js';
+import * as toolsHtml from './tools_creationHTMLElement.js';
 
 let container = document.getElementById('content');
 const divMain = tools.DisplayMainPage();
 const detailledCards = tools.CreateAllGameDetails();
 container.appendChild(divMain);
-let bands = document.getElementsByClassName('CardInfo');
-for(let band of bands) {
-    console.log(GetHeightElem(band));
-};
+
 window.addEventListener('clickInfoBubble', (event) =>
 {
     //container.replaceChildren(detailledCards[event.detail.projectName]);
@@ -20,3 +17,16 @@ window.addEventListener('backToMainPage', () =>
     //container.replaceChildren(divMain)
     tools.FadeOutAnimation(container,divMain);
 });
+setTimeout(PlaceBandOnGameCard, 100);
+PlaceBandOnGameCard();
+window.onresize = () => {
+    PlaceBandOnGameCard();
+};
+
+function PlaceBandOnGameCard()
+{
+    let gameCards = document.getElementsByClassName('GameCard');
+    for(let gameCard of gameCards) {
+        toolsHtml.SetElemTopByElem(gameCard.children[1], gameCard.children[1], gameCard.children[1].children[0]);
+    };
+} 
