@@ -187,14 +187,22 @@ body
 .ProjectTitleContainer .ImportantText
 {
     margin: 0;
-    font-size: clamp(.7rem, 2vw, 1.2rem);
+    font-size: clamp(.8rem, 2vw, 1.2rem);
 }
+/*-----------------------Titre et description du jeu----------------------*/
+.DescriptionContainer
+{
+    padding: 0 1vw 1vw 1vw;
+    background-color: #00000099;
+    font-size: clamp(.7rem, 1vw, 1.2rem);
+}
+/*------------------Icone Descriptive -------------------------*/
 .IconsContainer
 {
     display: flex;
-    font-size: clamp(.5em, 2em, 100%);
     background-color: #292929;
-    gap: clamp(1em, 2vw, 2em);
+    gap: clamp(1em, 2vw, 1.3em);
+    line-height: 1;
 }
 .IconContainer
 {
@@ -206,13 +214,6 @@ body
 {
     width: clamp(.1em, 5vw, 1.3em);
     overflow: visible;
-}
-/*-----------------------Titre et description du jeu----------------------*/
-.DescriptionContainer
-{
-    padding: 0 1vw 1vw 1vw;
-    background-color: #00000099;
-    font-size: clamp(.7rem, 1vw, 1.5rem);
 }
 
 /*--------------------Footer------------------------------*/
@@ -275,6 +276,8 @@ body
     max-width: 1400px;
     padding: 1em;
 }
+
+/*---------------------- Card Info ---------------------------*/
 .BackButton{
     background-color: #174204;
     display: flex;
@@ -393,12 +396,16 @@ body
 }
 /* --------------------- Responsive Phone ------------------------*/
 
-@media(max-width : 700px)
+@media(max-width : 750px)
 {
-    /* body
+    .CardArray
     {
-        width: 80%;
-    } */
+        position: relative;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, 100%);
+        flex-wrap: wrap;
+    }
     .NavBar, #navBarTitle h1
     {        
         display: flex;
