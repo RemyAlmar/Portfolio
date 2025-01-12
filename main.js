@@ -17,16 +17,25 @@ window.addEventListener('backToMainPage', () =>
     //container.replaceChildren(divMain)
     tools.FadeOutAnimation(container,divMain);
 });
-setTimeout(PlaceBandOnGameCard, 100);
-PlaceBandOnGameCard();
+
+setTimeout(() => {
+    PlaceBandOnGameCard('CardInfo');
+    PlaceBandOnGameCard('TitleBand', 'VideoContainer');
+}, 500);
+
 window.onresize = () => {
-    PlaceBandOnGameCard();
+    PlaceBandOnGameCard('CardInfo');
+    PlaceBandOnGameCard('TitleBand', 'TitleBand', 'TitleBand');
 };
 
-function PlaceBandOnGameCard()
+function PlaceBandOnGameCard(elementToPlaceClassName, elemToGetHeightClassName = '', offsetElemClassName = '')
 {
-    let gameCards = document.getElementsByClassName('GameCard');
-    for(let gameCard of gameCards) {
-        toolsHtml.SetElemTopByElem(gameCard.children[1], gameCard.children[1], gameCard.children[1].children[0]);
+    let index = 0;
+    let bands = document.getElementsByClassName(elementToPlaceClassName);
+    for(let band of bands) {
+            let elemToGetHeight = elemToGetHeightClassName == '' ? band : document.getElementsByClassName(elemToGetHeightClassName)[index];
+            let offsetElem = offsetElemClassName == '' ? band.children[0] : document.getElementsByClassName(offsetElemClassName)[index];
+        toolsHtml.SetElemTopByElem(band, elemToGetHeight, offsetElem);
+        index++;
     };
 } 

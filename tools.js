@@ -192,11 +192,11 @@ export function CreateGameDetails(_index)
         window.dispatchEvent(event);        
     });
 /*---------------- Creation du container ------------------------*/
-    const divProjectContainerChild = [videoDiv, divGameInfo, divSubjectContent, divButtonBack];
+    const divProjectContainerChild = [videoDiv, divGameInfo, divSubjectContent];
     const divProjectContainerData = new data.Data('ProjectContainer', divProjectContainerChild);
     const divProjectContainer = elem.CreateDiv(divProjectContainerData);
 
-    const divContainerChilds = [divButtonBack, divProjectContainer];
+    const divContainerChilds = [divProjectContainer, divButtonBack];
     const divContainerData = new data.Data('GlobalContainer', divContainerChilds);
     const divContainer = elem.CreateDiv(divContainerData);
 

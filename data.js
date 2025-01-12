@@ -17,10 +17,10 @@ export const githubSVG = "M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 
 export const teamIconData = new Data("SVG Icon ImportantText", teamSVG);
 export const timeIconData = new Data("SVG Icon ImportantText", timeSVG);
 export const toolsIconData = new Data("SVG Icon ImportantText", toolsSVG);
-export const chevronIconData = new Data("SVG Icon", chevronSVG);
+export const chevronIconData = new Data("SVG Link Icon", chevronSVG);
 
-export const linkedinIconData = new Data("SVG Link Icon", linkedinSVG);
-export const githubIconData = new Data("SVG Link Icon", githubSVG);
+export const linkedinIconData = new Data("SVG ExtLink Icon", linkedinSVG);
+export const githubIconData = new Data("SVG ExtLink Icon", githubSVG);
 
 export const EProjectName = 
 {
