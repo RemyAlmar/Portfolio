@@ -42,7 +42,7 @@ body
     font-family: 'Poppins', sans-serif;
     font-size: large;
     margin: auto;
-    width: 60%;
+    width: clamp(250px, 60%, 1000px);
     padding: 0;
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -140,7 +140,7 @@ body
     position: relative;
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, clamp(250px, 800px, 50%));
+    grid-template-columns: repeat(auto-fit, clamp(200px, 800px, 50%));
     flex-wrap: wrap;
 }
 .GameCard
@@ -162,7 +162,7 @@ body
     height: 100%;
     position: absolute;
     border-radius: .1rem .1rem 0 0;
-    top: 80%;
+    top: 0;
     transition: top .2s ease-in-out;
     width: 100%;
 }
@@ -395,10 +395,10 @@ body
 
 @media(max-width : 700px)
 {
-    body
+    /* body
     {
         width: 80%;
-    }
+    } */
     .NavBar, #navBarTitle h1
     {        
         display: flex;
