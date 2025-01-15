@@ -8,25 +8,29 @@ container.appendChild(divMain);
 
 window.addEventListener('clickInfoBubble', (event) =>
 {
-    //container.replaceChildren(detailledCards[event.detail.projectName]);
     tools.FadeOutAnimation(container, detailledCards[event.detail.projectName]);
 });
 window.addEventListener('backToMainPage', () =>
 {
-    console.log("Element supprimé");
-    //container.replaceChildren(divMain)
     tools.FadeOutAnimation(container,divMain);
 });
-PlaceBandOnGameCard();
+
+setTimeout(() => {
+    PlaceBandOnGameCard('CardInfo');
+}, 500);
+
 window.onresize = () => {
-    PlaceBandOnGameCard();
+    PlaceBandOnGameCard('CardInfo');
 };
 
-setTimeout(PlaceBandOnGameCard, 3000);
-function PlaceBandOnGameCard()
+function PlaceBandOnGameCard(elementToPlaceClassName, elemToGetHeightClassName = '', offsetElemClassName = '')
 {
-    let gameCards = document.getElementsByClassName('GameCard');
-    for(let gameCard of gameCards) {
-        toolsHtml.SetElemTopByElem(gameCard.children[1], gameCard.children[1], gameCard.children[1].children[0]);
+    let index = 0;
+    let bands = document.getElementsByClassName(elementToPlaceClassName);
+    for(let band of bands) {
+        let elemToGetHeight = elemToGetHeightClassName == '' ? band : document.getElementsByClassName(elemToGetHeightClassName)[index];
+        let offsetElem = offsetElemClassName == '' ? band.children[0] : document.getElementsByClassName(offsetElemClassName)[index];
+        toolsHtml.SetElemTopByElem(band, elemToGetHeight, offsetElem);
+        index++;
     };
 } 

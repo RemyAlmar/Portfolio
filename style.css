@@ -23,15 +23,6 @@ a:visited
     color: var(--colorContact);
 }
 
-.Link
-{
-    color: var(--colorContact);
-    cursor: pointer;
-}
-video
-{
-    width: 100%;
-}
 html{    
     background-color: var(--pageBandColor);
 }
@@ -46,6 +37,13 @@ body
     padding: 0;
     overflow-x: hidden;
     scroll-behavior: smooth;
+}
+video
+{
+    width: 100%;
+}
+*{    
+    box-sizing: border-box;
 }
 
 /* ------------------- Head Section - Title And Contact --------------------------*/
@@ -64,7 +62,7 @@ body
 }
 #navBarTitle
 {
-    font-size: .8em;
+    font-size: 1rem;
     /* margin-bottom: 1em; */
 }
 #navBarTitle h1 
@@ -81,7 +79,7 @@ body
 }
 #navBarTitle small
 {
-    font-size: 1rem;
+    font-size: clamp(.8rem, 3vw, 1.5rem);
     font-weight: 400;
     line-height: 1;
 }
@@ -102,11 +100,16 @@ body
 }
 .Link
 {
-    font-size: 2em;
-    margin: 0 .25rem;
-    width: 3rem;
+    cursor: pointer;
 }
-:hover.Link
+.ExtLink
+{
+    color: var(--colorContact);
+    cursor: pointer;
+    margin: 0 .25rem;
+    width: clamp(2rem, 5vw, 3rem);
+}
+:hover.ExtLink
 {
     color: var(--colorHover);    
 }
@@ -257,27 +260,17 @@ body
     background-color: #ffffff;
 }
 
-
 /*---------------------- Project Container -----------------------*/
 .GlobalContainer{
     background-color: #87bee2;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    min-width: 300px;
-    max-width: 1400px;
-    padding: 1em;
 }
 
 .ProjectContainer{
     background-color: #87bee2;
-    width: 70%;
-    min-width: 300px;
-    max-width: 1400px;
-    padding: 1em;
+    margin: auto;
 }
 
-/*---------------------- Card Info ---------------------------*/
 .BackButton{
     background-color: #174204;
     display: flex;
@@ -286,32 +279,40 @@ body
     width: fit-content;
     height: fit-content;
     padding: 0 1.5em;
-    position: sticky;
-    top: 90%;
-    left: 90%;
+    position: fixed;
+    bottom: 2%;
+    right: 5%;
     z-index: 15;
 }
-.VideoContainer{
+
+/*---------------------- Card Info ---------------------------*/
+.VideoContainer
+{
+    display: flex;
     position: relative;
-    margin: 1em auto;
+    border-radius: .2rem;
 }
 .TitleBand{
-    background-color: #000000ca;
-    box-sizing: border-box;
-    bottom: 0;
-    font-weight: bold;
-    font-size: 1.5rem;
-    height: auto;
-    left: 0;
-    padding: 0 1rem;
+    background-color: #000000e0;
     position: absolute;
+    padding: clamp(.5rem, 1vw, 1rem);
+    text-transform: uppercase;
+    margin: auto;
+    height: fit-content;
     width: 100%;
+    bottom: 0%;
+    font-size: clamp(.8rem, 2vw, 1.5rem);
+}
+
+.TitleBand h2{
+    margin: auto;
 }
 .GameInfo{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 1%;
+    margin-top: 1%;
 }
 
 .Section{
