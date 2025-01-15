@@ -112,5 +112,6 @@ export function SetElemTopByElem(elemToTranslate, otherElem, ElemOffset)
     let otherElemHeight = GetHeightElem(otherElem);
     let finalPos = otherElemHeight - heightOffset;
     elemToTranslate.style.transform = `translateY(${finalPos}px)`;
+    console.log(`${otherElem} has ${otherElemHeight} px of height`);
 }
 //#endregion

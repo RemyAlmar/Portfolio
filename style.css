@@ -23,10 +23,6 @@ a:visited
     color: var(--colorContact);
 }
 
-video
-{
-    width: 100%;
-}
 html{    
     background-color: var(--pageBandColor);
 }
@@ -41,6 +37,13 @@ body
     padding: 0;
     overflow-x: hidden;
     scroll-behavior: smooth;
+}
+video
+{
+    width: 100%;
+}
+*{    
+    box-sizing: border-box;
 }
 
 /* ------------------- Head Section - Title And Contact --------------------------*/
@@ -76,7 +79,7 @@ body
 }
 #navBarTitle small
 {
-    font-size: 1rem;
+    font-size: clamp(.8rem, 3vw, 1.5rem);
     font-weight: 400;
     line-height: 1;
 }
@@ -288,15 +291,21 @@ body
     display: flex;
     position: relative;
     border-radius: .2rem;
-    justify-content: center;
 }
 .TitleBand{
-    background-color: #000000ca;
+    background-color: #000000e0;
     position: absolute;
-    padding: 0 clamp(.5rem, 1vw, 1rem);
+    padding: clamp(.5rem, 1vw, 1rem);
     text-transform: uppercase;
+    margin: auto;
     height: fit-content;
+    width: 100%;
+    bottom: 0%;
     font-size: clamp(.8rem, 2vw, 1.5rem);
+}
+
+.TitleBand h2{
+    margin: auto;
 }
 .GameInfo{
     display: flex;
