@@ -9,7 +9,7 @@ export function CreateCard(_data)
     const titleGame = elem.CreateText(titleGameData, 'h3');
     let childToolsSize = [titleGame, infoBubble];
 
-    const divProjectTitleContainerData = new data.Data("ProjectTitleContainer", childToolsSize);
+    const divProjectTitleContainerData = new data.Data("ProjectTitleContainer Clickable", childToolsSize);
     const divProjectTitleContainer = elem.CreateDiv(divProjectTitleContainerData);
 
     /*---------------------------- Creation des Icones ---------------------------------*/
@@ -182,7 +182,7 @@ export function CreateGameDetails(_index)
     const buttonBackTextData = new data.Data("", "Back");
     const buttonBackText = elem.CreateText(buttonBackTextData, 'p');
     const divButtonBackChild = [buttonBackText];
-    const divButtonBackData = new data.Data('BackButton', divButtonBackChild);
+    const divButtonBackData = new data.Data('BackButton Clickable', divButtonBackChild);
     const divButtonBack = elem.CreateDiv(divButtonBackData);
 
     divButtonBack.addEventListener('click', () => 
@@ -244,83 +244,3 @@ export function FadeOutAnimation(_parentContainer, _elementToDisplay)
 
     console.log("Changement de page initié, In");
 }
-//svg-inline--fa fa-users icon  nomClasse User Icon
-
-
-
-/*
-    <div class="BackButton">
-        <a class="CloseProject" href="#">
-            <p>Back</p>
-        </a>
-    </div>
-    <div class="ProjectContainer">
-        <div class="VideoContainer">
-            <video src="Video/ExtraitVideo.mp4"></video>
-            <div class="TitleBand">
-                <h2>Titre du Jeu</h2>
-            </div>
-        </div>
-        <div class="GameInfo">
-            <div class="Section">
-                <h3>About</h3>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro
-                mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati
-                repudiandae, modi repellat voluptate repellendus.
-            </div>
-            <div class="Section">
-                <h3>Project Info</h3>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro
-                mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati
-                repudiandae, modi repellat voluptate repellendus.
-            </div>
-        </div>
-        <div class="SubjectContent">
-            <div class="BlocContent">
-                <div class="Section">
-                    <h3>Problem encountered during development:</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quasi dolore. Odio,
-                        doloribus.
-                        Ducimus provident ullam quia officiis nisi voluptates cupiditate placeat perspiciatis
-                        sapiente
-                        maxime, commodi cum et sint earum.
-                    </p>
-                </div>
-                <div class="Pictures">
-                    <img src="Pictures/LogoESMA.png" alt="uneImage">
-                    <img src="Pictures/LogoESMA.png" alt="uneImage">
-                </div>
-            </div>
-            <div class="BlocContent">
-
-                <div class="Section">
-                    <h3>Solution:</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quasi dolore. Odio,
-                        doloribus.
-                        Ducimus provident ullam quia officiis nisi voluptates cupiditate placeat perspiciatis
-                        sapiente
-                        maxime, commodi cum et sint earum.
-                    </p>
-                </div>
-                <div class="Pictures">
-                    <img src="Pictures/LogoESMA.png" alt="uneImage">
-                    <img src="Pictures/LogoESMA.png" alt="uneImage">
-                </div>
-            </div>
-            <div class="BlocContent">
-
-                <div class="Section">
-                    <h3>What I learned:</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quasi dolore. Odio,
-                        doloribus.
-                        Ducimus provident ullam quia officiis nisi voluptates cupiditate placeat perspiciatis
-                        sapiente
-                        maxime, commodi cum et sint earum.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>*/

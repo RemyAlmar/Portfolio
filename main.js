@@ -15,12 +15,16 @@ window.addEventListener('backToMainPage', () =>
     tools.FadeOutAnimation(container,divMain);
 });
 
-setTimeout(() => {
-    PlaceBandOnGameCard('CardInfo');
-}, 500);
+// Une fois les videos chargées, fait le calcul pour placer la bande
+const videos = document.getElementsByTagName('video');
+Array.from(videos).forEach(video => {
+    video.addEventListener('loadeddata', () => {
+        PlaceBandOnGameCard('CardInfo', 'CardInfo', 'ProjectTitleContainer');
+    });
+});
 
 window.onresize = () => {
-    PlaceBandOnGameCard('CardInfo');
+    PlaceBandOnGameCard('CardInfo', 'CardInfo', 'ProjectTitleContainer');
 };
 
 function PlaceBandOnGameCard(elementToPlaceClassName, elemToGetHeightClassName = '', offsetElemClassName = '')

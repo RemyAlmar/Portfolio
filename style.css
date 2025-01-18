@@ -1,17 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 :root
 {
+    --TestColorData: #600c0c;
+
     --colorBaseFont: #ffffff;
-    --colorContact: #02f948;
-    --colorMainTitle: #ffd560;
+    --colorContact: #d66311;
+    --colorMainTitle: #ff9100;
     --colorHover: #87bee2;
-    --pageBackgroundColor: #131313;
-    --pageBandColor: rgb(0, 0, 0);
-    
-    --colorBgShiin: #600c0c;
-    --colorShiin: #c19906;
-    --colorBgOculi: #174204;
-    --colorOculi: #3cc800;
+    --colorBackgroundPageHtml: rgb(9, 9, 9);
+    --colorBackgroundBody: rgb(22, 22, 22);
+
+    /* Color Header */
+    --colorNavBar: rgba(0, 0, 0, 0.6);
+    --navBarBlur: 15px;
+    --headerBoxShadow: 0px 5px 30px hsla(0, 0%, 0%, 1);
 }
 a
 {    
@@ -24,16 +26,15 @@ a:visited
 }
 
 html{    
-    background-color: var(--pageBandColor);
+    background-color: var(--colorBackgroundPageHtml);
 }
 body
 {
-    background-color: var(--pageBackgroundColor);
     color : var(--colorBaseFont);
+    background-color: var(--colorBackgroundBody);
     font-family: 'Poppins', sans-serif;
     font-size: large;
     margin: auto;
-    width: clamp(250px, 60%, 1000px);
     padding: 0;
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -45,37 +46,43 @@ video
 *{    
     box-sizing: border-box;
 }
+.Clickable :hover{
+    cursor: pointer;    
+}
 
 /* ------------------- Head Section - Title And Contact --------------------------*/
+header
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    box-shadow: var(--headerBoxShadow);
+    background: var(--colorNavBar); /* Transparence */
+    backdrop-filter: blur(var(--navBarBlur)); /* Effet de flou */
+    top: 0;
+    position: sticky;
+    padding: 1rem 2rem;
+    z-index: 100;
+}
 .NavBar
 {
+    width: clamp(250px, 60%, 1000px);
     align-items: center;
-    background-color: var(--pageBandColor);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     justify-items: center;
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 5;
+    color: var(--colorMainTitle);
 }
 #navBarTitle
 {
     font-size: 1rem;
-    /* margin-bottom: 1em; */
 }
 #navBarTitle h1 
 {
     margin: 0;
-    color: var(--colorMainTitle);
     display: flex;
     flex-direction: column;
-}
-#navBarTitle a
-{
-    text-decoration: none;
-    color: var(--colorMainTitle);
 }
 #navBarTitle small
 {
@@ -105,7 +112,6 @@ video
 .ExtLink
 {
     color: var(--colorContact);
-    cursor: pointer;
     margin: 0 .25rem;
     width: clamp(2rem, 5vw, 3rem);
 }
@@ -117,6 +123,7 @@ video
 #content{
     justify-items: center;
     margin: auto;
+    width: clamp(250px, 60%, 1000px);
     transition: opacity 1s;
 }
 
@@ -152,7 +159,7 @@ video
     margin: .5rem;
     position: relative;
     flex-direction: column;
-    opacity: .8;
+    opacity: .6;
     border-radius: .2rem;
     transition: opacity .5s;
     overflow: hidden;
@@ -180,7 +187,7 @@ video
 }
 .ProjectTitleContainer
 {
-    padding: 0 clamp(.5rem, 1vw, 1rem);
+    margin: 0 clamp(.5rem, 1vw, 1rem);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -195,15 +202,15 @@ video
 /*-----------------------Titre et description du jeu----------------------*/
 .DescriptionContainer
 {
-    padding: 0 1vw 1vw 1vw;
-    background-color: #00000099;
+    padding: 1vw 1vw 1vw 1vw;
+    background-color: #ffffff;
     font-size: clamp(.7rem, 1vw, 1rem);
 }
 /*------------------Icone Descriptive -------------------------*/
 .IconsContainer
 {
-    display: flex;
-    background-color: #292929;
+    display: flex; 
+    /* background-color: #00000099; */
     gap: clamp(1em, 2vw, 1.3em);
     line-height: 1;
 }
@@ -262,17 +269,14 @@ video
 
 /*---------------------- Project Container -----------------------*/
 .GlobalContainer{
-    background-color: #87bee2;
     width: 100%;
 }
 
 .ProjectContainer{
-    background-color: #87bee2;
     margin: auto;
 }
 
 .BackButton{
-    background-color: #174204;
     display: flex;
     font-size: clamp(15px, 1vw, 25px);
     justify-content: center;

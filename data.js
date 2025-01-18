@@ -17,10 +17,10 @@ export const githubSVG = "M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 
 export const teamIconData = new Data("SVG Icon ImportantText", teamSVG);
 export const timeIconData = new Data("SVG Icon ImportantText", timeSVG);
 export const toolsIconData = new Data("SVG Icon ImportantText", toolsSVG);
-export const chevronIconData = new Data("SVG Link Icon", chevronSVG);
+export const chevronIconData = new Data("SVG Icon", chevronSVG);
 
-export const linkedinIconData = new Data("SVG ExtLink Icon", linkedinSVG);
-export const githubIconData = new Data("SVG ExtLink Icon", githubSVG);
+export const linkedinIconData = new Data("SVG ExtLink Icon Clickable", linkedinSVG);
+export const githubIconData = new Data("SVG ExtLink Icon Clickable", githubSVG);
 
 export const EProjectName = 
 {
@@ -64,7 +64,7 @@ export const cardsData = [
         selfRole: 'All', 
         description: 'A 2D platformer where you play as ninja. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint consectetur sit officiis nostrquod est temporibus ratione enim, reprehenderit totam, corrupti, ad quo quaerat doloremque? Quos dolore veniam omnis temporibus architecto praesentium! Laborum dolorem culpa est vero. Ipsum similique, nemo quia beatae voluptatum ex ducimus impedit perferendis asperiores incidunt corporis maiores porro numquam. Amet consectetur corrupti libero similique voluptatum eligendi vitae repellendus recusandae, molestias necessitatibus beatae. Dolor autem ducimus voluptates eius. Papo poadpda Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint consectetur sit officiis nostrquod est temporibus ratione enim, reprehenderit totam, corrupti, ad quo quaerat doloremque? Quos dolore veniam omnis temporibus architecto praesentium! Laborum dolorem culpa est vero. Ipsum similique, nemo quia beatae voluptatum ex ducimus impedit perferendis asperiores incidunt corporis maiores porro numquam. Amet consectetur corrupti libero similique voluptatum eligendi vitae repellendus recusandae, molestias necessitatibus beatae. Dolor autem ducimus voluptates eius. Papo papou',
         textColor: '#deae00',
-        BgColor: '#600c0c',
+        BgColor: '#0f0f0f',
     },
     {
         videoSrc: 'ExtraitVideo',
@@ -77,7 +77,7 @@ export const cardsData = [
         selfRole: 'UX, Developer, Animator', 
         description: 'A psychological horror game.',
         textColor: '#3cc800',
-        BgColor: '#174204',
+        BgColor: '#0f0f0f',
     }
 ];
 
