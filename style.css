@@ -13,7 +13,7 @@
     /* Color Header */
     --colorNavBar: rgba(0, 0, 0, 0.6);
     --navBarBlur: 15px;
-    --headerBoxShadow: 0px 5px 30px hsla(0, 0%, 0%, 1);
+    --headerBoxShadow: 0px 0px 5px hsla(0, 0%, 0%, 1);
 }
 a
 {    
