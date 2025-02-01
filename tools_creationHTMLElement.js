@@ -100,9 +100,10 @@ export function CreateDivIconText(iconData, iconColor, _data, textFormat, divCla
 
 export function GetHeightElem(elem)
 {
-    let margin = parseFloat(window.getComputedStyle(elem).margin);
+    let marginTop = parseFloat(window.getComputedStyle(elem).marginTop);
+    let marginBottom = parseFloat(window.getComputedStyle(elem).marginBottom);
     let height = parseFloat(window.getComputedStyle(elem).height);
-    let total = height + margin;
+    let total = height + marginTop + marginBottom;
     return total;
 }
 

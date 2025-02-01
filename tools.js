@@ -9,7 +9,7 @@ export function CreateCard(_data)
     const titleGame = elem.CreateText(titleGameData, 'h3');
     let childToolsSize = [titleGame, infoBubble];
 
-    const divProjectTitleContainerData = new data.Data("ProjectTitleContainer", childToolsSize);
+    const divProjectTitleContainerData = new data.Data("ProjectTitleContainer Clickable", childToolsSize);
     const divProjectTitleContainer = elem.CreateDiv(divProjectTitleContainerData);
 
     /*---------------------------- Creation des Icones ---------------------------------*/
@@ -32,7 +32,7 @@ export function CreateCard(_data)
     const childInfo = [divProjectTitleContainer, divDescription];
     const cardInfoData = new data.Data("CardInfo", childInfo);
     const divCardInfo = elem.CreateDiv(cardInfoData);
-    divCardInfo.style.backgroundColor = _data.BgColor;
+    //divCardInfo.style.backgroundColor = _data.BgColor;
     elem.SetColorToClassElement(divCardInfo, _data.textColor,"ImportantText");
     
     /*---------------------------- Creation de la div Video ---------------------------------*/
@@ -87,11 +87,11 @@ export function DisplayMainPage()
     return divMain;
 }
 
-export function CreateSection(_index)
+export function CreateSection(_projectName)
 {
-
     let _blocSections = [];
-    data.blocContentData.bloc.forEach(_bloc =>
+    let _blocData = data.GetBlocContentData(_projectName);
+    _blocData.forEach(_bloc =>
     {
         let _blocDivChilds = [];
 
@@ -129,27 +129,27 @@ export function CreateSection(_index)
     })
     return _blocSections;
 }
-export function CreateGameDetails(_index)
+export function CreateGameDetails(_projectName)
 {
     /*---------------- Creation Div Subject Content --------------------*/
-    const divSubjectContentChilds = CreateSection(_index);
+    const divSubjectContentChilds = CreateSection(_projectName);
     const divSubjectContentData = new data.Data("SubjectContent", divSubjectContentChilds);
     const divSubjectContent = elem.CreateDiv(divSubjectContentData);
 
     /*---------------- Creation Div About Game --------------------*/
-    const textAboutData = new data.Data("", data.cardsDetailData[_index].aboutText);
+    const textAboutData = new data.Data("", data.cardsDetailData[_projectName].aboutText);
     const textAbout = elem.CreateText(textAboutData, 'p');
 
-    const titleSectionAboutData = new data.Data("", data.cardsDetailData[_index].titleAbout);
+    const titleSectionAboutData = new data.Data("", data.cardsDetailData[_projectName].titleAbout);
     const titleSectionAbout = elem.CreateText(titleSectionAboutData, 'h3');
     const divAboutChild = [titleSectionAbout, textAbout];
     const divAboutData = new data.Data("Section", divAboutChild);
     const divAbout = elem.CreateDiv(divAboutData);
 
     /*---------------- Creation Div Project Info --------------------*/
-    const textProjectData = new data.Data("", data.cardsDetailData[_index].problemText);
+    const textProjectData = new data.Data("", data.cardsDetailData[_projectName].problemText);
     const textProjectInfo = elem.CreateText(textProjectData, 'p');
-    const titleSectionProjectInfoData = new data.Data("",data.cardsDetailData[_index].titleProjectInfo);
+    const titleSectionProjectInfoData = new data.Data("",data.cardsDetailData[_projectName].titleProjectInfo);
     const titleSectionProjectInfo = elem.CreateText(titleSectionProjectInfoData, 'h3');
     const divProjectInfoChild = [titleSectionProjectInfo, textProjectInfo];
     const divProjectInfoData = new data.Data("Section", divProjectInfoChild);
@@ -161,28 +161,28 @@ export function CreateGameDetails(_index)
     const divGameInfo = elem.CreateDiv(divGameInfoData);
 
 /*---------------- Creation du titre du jeu ------------------------*/
-    const titleGameBandData = new data.Data("", data.cardsDetailData[_index].titleGame);
-    const titleGameBand = elem.CreateText(titleGameBandData, 'h2', data.cardsData[_index].textColor);
+    const titleGameBandData = new data.Data("", data.cardsDetailData[_projectName].titleGame);
+    const titleGameBand = elem.CreateText(titleGameBandData, 'h2', data.cardsData[_projectName].textColor);
 
 /*---------------- Creation de la bande du jeu ------------------------*/
     const childInfo = [titleGameBand];
     const titleBandData = new data.Data("TitleBand", childInfo);
     const divTitleBand = elem.CreateDiv(titleBandData);
-   /* divCardInfo.style.backgroundColor = data.cardsData[_index].BgColor;
+   /* divCardInfo.style.backgroundColor = data.cardsData[_projectName].BgColor;
 
 /*---------------- Creation de la vidéo ------------------------*/
-    const video = elem.CreateVideo(data.cardsDetailData[_index].videoSrc);
+    const video = elem.CreateVideo(data.cardsDetailData[_projectName].videoSrc);
     const videoDivChilds = [video, divTitleBand];
     const videoDivData = new data.Data("VideoContainer", videoDivChilds);
     const videoDiv = elem.CreateDiv(videoDivData);
-    videoDiv.classList.add(data.cardsDetailData[_index].titleGame);
+    videoDiv.classList.add(data.cardsDetailData[_projectName].titleGame);
 
 
 /*---------------- Creation Boutton Retour ----------------------*/
     const buttonBackTextData = new data.Data("", "Back");
     const buttonBackText = elem.CreateText(buttonBackTextData, 'p');
     const divButtonBackChild = [buttonBackText];
-    const divButtonBackData = new data.Data('BackButton', divButtonBackChild);
+    const divButtonBackData = new data.Data('BackButton Clickable', divButtonBackChild);
     const divButtonBack = elem.CreateDiv(divButtonBackData);
 
     divButtonBack.addEventListener('click', () => 
@@ -207,7 +207,7 @@ export function CreateAllGameDetails()
 {
     let detailledCards = [];
     data.cardsData.forEach(_index =>
-    {
+    {        
         let detailledCard = CreateGameDetails(_index.projectName);
         detailledCards.push(detailledCard);
     }
@@ -244,83 +244,3 @@ export function FadeOutAnimation(_parentContainer, _elementToDisplay)
 
     console.log("Changement de page initié, In");
 }
-//svg-inline--fa fa-users icon  nomClasse User Icon
-
-
-
-/*
-    <div class="BackButton">
-        <a class="CloseProject" href="#">
-            <p>Back</p>
-        </a>
-    </div>
-    <div class="ProjectContainer">
-        <div class="VideoContainer">
-            <video src="Video/ExtraitVideo.mp4"></video>
-            <div class="TitleBand">
-                <h2>Titre du Jeu</h2>
-            </div>
-        </div>
-        <div class="GameInfo">
-            <div class="Section">
-                <h3>About</h3>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro
-                mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati
-                repudiandae, modi repellat voluptate repellendus.
-            </div>
-            <div class="Section">
-                <h3>Project Info</h3>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro
-                mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati
-                repudiandae, modi repellat voluptate repellendus.
-            </div>
-        </div>
-        <div class="SubjectContent">
-            <div class="BlocContent">
-                <div class="Section">
-                    <h3>Problem encountered during development:</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quasi dolore. Odio,
-                        doloribus.
-                        Ducimus provident ullam quia officiis nisi voluptates cupiditate placeat perspiciatis
-                        sapiente
-                        maxime, commodi cum et sint earum.
-                    </p>
-                </div>
-                <div class="Pictures">
-                    <img src="Pictures/LogoESMA.png" alt="uneImage">
-                    <img src="Pictures/LogoESMA.png" alt="uneImage">
-                </div>
-            </div>
-            <div class="BlocContent">
-
-                <div class="Section">
-                    <h3>Solution:</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quasi dolore. Odio,
-                        doloribus.
-                        Ducimus provident ullam quia officiis nisi voluptates cupiditate placeat perspiciatis
-                        sapiente
-                        maxime, commodi cum et sint earum.
-                    </p>
-                </div>
-                <div class="Pictures">
-                    <img src="Pictures/LogoESMA.png" alt="uneImage">
-                    <img src="Pictures/LogoESMA.png" alt="uneImage">
-                </div>
-            </div>
-            <div class="BlocContent">
-
-                <div class="Section">
-                    <h3>What I learned:</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quasi dolore. Odio,
-                        doloribus.
-                        Ducimus provident ullam quia officiis nisi voluptates cupiditate placeat perspiciatis
-                        sapiente
-                        maxime, commodi cum et sint earum.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>*/
