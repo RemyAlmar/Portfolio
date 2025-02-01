@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 :root
 {
-    --TestColorData: #b34711;
+    --TestColorData: #f28266;
 
     --colorBaseFont: #ffffff;
-    --colorContact: #d66311;
-    --colorMainTitle: #ff9100;
-    --colorHover: #87bee2;
+    --colorContact: #fea900c9;
+    --colorMainTitle: #addeff;
+    --colorHover: #ff9b05;
     --colorBackgroundPageHtml: rgb(16, 16, 16);
     --colorBackgroundBody: rgb(23, 23, 23);
 
@@ -45,8 +45,9 @@ video
 *{    
     box-sizing: border-box;
 }
-.Clickable :hover{
-    cursor: pointer;    
+:hover.Clickable{
+    cursor: pointer;
+    color: var(--colorHover);    
 }
 #contact
 {
@@ -68,7 +69,7 @@ header
 }
 .NavBar
 {
-    width: clamp(250px, 60%, 1000px);
+    width: clamp(250px, 80%, 2000px);
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -78,7 +79,7 @@ header
 }
 #navBarTitle
 {
-    font-size: 1rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
 }
 #navBarTitle h1 
 {
@@ -88,7 +89,7 @@ header
 }
 #navBarTitle small
 {
-    font-size: clamp(.8rem, 3vw, 1.5rem);
+    font-size: clamp(.8rem, 3vw, 1.2rem);
     font-weight: 400;
     line-height: 1;
 }
@@ -115,17 +116,13 @@ header
 {
     color: var(--colorContact);
     margin: 0 .25rem;
-    width: clamp(2rem, 5vw, 3rem);
-}
-:hover.ExtLink
-{
-    color: var(--colorHover);    
+    width: clamp(2rem, 5vw, 3.5rem);
 }
 /*------------------------------ Content ---------------------------------------------*/
 #content{
     justify-items: center;
     margin: auto;
-    width: clamp(250px, 60%, 1000px);
+    width: clamp(250px, 80%, 2000px);
     transition: opacity 1s;
 }
 
@@ -142,9 +139,8 @@ header
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 0 auto;
+    margin: 2em auto;
     font-size: clamp(1rem, 2vw, 1.5rem);
-    width: clamp(50px, 100%, 1000px)
 }
 /* ----------------------------- Project experiences ---------------------------------*/
 .CardArray
@@ -161,9 +157,7 @@ header
     margin: .5rem;
     position: relative;
     flex-direction: column;
-    /* opacity: .6; */
-    border-radius: .2rem;
-    transition: opacity .5s;
+    border-radius: .1rem;
     overflow: hidden;
 }
 
@@ -174,19 +168,14 @@ header
     height: 100%;
     position: absolute;
     top: 0; 
-    border-radius: .1rem .1rem 0 0;
     transition: top .2s ease-in-out;
     width: 100%;
-    background: rgba(0, 0, 0, .2); /* Transparence */
-    backdrop-filter: blur(20px); /* Effet de flou */
+    background: rgba(0, 0, 0, .3); /* Transparence */
+    backdrop-filter: blur(10px); /* Effet de flou */
 }
 /* Affichage de la bande au survol */
 .GameCard:hover .CardInfo {
     top: -60%;
-}
-/* Affichage de la bande au survol */
-.GameCard:hover{
-    /* opacity: 1; */
 }
 .ProjectTitleContainer
 {
@@ -195,7 +184,7 @@ header
     align-items: center;
     justify-content: space-between;
     text-transform: uppercase;
-    height: 2em;
+    height: 2.5em;
     background: rgba(0, 10, 25, 0.8); /* Transparence */
 }
 .ProjectTitleContainer .ImportantText
@@ -206,7 +195,7 @@ header
 /*-----------------------Titre et description du jeu----------------------*/
 .DescriptionContainer
 {
-    padding: 1vw 1vw 1vw 1vw;
+    padding: 0 1vw;
     font-size: clamp(.7rem, 1vw, 1rem);
     background: rgba(30, 30, 30, 0.802); /* Transparence */
 }
@@ -214,18 +203,18 @@ header
 .IconsContainer
 {
     display: flex; 
-    gap: clamp(1em, 2vw, 1.3em);
+    gap: clamp(1em, 2vw, 1.5em);
     line-height: 1;
 }
 .IconContainer
 {
     display: flex;
     align-items: center;
-    gap: clamp(.6em, 1vw, 1em);
+    gap: clamp(.6em, 1vw, .5em);
 }
 .Icon
 {
-    width: clamp(.1em, 5vw, 1.3em);
+    width: 1em;
     overflow: visible;
 }
 
@@ -243,12 +232,12 @@ header
 
 .VerticalList h4
 {
-    font-size: large;
+    font-size: x-large;
     margin: 0;
 }
 .mail
 {
-    font-size: .8rem;
+    font-size: 1rem;
     margin: 0;
     color: var(--colorContact);
 }
@@ -300,14 +289,15 @@ header
     border-radius: .2rem;
 }
 .TitleBand{
-    background-color: #0000008a;
+    background-color: #000000d1;
+    backdrop-filter: blur(10px); /* Effet de flou */
     position: absolute;
     padding: clamp(.5rem, 1vw, 1rem);
     text-transform: uppercase;
     margin: auto;
     height: fit-content;
     width: 100%;
-    bottom: 0%;
+    bottom: 0;
     font-size: clamp(.8rem, 2vw, 1.5rem);
 }
 
@@ -318,13 +308,12 @@ header
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 1%;
     margin-top: 1%;
 }
 
 .Section{
     flex: 1 1 300px;
-    background-color: #600c0c;
+    background-color: #751111;
     padding: 1em;
 }
 .SubjectContent {
@@ -335,36 +324,36 @@ header
 .Pictures{
     display: flex;
     flex-wrap: wrap;
-    margin: 5%;
+    margin: 3% 0;
     justify-content: space-between;
-    background-color: #0c3d60;
+    background-color: #1a90e465;
 }
 .Pictures *{
     flex: 1 1 150px;
-    width: 5%;
+    width: 50%;
 }
 
 
 /*---------------------- Animation --------------------------*/
 .DisplayAnimationPage
 {
-    animation: fadeIn 1s forwards;
+    animation: fadeIn .5s forwards;
 }
 
 .HiddenAnimationPage
 {
-    animation: fadeOut 1s forwards;
+    animation: fadeOut .5s forwards;
 }
 
 .FadeInOutAnimation
 {
-    animation: fadeInOut 1s forwards;
+    animation: fadeInOut .5s forwards;
 }
 .FadeInAnimation{
-    animation: fadeIn 1s forwards;
+    animation: fadeIn .5s forwards;
 }
 .FadeOutAnimation{
-    animation: fadeOut 1s forwards;
+    animation: fadeOut .5s forwards;
 }
 
 @keyframes fadeInOut {
@@ -424,7 +413,6 @@ header
     #navBarTitle h1 
     {              
         margin: 1rem 0 1rem 0;
-        font-size: 1.7rem;
     }
     #navBarTitle small
     {
