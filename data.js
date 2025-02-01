@@ -56,55 +56,55 @@ export const presentation = {
 export const cardsData = [
     
     {
+        projectName: EProjectName.VOIDFISHER,
         videoSrc: 'ExtraitVideo',
         videoPath: '',
         teamMate: '10',
         productionTime: '8 months',
         device: 'Blueprint, UE5',
         titleGame: `VoidFisher`,
-        projectName: EProjectName.VOIDFISHER,
         selfRole: 'Developer', 
-        description: 'A solo game',
-        textColor: '#b34711',
+        description: 'Coming Soon',
+        textColor: '#f28266',
         BgColor: '#0f0f0f',
     },
     {
+        projectName: EProjectName.BUBBLEHEAD,
         videoSrc: 'ExtraitVideo',
         videoPath: '',
         teamMate: '7',
         productionTime: '2 days',
         device: 'Blueprint, UE5',
         titleGame: `Bubbl'Head`,
-        projectName: EProjectName.BUBBLEHEAD,
         selfRole: 'Developer', 
-        description: 'A local party game.',
-        textColor: '#b34711',
+        description: 'Coming Soon',
+        textColor: '#f28266',
         BgColor: '#0f0f0f',
     },
     {
+        projectName: EProjectName.OCULI,
         videoSrc: 'ExtraitVideo',
         videoPath: '',
         teamMate: '8',
         productionTime: '2 months',
         device: 'Blueprint, UE5',
         titleGame: 'Oculi',
-        projectName: EProjectName.OCULI,
         selfRole: 'UX, Developer, Animator', 
         description: 'A psychological horror game.',
-        textColor: '#b34711',
+        textColor: '#f28266',
         BgColor: '#0f0f0f',
     },
     {
+        projectName: EProjectName.SHIIN,
         videoSrc: 'ExtraitVideo',
         videoPath: '',
         teamMate: '1',
         productionTime: '3 months',
         device: 'C#, Unity',
         titleGame: 'Shiin',
-        projectName: EProjectName.SHIIN,
         selfRole: 'All', 
         description: 'A 2D platformer where you play as ninja.',
-        textColor: '#b34711',
+        textColor: '#f28266',
         BgColor: '#0f0f0f',
     }
 ];
@@ -117,6 +117,7 @@ const titleBlocData = {
 
 export const cardsDetailData = [
     {
+        projectName: EProjectName.VOIDFISHER,
         titleGame: `VoidFisher`,
         videoSrc: 'ExtraitVideo',
         videoPath: '',
@@ -131,6 +132,7 @@ export const cardsDetailData = [
         learnedText: 'I learned how to make a game with low dependancies',
     },
     {
+        projectName: EProjectName.BUBBLEHEAD,
         titleGame: `Bubbl'Head`,
         videoSrc: 'ExtraitVideo',
         videoPath: '',
@@ -138,13 +140,14 @@ export const cardsDetailData = [
         titleProjectInfo: 'Project Info',
         aboutText: `It's a fun project`,
         titleProblemText: 'Problem encountered during development',
-        problemText: 'Just a problem with multiplayer local, we need use UE5.1 à la place de UE5.4 because a node was dysfonctionnel.',
+        problemText: 'Just a problem with multiplayer local, we need use UE5.1 instead UE5.4 because a node was dysfonctionnel.',
         problemExample:['LogoESMA', 'LogoESMA'],
         solutionText: 'Changement de version pour utilisé le node',
         solutionExample:['LogoESMA', 'LogoESMA'],
         learnedText: 'I learned how to make a local multiplayer on Unreal, and it was easyiest that Unity',
     },
     {
+        projectName: EProjectName.OCULI,
         titleGame: 'Oculi',
         videoSrc: 'ExtraitVideo',
         videoPath: '',
@@ -159,6 +162,7 @@ export const cardsDetailData = [
         learnedText: 'Nothing',
     },
     {
+        projectName: EProjectName.SHIIN,
         titleGame: 'Shiin',
         videoSrc: 'ExtraitVideo',
         videoPath: '',
@@ -176,7 +180,8 @@ export const cardsDetailData = [
 
 export function GetBlocContentData(_currentProjectName)
 {
-    let _projectDetails = cardsDetailData.find(project => project.titleGame === _currentProjectName);
+    cardsData
+    let _projectDetails = cardsDetailData.find(cardsData => cardsData.projectName === _currentProjectName);
     
     if (!_projectDetails) {
         console.error("Projet non trouvé :", _currentProjectName);
