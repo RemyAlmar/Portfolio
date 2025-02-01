@@ -24,9 +24,10 @@ export const githubIconData = new Data("SVG ExtLink Icon Clickable", githubSVG);
 
 export const EProjectName = 
 {
-    SHIIN: 0,
-    OCULI: 1,
-    VOIDFISHER: 2,
+    VOIDFISHER : 0,    
+    BUBBLEHEAD : 1,
+    OCULI : 2,
+    SHIIN : 3
 }
 export const listNavBarData = [
     {
@@ -53,17 +54,31 @@ export const presentation = {
 };
 
 export const cardsData = [
+    
     {
         videoSrc: 'ExtraitVideo',
         videoPath: '',
-        teamMate: '1',
-        productionTime: '3 months',
-        device: 'C#, Unity',
-        titleGame: 'Shiin',
-        projectName: EProjectName.SHIIN,
-        selfRole: 'All', 
-        description: 'A 2D platformer where you play as ninja. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint consectetur sit officiis nostrquod est temporibus ratione enim, reprehenderit totam, corrupti, ad quo quaerat doloremque? Quos dolore veniam omnis temporibus architecto praesentium! Laborum dolorem culpa est vero. Ipsum similique, nemo quia beatae voluptatum ex ducimus impedit perferendis asperiores incidunt corporis maiores porro numquam. Amet consectetur corrupti libero similique voluptatum eligendi vitae repellendus recusandae, molestias necessitatibus beatae. Dolor autem ducimus voluptates eius. Papo poadpda Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint consectetur sit officiis nostrquod est temporibus ratione enim, reprehenderit totam, corrupti, ad quo quaerat doloremque? Quos dolore veniam omnis temporibus architecto praesentium! Laborum dolorem culpa est vero. Ipsum similique, nemo quia beatae voluptatum ex ducimus impedit perferendis asperiores incidunt corporis maiores porro numquam. Amet consectetur corrupti libero similique voluptatum eligendi vitae repellendus recusandae, molestias necessitatibus beatae. Dolor autem ducimus voluptates eius. Papo papou',
-        textColor: '#deae00',
+        teamMate: '10',
+        productionTime: '8 months',
+        device: 'Blueprint, UE5',
+        titleGame: `VoidFisher`,
+        projectName: EProjectName.VOIDFISHER,
+        selfRole: 'Developer', 
+        description: 'A solo game',
+        textColor: '#b34711',
+        BgColor: '#0f0f0f',
+    },
+    {
+        videoSrc: 'ExtraitVideo',
+        videoPath: '',
+        teamMate: '7',
+        productionTime: '2 days',
+        device: 'Blueprint, UE5',
+        titleGame: `Bubbl'Head`,
+        projectName: EProjectName.BUBBLEHEAD,
+        selfRole: 'Developer', 
+        description: 'A local party game.',
+        textColor: '#b34711',
         BgColor: '#0f0f0f',
     },
     {
@@ -76,7 +91,20 @@ export const cardsData = [
         projectName: EProjectName.OCULI,
         selfRole: 'UX, Developer, Animator', 
         description: 'A psychological horror game.',
-        textColor: '#3cc800',
+        textColor: '#b34711',
+        BgColor: '#0f0f0f',
+    },
+    {
+        videoSrc: 'ExtraitVideo',
+        videoPath: '',
+        teamMate: '1',
+        productionTime: '3 months',
+        device: 'C#, Unity',
+        titleGame: 'Shiin',
+        projectName: EProjectName.SHIIN,
+        selfRole: 'All', 
+        description: 'A 2D platformer where you play as ninja.',
+        textColor: '#b34711',
         BgColor: '#0f0f0f',
     }
 ];
@@ -86,21 +114,35 @@ const titleBlocData = {
     titleSolution: 'Solution',
     conclusionTitle: 'What I learned',
 }
-export let currentProjectName = EProjectName.SHIIN;
+
 export const cardsDetailData = [
     {
-        titleGame: 'Shiin',
+        titleGame: `VoidFisher`,
         videoSrc: 'ExtraitVideo',
         videoPath: '',
         titleAbout: 'About',
         titleProjectInfo: 'Project Info',
-        aboutText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        aboutText: `It's a complex project`,
         titleProblemText: 'Problem encountered during development',
-        problemText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        problemText: 'With AI, optimization.',
         problemExample:['LogoESMA', 'LogoESMA'],
-        solutionText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        solutionText: 'Manager opti, appel reduit par frame',
         solutionExample:['LogoESMA', 'LogoESMA'],
-        learnedText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        learnedText: 'I learned how to make a game with low dependancies',
+    },
+    {
+        titleGame: `Bubbl'Head`,
+        videoSrc: 'ExtraitVideo',
+        videoPath: '',
+        titleAbout: 'About',
+        titleProjectInfo: 'Project Info',
+        aboutText: `It's a fun project`,
+        titleProblemText: 'Problem encountered during development',
+        problemText: 'Just a problem with multiplayer local, we need use UE5.1 à la place de UE5.4 because a node was dysfonctionnel.',
+        problemExample:['LogoESMA', 'LogoESMA'],
+        solutionText: 'Changement de version pour utilisé le node',
+        solutionExample:['LogoESMA', 'LogoESMA'],
+        learnedText: 'I learned how to make a local multiplayer on Unreal, and it was easyiest that Unity',
     },
     {
         titleGame: 'Oculi',
@@ -108,32 +150,52 @@ export const cardsDetailData = [
         videoPath: '',
         titleAbout: 'About',
         titleProjectInfo: 'Project Info',
-        aboutText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        aboutText: 'Nothing',
         titleProblemText: 'Problem encountered during development',
-        problemText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        problemText: 'Nothing',
         problemExample:['LogoESMA', 'LogoESMA'],
-        solutionText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        solutionText: 'Nothing',
         solutionExample:['LogoESMA', 'LogoESMA'],
-        learnedText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias illo optio nobis dolor porro mollitia eaque molestiae consequatur iure voluptates inventore sequi, quis eligendi obcaecati repudiandae, modi repellat voluptate repellendus.',
+        learnedText: 'Nothing',
+    },
+    {
+        titleGame: 'Shiin',
+        videoSrc: 'ExtraitVideo',
+        videoPath: '',
+        titleAbout: 'About',
+        titleProjectInfo: 'Project Info',
+        aboutText: '',
+        titleProblemText: 'Problem encountered during development',
+        problemText: '',
+        problemExample:['LogoESMA', 'LogoESMA'],
+        solutionText: '',
+        solutionExample:['LogoESMA', 'LogoESMA'],
+        learnedText: '',
     }
 ];
 
-export let blocContentData = 
-    {
-        bloc:[
-            {
-                title: titleBlocData.titleProblem,
-                text: cardsDetailData[currentProjectName].problemText,
-                img: cardsDetailData[currentProjectName].problemExample,
-            },
-            {
-                title: titleBlocData.titleSolution,
-                text: cardsDetailData[currentProjectName].solutionText,
-                img: cardsDetailData[currentProjectName].solutionExample,
-            },
-            {
-                title: titleBlocData.conclusionTitle,
-                text: cardsDetailData[currentProjectName].learnedText,
-            },
-        ]
+export function GetBlocContentData(_currentProjectName)
+{
+    let _projectDetails = cardsDetailData.find(project => project.titleGame === _currentProjectName);
+    
+    if (!_projectDetails) {
+        console.error("Projet non trouvé :", _currentProjectName);
+        return [];
     }
+    return [
+        {
+            title: titleBlocData.titleProblem,
+            text: _projectDetails.problemText,
+            img: _projectDetails.problemExample,
+        },
+        {
+            title: titleBlocData.titleSolution,
+            text: _projectDetails.solutionText,
+            img: _projectDetails.solutionExample,
+        },
+        {
+            title: titleBlocData.conclusionTitle,
+            text: _projectDetails.learnedText,
+        },
+    ]; 
+} 

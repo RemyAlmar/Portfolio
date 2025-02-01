@@ -32,7 +32,7 @@ export function CreateCard(_data)
     const childInfo = [divProjectTitleContainer, divDescription];
     const cardInfoData = new data.Data("CardInfo", childInfo);
     const divCardInfo = elem.CreateDiv(cardInfoData);
-    divCardInfo.style.backgroundColor = _data.BgColor;
+    //divCardInfo.style.backgroundColor = _data.BgColor;
     elem.SetColorToClassElement(divCardInfo, _data.textColor,"ImportantText");
     
     /*---------------------------- Creation de la div Video ---------------------------------*/
@@ -87,11 +87,11 @@ export function DisplayMainPage()
     return divMain;
 }
 
-export function CreateSection(_index)
+export function CreateSection(_projectName)
 {
-
     let _blocSections = [];
-    data.blocContentData.bloc.forEach(_bloc =>
+    let _blocData = data.GetBlocContentData(_projectName);
+    _blocData.forEach(_bloc =>
     {
         let _blocDivChilds = [];
 
@@ -129,27 +129,27 @@ export function CreateSection(_index)
     })
     return _blocSections;
 }
-export function CreateGameDetails(_index)
+export function CreateGameDetails(_projectName)
 {
     /*---------------- Creation Div Subject Content --------------------*/
-    const divSubjectContentChilds = CreateSection(_index);
+    const divSubjectContentChilds = CreateSection(_projectName);
     const divSubjectContentData = new data.Data("SubjectContent", divSubjectContentChilds);
     const divSubjectContent = elem.CreateDiv(divSubjectContentData);
 
     /*---------------- Creation Div About Game --------------------*/
-    const textAboutData = new data.Data("", data.cardsDetailData[_index].aboutText);
+    const textAboutData = new data.Data("", data.cardsDetailData[_projectName].aboutText);
     const textAbout = elem.CreateText(textAboutData, 'p');
 
-    const titleSectionAboutData = new data.Data("", data.cardsDetailData[_index].titleAbout);
+    const titleSectionAboutData = new data.Data("", data.cardsDetailData[_projectName].titleAbout);
     const titleSectionAbout = elem.CreateText(titleSectionAboutData, 'h3');
     const divAboutChild = [titleSectionAbout, textAbout];
     const divAboutData = new data.Data("Section", divAboutChild);
     const divAbout = elem.CreateDiv(divAboutData);
 
     /*---------------- Creation Div Project Info --------------------*/
-    const textProjectData = new data.Data("", data.cardsDetailData[_index].problemText);
+    const textProjectData = new data.Data("", data.cardsDetailData[_projectName].problemText);
     const textProjectInfo = elem.CreateText(textProjectData, 'p');
-    const titleSectionProjectInfoData = new data.Data("",data.cardsDetailData[_index].titleProjectInfo);
+    const titleSectionProjectInfoData = new data.Data("",data.cardsDetailData[_projectName].titleProjectInfo);
     const titleSectionProjectInfo = elem.CreateText(titleSectionProjectInfoData, 'h3');
     const divProjectInfoChild = [titleSectionProjectInfo, textProjectInfo];
     const divProjectInfoData = new data.Data("Section", divProjectInfoChild);
@@ -161,21 +161,21 @@ export function CreateGameDetails(_index)
     const divGameInfo = elem.CreateDiv(divGameInfoData);
 
 /*---------------- Creation du titre du jeu ------------------------*/
-    const titleGameBandData = new data.Data("", data.cardsDetailData[_index].titleGame);
-    const titleGameBand = elem.CreateText(titleGameBandData, 'h2', data.cardsData[_index].textColor);
+    const titleGameBandData = new data.Data("", data.cardsDetailData[_projectName].titleGame);
+    const titleGameBand = elem.CreateText(titleGameBandData, 'h2', data.cardsData[_projectName].textColor);
 
 /*---------------- Creation de la bande du jeu ------------------------*/
     const childInfo = [titleGameBand];
     const titleBandData = new data.Data("TitleBand", childInfo);
     const divTitleBand = elem.CreateDiv(titleBandData);
-   /* divCardInfo.style.backgroundColor = data.cardsData[_index].BgColor;
+   /* divCardInfo.style.backgroundColor = data.cardsData[_projectName].BgColor;
 
 /*---------------- Creation de la vidéo ------------------------*/
-    const video = elem.CreateVideo(data.cardsDetailData[_index].videoSrc);
+    const video = elem.CreateVideo(data.cardsDetailData[_projectName].videoSrc);
     const videoDivChilds = [video, divTitleBand];
     const videoDivData = new data.Data("VideoContainer", videoDivChilds);
     const videoDiv = elem.CreateDiv(videoDivData);
-    videoDiv.classList.add(data.cardsDetailData[_index].titleGame);
+    videoDiv.classList.add(data.cardsDetailData[_projectName].titleGame);
 
 
 /*---------------- Creation Boutton Retour ----------------------*/
@@ -207,7 +207,7 @@ export function CreateAllGameDetails()
 {
     let detailledCards = [];
     data.cardsData.forEach(_index =>
-    {
+    {        
         let detailledCard = CreateGameDetails(_index.projectName);
         detailledCards.push(detailledCard);
     }

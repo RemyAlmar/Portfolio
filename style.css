@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 :root
 {
-    --TestColorData: #600c0c;
+    --TestColorData: #b34711;
 
     --colorBaseFont: #ffffff;
     --colorContact: #d66311;
     --colorMainTitle: #ff9100;
     --colorHover: #87bee2;
-    --colorBackgroundPageHtml: rgb(9, 9, 9);
-    --colorBackgroundBody: rgb(22, 22, 22);
+    --colorBackgroundPageHtml: rgb(16, 16, 16);
+    --colorBackgroundBody: rgb(23, 23, 23);
 
     /* Color Header */
+    --headerBoxShadow: 0px 0px 5px hsla(0, 0%, 0%, 1);
     --colorNavBar: rgba(0, 0, 0, 0.6);
     --navBarBlur: 15px;
-    --headerBoxShadow: 0px 0px 5px hsla(0, 0%, 0%, 1);
 }
 a
 {    
@@ -24,7 +24,6 @@ a:visited
 {
     color: var(--colorContact);
 }
-
 html{    
     background-color: var(--colorBackgroundPageHtml);
 }
@@ -49,7 +48,10 @@ video
 .Clickable :hover{
     cursor: pointer;    
 }
-
+#contact
+{
+    padding: 2em;
+}
 /* ------------------- Head Section - Title And Contact --------------------------*/
 header
 {
@@ -159,7 +161,7 @@ header
     margin: .5rem;
     position: relative;
     flex-direction: column;
-    opacity: .6;
+    /* opacity: .6; */
     border-radius: .2rem;
     transition: opacity .5s;
     overflow: hidden;
@@ -175,24 +177,26 @@ header
     border-radius: .1rem .1rem 0 0;
     transition: top .2s ease-in-out;
     width: 100%;
+    background: rgba(0, 0, 0, .2); /* Transparence */
+    backdrop-filter: blur(20px); /* Effet de flou */
 }
-
 /* Affichage de la bande au survol */
 .GameCard:hover .CardInfo {
     top: -60%;
 }
 /* Affichage de la bande au survol */
 .GameCard:hover{
-    opacity: 1;
+    /* opacity: 1; */
 }
 .ProjectTitleContainer
 {
-    margin: 0 clamp(.5rem, 1vw, 1rem);
+    padding: 0 clamp(.5rem, 1vw, 1rem);
     display: flex;
     align-items: center;
     justify-content: space-between;
     text-transform: uppercase;
     height: 2em;
+    background: rgba(0, 10, 25, 0.8); /* Transparence */
 }
 .ProjectTitleContainer .ImportantText
 {
@@ -203,14 +207,13 @@ header
 .DescriptionContainer
 {
     padding: 1vw 1vw 1vw 1vw;
-    background-color: #ffffff;
     font-size: clamp(.7rem, 1vw, 1rem);
+    background: rgba(30, 30, 30, 0.802); /* Transparence */
 }
 /*------------------Icone Descriptive -------------------------*/
 .IconsContainer
 {
     display: flex; 
-    /* background-color: #00000099; */
     gap: clamp(1em, 2vw, 1.3em);
     line-height: 1;
 }
@@ -297,7 +300,7 @@ header
     border-radius: .2rem;
 }
 .TitleBand{
-    background-color: #000000e0;
+    background-color: #0000008a;
     position: absolute;
     padding: clamp(.5rem, 1vw, 1rem);
     text-transform: uppercase;
