@@ -3,16 +3,20 @@
 {
     --TestColorData: #f28266;
 
-    --colorBaseFont: #ffffff;
+    --colorBaseFont: #f2fdff;
     --colorContact: #fea900c9;
-    --colorMainTitle: #addeff;
+    --colorMainTitle: #b7e2ff;
     --colorHover: #ff9b05;
-    --colorBackgroundPageHtml: rgb(16, 16, 16);
-    --colorBackgroundBody: rgb(23, 23, 23);
+    --colorBackgroundBody: #1a1a25;
+
+    /* Color Card*/
+    --colorBackgroundGameCard: #15121b;
+    --bgColorTitleInfo : #15121b;
+    --bgColorCardInfo : #1b1722d8;
 
     /* Color Header */
-    --headerBoxShadow: 0px 0px 5px hsla(0, 0%, 0%, 1);
-    --colorNavBar: rgba(0, 0, 0, 0.6);
+    --headerBoxShadow: 0px 0px 4px #120b24a5;
+    --colorNavBar: #0e0d13c2;
     --navBarBlur: 15px;
 }
 a
@@ -23,9 +27,6 @@ a
 a:visited 
 {
     color: var(--colorContact);
-}
-html{    
-    background-color: var(--colorBackgroundPageHtml);
 }
 body
 {
@@ -41,6 +42,7 @@ body
 video
 {
     width: 100%;
+    border-radius: 3px;
 }
 *{    
     box-sizing: border-box;
@@ -64,7 +66,7 @@ header
     backdrop-filter: blur(var(--navBarBlur)); /* Effet de flou */
     top: 0;
     position: sticky;
-    padding: 1rem 2rem;
+    padding: 1rem;
     z-index: 100;
 }
 .NavBar
@@ -79,7 +81,7 @@ header
 }
 #navBarTitle
 {
-    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-size: clamp(.6rem, 3vw, 1rem);
 }
 #navBarTitle h1 
 {
@@ -89,7 +91,7 @@ header
 }
 #navBarTitle small
 {
-    font-size: clamp(.8rem, 3vw, 1.2rem);
+    font-size: clamp(.6rem, 3vw, 1rem);
     font-weight: 400;
     line-height: 1;
 }
@@ -116,7 +118,7 @@ header
 {
     color: var(--colorContact);
     margin: 0 .25rem;
-    width: clamp(2rem, 5vw, 3.5rem);
+    width: clamp(1.5rem, 5vw, 2.5rem);
 }
 /*------------------------------ Content ---------------------------------------------*/
 #content{
@@ -157,8 +159,12 @@ header
     margin: .5rem;
     position: relative;
     flex-direction: column;
-    border-radius: .1rem;
+    border-radius: 5px;
     overflow: hidden;
+    background: var(--colorBackgroundGameCard);
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: var(--bgColorTitleInfo);
 }
 
 .CardInfo
@@ -170,8 +176,7 @@ header
     top: 0; 
     transition: top .2s ease-in-out;
     width: 100%;
-    background: rgba(0, 0, 0, .3); /* Transparence */
-    backdrop-filter: blur(10px); /* Effet de flou */
+    background: var(--bgColorCardInfo);
 }
 /* Affichage de la bande au survol */
 .GameCard:hover .CardInfo {
@@ -185,7 +190,7 @@ header
     justify-content: space-between;
     text-transform: uppercase;
     height: 2.5em;
-    background: rgba(0, 10, 25, 0.8); /* Transparence */
+    background: var(--bgColorTitleInfo); /* Transparence */
 }
 .ProjectTitleContainer .ImportantText
 {
@@ -197,7 +202,10 @@ header
 {
     padding: 0 1vw;
     font-size: clamp(.7rem, 1vw, 1rem);
-    background: rgba(30, 30, 30, 0.802); /* Transparence */
+    border-style: solid;
+    border-width: 0 0 10px 0;
+    border-color: var(--bgColorTitleInfo);
+    backdrop-filter: blur(10px);
 }
 /*------------------Icone Descriptive -------------------------*/
 .IconsContainer
@@ -256,7 +264,7 @@ header
 }
 
 .Scrollable::-webkit-scrollbar-thumb { 
-    background-color: #ffffff;
+    background-color: #4545459c;
 }
 
 /*---------------------- Project Container -----------------------*/
@@ -286,11 +294,14 @@ header
 {
     display: flex;
     position: relative;
-    border-radius: .2rem;
+}
+.VideoContainer video{
+    
+    border-radius: 10px;
 }
 .TitleBand{
-    background-color: #000000d1;
-    backdrop-filter: blur(10px); /* Effet de flou */
+    background-color: #151320d9;
+    backdrop-filter: blur(20px); /* Effet de flou */
     position: absolute;
     padding: clamp(.5rem, 1vw, 1rem);
     text-transform: uppercase;
@@ -299,6 +310,7 @@ header
     width: 100%;
     bottom: 0;
     font-size: clamp(.8rem, 2vw, 1.5rem);
+    border-radius: 0 0 10px 10px;
 }
 
 .TitleBand h2{
@@ -313,8 +325,9 @@ header
 
 .Section{
     flex: 1 1 300px;
-    background-color: #751111;
+    background-color: #151320d9;
     padding: 1em;
+    border-radius: 5px;
 }
 .SubjectContent {
     display: flex;
