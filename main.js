@@ -37,4 +37,6 @@ function PlaceBandOnGameCard(elementToPlaceClassName, elemToGetHeightClassName =
         toolsHtml.SetElemTopByElem(band, elemToGetHeight, offsetElem);
         index++;
     };
-} 
+}
+
+toolsHtml.CopyText();
