@@ -115,4 +115,36 @@ export function SetElemTopByElem(elemToTranslate, otherElem, ElemOffset)
     elemToTranslate.style.transform = `translateY(${finalPos}px)`;
     console.log(`${otherElem} has ${otherElemHeight} px of height`);
 }
+export function CreateBubbleInfo(content = 'BubbleInfo')
+{
+    let textData = new data.Data("", content);
+    let text = CreateText(textData, 'p');
+    let childs = [text];
+    let divData = new data.Data("", childs); 
+    let divText = CreateDiv(divData);
+    divText.id = 'bubbleInfo';
+
+    return divText;
+}
+export function CopyText(eventForCopy = 'click', idSelected = 'mail')
+{
+    const elementToCopy = document.getElementById(idSelected);
+
+    elementToCopy.addEventListener(eventForCopy, () => {
+
+        const textToCopy = elementToCopy.textContent;
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            let bubbleInfo = CreateBubbleInfo(`${textToCopy} was copied`);
+            document.body.appendChild(bubbleInfo);
+
+            //Supprime la bubble après 1.5s
+            setTimeout(() => 
+            {
+                bubbleInfo.remove();
+            }, 1500);
+        }).catch(err => { 
+            console.error("Erreur de copie : ", err);
+        });
+    });
+}
 //#endregion
