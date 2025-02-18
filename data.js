@@ -29,24 +29,6 @@ export const EProjectName =
     OCULI : 2,
     SHIIN : 3
 }
-export const listNavBarData = [
-    {
-        text: 'Home',
-        ref: '#home'
-    },
-    {
-        text: 'Projects',
-        ref: '#projects'
-    },
-    {
-        text: 'About me',
-        ref: '#aboutMe'
-    },
-    {
-        text: 'Contacts',
-        ref: '#contacts'
-    }
-]
 export const presentation = {
     parcours: 'Student at ESMA in Toulouse, I like working on all kinds of projects in which my contribution can be useful.',
     passion: 'I like learning new things, especially about programming and animation, these two professions are those in which I would like to flourish.',

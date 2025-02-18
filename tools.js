@@ -4,12 +4,18 @@ import * as elem from './tools_creationHTMLElement.js'
 export function CreateCard(_data)
 {  
     /*---------------------------- Creation de la bande avec le titre ---------------------------------*/
-    const infoBubble = elem.CreateIcon(data.chevronIconData);
+    // const infoBubble = elem.CreateIcon(data.chevronIconData);
+    const infoBubbleData = new data.Data("", "More Info +");
+    const infoBubbleContent = elem.CreateText(infoBubbleData, 'p');
+    let childBubble = [infoBubbleContent];
+    const divInfoBubbleData = new data.Data("BubbleInfo Clickable",childBubble);
+    const infoBubble = elem.CreateDiv(divInfoBubbleData);
+    
     const titleGameData = new data.Data("ImportantText", _data.titleGame);
     const titleGame = elem.CreateText(titleGameData, 'h3');
     let childToolsSize = [titleGame, infoBubble];
 
-    const divProjectTitleContainerData = new data.Data("ProjectTitleContainer Clickable", childToolsSize);
+    const divProjectTitleContainerData = new data.Data("ProjectTitleContainer", childToolsSize);
     const divProjectTitleContainer = elem.CreateDiv(divProjectTitleContainerData);
 
     /*---------------------------- Creation des Icones ---------------------------------*/
