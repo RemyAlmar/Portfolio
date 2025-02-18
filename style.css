@@ -19,6 +19,10 @@
     --colorNavBar: #0e0d13c2;
     --navBarBlur: 15px;
 }
+html
+{
+    scroll-behavior: smooth;
+}
 a
 {    
     text-decoration: none;
@@ -38,7 +42,6 @@ body
     padding: 0;
     line-height: 1;
     overflow-x: hidden;
-    scroll-behavior: smooth;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -428,7 +431,7 @@ header
 }
 /* --------------------- Responsive Phone ------------------------*/
 
-@media(max-width : 750px)
+@media screen and (max-width : 768px)
 {
     .CardArray
     {
