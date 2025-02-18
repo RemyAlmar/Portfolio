@@ -127,6 +127,7 @@ header
     width: fit-content;
     justify-content: center;
     align-items: center;
+    gap: 1.25rem;
 }
 .HorizontalList a 
 {
@@ -142,8 +143,11 @@ header
 .ExtLink
 {
     color: var(--colorContact);
-    margin: 0.5rem .4rem;
     width: clamp(1rem, 5vw, 2rem);
+}
+
+.NavMenu a{
+    color: var(--colorBaseFont);
 }
 /*------------------------------ Content ---------------------------------------------*/
 #content{
@@ -259,7 +263,8 @@ header
     align-items: center;
     justify-content: center;
     margin: 1rem 0 0 0;
-    padding: 1rem;
+    gap: .75rem;
+    padding: 2rem;
 
 }
 
@@ -441,7 +446,7 @@ header
         grid-template-columns: repeat(auto-fit, 100%);
         flex-wrap: wrap;
     }
-    /* .NavBar, #navBarTitle h1
+    .NavBar, #navBarTitle h1
     {        
         display: flex;
         flex-direction: column;
@@ -456,5 +461,9 @@ header
     {
         flex-wrap: wrap;
         text-align: center;
-    } */
+    }
+    .NavMenu
+    {
+        margin: 1rem;
+    }
 }
