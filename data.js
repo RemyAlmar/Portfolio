@@ -32,19 +32,19 @@ export const EProjectName =
 export const listNavBarData = [
     {
         text: 'Home',
-        anchor: '#home'
+        ref: '#home'
     },
     {
         text: 'Projects',
-        anchor: '#project'
+        ref: '#projects'
     },
     {
         text: 'About me',
-        anchor: '#aboutMe'
+        ref: '#aboutMe'
     },
     {
-        text: 'Contact',
-        anchor: '#contact'
+        text: 'Contacts',
+        ref: '#contacts'
     }
 ]
 export const presentation = {
