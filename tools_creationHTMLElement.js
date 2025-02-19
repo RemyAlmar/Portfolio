@@ -23,7 +23,8 @@ export function CreateDiv(divData)
     if(divData.content != null)
         divData.content.forEach(child => 
         {
-            div.appendChild(child);
+            if(child != null)
+                div.appendChild(child);
         });
     return div;
 } 
@@ -33,11 +34,16 @@ export function CreateText(textData, textFormat, _color = 'currentColor')
     text.className = textData.className;
     text.textContent = textData.content;
     text.style.color = _color;
+    text.innerHTML = text.innerText.replace(/\n/g, "<br>");
     return text;
 }
 
 export function CreateSourceImage(imageName, path = 'Pictures', _formatImg = 'png')
 {
+    if(imageName == '')
+    {
+        return;
+    }
     const image = document.createElement('img');
     image.src = `${path}/${imageName}.${_formatImg}`;
     return image;

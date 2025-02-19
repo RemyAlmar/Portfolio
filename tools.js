@@ -4,12 +4,18 @@ import * as elem from './tools_creationHTMLElement.js'
 export function CreateCard(_data)
 {  
     /*---------------------------- Creation de la bande avec le titre ---------------------------------*/
-    const infoBubble = elem.CreateIcon(data.chevronIconData);
+    // const infoBubble = elem.CreateIcon(data.chevronIconData);
+    const infoBubbleData = new data.Data("", "More Info +");
+    const infoBubbleContent = elem.CreateText(infoBubbleData, 'p');
+    let childBubble = [infoBubbleContent];
+    const divInfoBubbleData = new data.Data("BubbleInfo Clickable",childBubble);
+    const infoBubble = elem.CreateDiv(divInfoBubbleData);
+    
     const titleGameData = new data.Data("ImportantText", _data.titleGame);
     const titleGame = elem.CreateText(titleGameData, 'h3');
     let childToolsSize = [titleGame, infoBubble];
 
-    const divProjectTitleContainerData = new data.Data("ProjectTitleContainer Clickable", childToolsSize);
+    const divProjectTitleContainerData = new data.Data("ProjectTitleContainer", childToolsSize);
     const divProjectTitleContainer = elem.CreateDiv(divProjectTitleContainerData);
 
     /*---------------------------- Creation des Icones ---------------------------------*/
@@ -115,11 +121,18 @@ export function CreateSection(_projectName)
             _bloc.img.forEach(_imgChild =>
             {
                 let _img = elem.CreateSourceImage(_imgChild);
-                _imgChilds.push(_img);
+                if(_img != null)
+                {
+                    _imgChilds.push(_img);
+                }
             })
-            let _PicturesDivData = new data.Data("Pictures", _imgChilds);
-            let _PicturesDiv = elem.CreateDiv(_PicturesDivData);
-            _blocDivChilds.push(_PicturesDiv);
+            if(_imgChilds.length > 0)
+            {              
+                console.log(_projectName);  
+                let _PicturesDivData = new data.Data("Pictures", _imgChilds);
+                let _PicturesDiv = elem.CreateDiv(_PicturesDivData);
+                _blocDivChilds.push(_PicturesDiv);
+            }
         }
 
         let _blocDivData = new data.Data("BlocContent", _blocDivChilds);
@@ -147,7 +160,7 @@ export function CreateGameDetails(_projectName)
     const divAbout = elem.CreateDiv(divAboutData);
 
     /*---------------- Creation Div Project Info --------------------*/
-    const textProjectData = new data.Data("", data.cardsDetailData[_projectName].problemText);
+    const textProjectData = new data.Data("", data.cardsDetailData[_projectName].projectInfoText);
     const textProjectInfo = elem.CreateText(textProjectData, 'p');
     const titleSectionProjectInfoData = new data.Data("",data.cardsDetailData[_projectName].titleProjectInfo);
     const titleSectionProjectInfo = elem.CreateText(titleSectionProjectInfoData, 'h3');

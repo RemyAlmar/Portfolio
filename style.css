@@ -11,8 +11,8 @@
 
     /* Color Card*/
     --colorBackgroundGameCard: #15121b;
-    --bgColorTitleInfo : #15121b;
     --bgColorCardInfo : #1b1722d8;
+    --bubbleInfoColor: var(--colorBackgroundGameCard);
 
     /* Color Header */
     --headerBoxShadow: 0px 0px 4px #120b24a5;
@@ -40,7 +40,6 @@ body
     font-size: large;
     margin: auto;
     padding: 0;
-    line-height: 1;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -82,6 +81,27 @@ video
     left: 50%; /* Centre horizontalement */
     transform: translateX(-50%); 
 }
+
+.BubbleInfo
+{    
+    height: fit-content; 
+    background-color:var(--bubbleInfoColor);
+    color: var(--colorHover);
+    border-radius: clamp(.2em, 1vw, .5em);
+    transition: scale 0.1s, background-color 0.3s ease, color 0.3s ease;   
+}
+.BubbleInfo p 
+{
+    margin: 0;
+    padding: clamp(.2em, 1vw, .5em);
+    font-size: clamp(8px, 1vw, 15px);
+}
+.BubbleInfo:hover
+{
+    background-color: var(--colorHover);
+    color: var(--bubbleInfoColor);
+    scale: 105%;
+}
 /* ------------------- Head Section - Title And Contact --------------------------*/
 header
 {
@@ -101,6 +121,7 @@ header
     width: clamp(250px, 80%, 2000px);
     align-items: center;
     display: flex;
+    line-height: 1;
     flex-direction: row;
     justify-content: space-between;
     justify-items: center;
@@ -108,7 +129,7 @@ header
 }
 #navBarTitle
 {
-    font-size: clamp(.5rem, 3vw, 1rem);
+    font-size: clamp(.8rem, 3vw, 1rem);
 }
 #navBarTitle h1 
 {
@@ -118,7 +139,7 @@ header
 }
 #navBarTitle small
 {
-    font-size: clamp(.5rem, 3vw, 1rem);
+    font-size: clamp(.8rem, 3vw, 1rem);
     font-weight: 400;
 }
 .HorizontalList
@@ -127,7 +148,7 @@ header
     width: fit-content;
     justify-content: center;
     align-items: center;
-    gap: 1.25rem;
+    gap: clamp(.5rem, 3vw, 1.25rem);
 }
 .HorizontalList a 
 {
@@ -148,6 +169,7 @@ header
 
 .NavMenu a{
     color: var(--colorBaseFont);
+    font-size: clamp(.7rem, 3vw, 1.2rem);
 }
 /*------------------------------ Content ---------------------------------------------*/
 #content{
@@ -193,7 +215,7 @@ header
     background: var(--colorBackgroundGameCard);
     border-style: solid;
     border-width: 10px 10px 0 10px;
-    border-color: var(--bgColorTitleInfo);
+    border-color: var(--colorBackgroundGameCard);
 }
 
 .CardInfo
@@ -219,7 +241,7 @@ header
     justify-content: space-between;
     text-transform: uppercase;
     height: 2.5em;
-    background: var(--bgColorTitleInfo); /* Transparence */
+    background: var(--colorBackgroundGameCard); /* Transparence */
 }
 .ProjectTitleContainer .ImportantText
 {
@@ -233,7 +255,7 @@ header
     font-size: clamp(.7rem, 1vw, 1rem);
     border-style: solid;
     border-width: 0 0 10px 0;
-    border-color: var(--bgColorTitleInfo);
+    border-color: var(--colorBackgroundGameCard);
     backdrop-filter: blur(10px);
 }
 /*------------------Icone Descriptive -------------------------*/
@@ -262,8 +284,7 @@ header
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 1rem 0 0 0;
-    gap: .75rem;
+    gap: .25rem;
     padding: 2rem;
 
 }
@@ -453,13 +474,9 @@ header
         align-items: center;
         justify-content: center;
     }
-    #navBarTitle h1 
-    {              
-        margin: 1rem 0;
-    }
     #navBarTitle small
     {
-        flex-wrap: wrap;
+        flex-wrap: no-wrap;
         text-align: center;
         line-height: 1.5;
     }
