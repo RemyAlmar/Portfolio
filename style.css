@@ -12,7 +12,7 @@
     /* Color Card*/
     --colorBackgroundGameCard: #15121b;
     --bgColorCardInfo : #1b1722d8;
-    --bubbleInfoColor: #15121b;
+    --bubbleInfoColor: var(--colorBackgroundGameCard);
 
     /* Color Header */
     --headerBoxShadow: 0px 0px 4px #120b24a5;
@@ -129,7 +129,7 @@ header
 }
 #navBarTitle
 {
-    font-size: clamp(.5rem, 3vw, 1rem);
+    font-size: clamp(.8rem, 3vw, 1rem);
 }
 #navBarTitle h1 
 {
@@ -139,7 +139,7 @@ header
 }
 #navBarTitle small
 {
-    font-size: clamp(.5rem, 3vw, 1rem);
+    font-size: clamp(.8rem, 3vw, 1rem);
     font-weight: 400;
 }
 .HorizontalList
@@ -148,7 +148,7 @@ header
     width: fit-content;
     justify-content: center;
     align-items: center;
-    gap: 1.25rem;
+    gap: clamp(.5rem, 3vw, 1.25rem);
 }
 .HorizontalList a 
 {
@@ -169,6 +169,7 @@ header
 
 .NavMenu a{
     color: var(--colorBaseFont);
+    font-size: clamp(.7rem, 3vw, 1.2rem);
 }
 /*------------------------------ Content ---------------------------------------------*/
 #content{
@@ -474,13 +475,9 @@ header
         align-items: center;
         justify-content: center;
     }
-    #navBarTitle h1 
-    {              
-        margin: 1rem 0;
-    }
     #navBarTitle small
     {
-        flex-wrap: wrap;
+        flex-wrap: no-wrap;
         text-align: center;
         line-height: 1.5;
     }

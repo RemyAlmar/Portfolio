@@ -23,7 +23,8 @@ export function CreateDiv(divData)
     if(divData.content != null)
         divData.content.forEach(child => 
         {
-            div.appendChild(child);
+            if(child != null)
+                div.appendChild(child);
         });
     return div;
 } 
@@ -38,6 +39,10 @@ export function CreateText(textData, textFormat, _color = 'currentColor')
 
 export function CreateSourceImage(imageName, path = 'Pictures', _formatImg = 'png')
 {
+    if(imageName == 'none')
+    {
+        return;
+    }
     const image = document.createElement('img');
     image.src = `${path}/${imageName}.${_formatImg}`;
     return image;

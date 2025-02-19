@@ -45,9 +45,9 @@ export const cardsData = [
         productionTime: '8 months',
         device: 'Blueprint, UE5',
         titleGame: `VoidFisher`,
-        selfRole: 'Developer', 
+        selfRole: '', 
         description: 'Coming Soon',
-        textColor: '#f28266',
+        textColor: '#fea900c9',
         BgColor: '#0f0f0f',
     },
     {
@@ -60,7 +60,7 @@ export const cardsData = [
         titleGame: `Bubbl'Head`,
         selfRole: 'Developer', 
         description: 'Coming Soon',
-        textColor: '#f28266',
+        textColor: '#fea900c9',
         BgColor: '#0f0f0f',
     },
     {
@@ -73,7 +73,7 @@ export const cardsData = [
         titleGame: 'Oculi',
         selfRole: 'UX, Developer, Animator', 
         description: 'A psychological horror game.',
-        textColor: '#f28266',
+        textColor: '#fea900c9',
         BgColor: '#0f0f0f',
     },
     {
@@ -86,7 +86,7 @@ export const cardsData = [
         titleGame: 'Shiin',
         selfRole: 'All', 
         description: 'A 2D platformer where you play as ninja.',
-        textColor: '#f28266',
+        textColor: '#fea900c9',
         BgColor: '#0f0f0f',
     }
 ];
@@ -153,9 +153,9 @@ export const cardsDetailData = [
         aboutText: '',
         titleProblemText: 'Problem encountered during development',
         problemText: '',
-        problemExample:['LogoESMA', 'LogoESMA'],
+        problemExample:['none'],
         solutionText: '',
-        solutionExample:['LogoESMA', 'LogoESMA'],
+        solutionExample:['none'],
         learnedText: '',
     }
 ];
