@@ -68,7 +68,7 @@ export const cardsData = [
         videoSrc: 'ComingSoon',
         videoPath: '',
         teamMate: '8',
-        productionTime: '2 months',
+        productionTime: '3 months',
         device: 'Blueprint, UE5',
         titleGame: 'Oculi',
         selfRole: 'UX, Developer, Animator', 
@@ -113,6 +113,8 @@ export const cardsDetailData = [
         solutionText: 'Manager opti, appel reduit par frame',
         solutionExample:[''],
         learnedText: 'I learned how to make a game with low dependancies',
+        externalLink:'',
+        linkText: 'Itch.io',
     },
     {
         projectName: EProjectName.BUBBLEHEAD,
@@ -125,10 +127,12 @@ export const cardsDetailData = [
         aboutText: `It's a fun project`,
         titleProblemText: 'Problem encountered during development',
         problemText: 'Just a problem with multiplayer local, we need use UE5.1 instead UE5.4 because a node was dysfonctionnel.',
-        problemExample:['LogoESMA', 'LogoESMA'],
+        problemExample:[''],
         solutionText: 'Changement de version pour utilisé le node',
-        solutionExample:['LogoESMA', 'LogoESMA'],
+        solutionExample:[''],
         learnedText: 'I learned how to make a local multiplayer on Unreal, and it was easyiest that Unity',
+        externalLink:'',
+        linkText: 'Itch.io',
     },
     {
         projectName: EProjectName.OCULI,
@@ -141,10 +145,12 @@ export const cardsDetailData = [
         aboutText: 'About Text',
         titleProblemText: 'Problem encountered during development',
         problemText: 'Problem Text',
-        problemExample:['LogoESMA', 'LogoESMA'],
+        problemExample:[''],
         solutionText: 'Solution Text',
-        solutionExample:['LogoESMA', 'LogoESMA'],
+        solutionExample:[''],
         learnedText: 'Learning Text',
+        externalLink:'https://lucyju.itch.io/oculi',
+        linkText: 'Itch.io',
     },
     {
         projectName: EProjectName.SHIIN,
@@ -161,6 +167,8 @@ export const cardsDetailData = [
         solutionText: 'As you can imagine, for the ragdoll, I found plenty of tutorials to solve the problem. However, I didn’t fully grasp all the details or how the system actually worked.\nAs for the AI, it was a real nightmare, managed with a ton of booleans, spoiler alert : a complete mess.',
         solutionExample:[''],
         learnedText: 'What did I learn? It was mainly a deep dive into the engine and its specifics. Of course, I made significant progress in programming, but it was really at the end of the project, or even a few weeks later, when I started learning C++, that I made a major leap forward.',
+        externalLink:'https://remy-almar.itch.io/shiin',
+        linkText: 'Itch.io',
     }
 ];
 

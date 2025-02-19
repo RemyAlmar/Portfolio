@@ -59,12 +59,6 @@ video
     cursor: pointer;
     color: var(--colorHover);    
 }
-#contact
-{
-    padding: 2em;
-    line-height: 1.5;
-}
-
 #bubbleInfo
 {
     position: fixed;
@@ -284,7 +278,7 @@ header
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: .25rem;
+    gap: 0.25rem;
     padding: 2rem;
 
 }
@@ -351,33 +345,41 @@ header
     border-radius: 10px;
 }
 .TitleBand{
-    background-color: #151320d9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--colorBackgroundGameCard);
     backdrop-filter: blur(20px); /* Effet de flou */
     position: absolute;
     padding: clamp(.5rem, 1vw, 1rem);
     text-transform: uppercase;
-    margin: auto;
+    margin: 0;
     height: fit-content;
     width: 100%;
     bottom: 0;
     font-size: clamp(.8rem, 2vw, 1.5rem);
     border-radius: 0 0 10px 10px;
 }
-
-.TitleBand h2{
-    margin: auto;
+.TitleBand h2
+{
+    margin: 0;
+}
+.TitleBand .BubbleInfo p 
+{
+    font-size: clamp(.8rem, 2vw, 1.5rem);
 }
 .GameInfo{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 1rem;
     margin-top: 1%;
 }
 
 .Section{
     flex: 1 1 300px;
-    background-color: #151320d9;
-    padding: 1em;
+    background-color: var(--colorBackgroundGameCard);
+    padding: 1rem;
     border-radius: 5px;
 }
 .SubjectContent {
@@ -388,16 +390,26 @@ header
 .Pictures{
     display: flex;
     flex-wrap: wrap;
-    margin: 3% 0;
+    margin: 1rem 0;
     justify-content: space-between;
-    background-color: #201333a1;
+    background-color: var(--colorBackgroundGameCard);
 }
 .Pictures *{
     flex: 1 1 150px;
     width: 50%;
 }
 
-
+/*--------------CONTACT-----------------*/
+#contacts
+{
+    padding: 2rem;
+    line-height: 1.25;
+}
+#contacts .HorizontalList
+{
+    
+    gap: clamp(.25rem, 1vw, .75rem) !important;
+}
 /*---------------------- Animation --------------------------*/
 .DisplayAnimationPage
 {

@@ -4,7 +4,6 @@ import * as elem from './tools_creationHTMLElement.js'
 export function CreateCard(_data)
 {  
     /*---------------------------- Creation de la bande avec le titre ---------------------------------*/
-    // const infoBubble = elem.CreateIcon(data.chevronIconData);
     const infoBubbleData = new data.Data("", "More Info +");
     const infoBubbleContent = elem.CreateText(infoBubbleData, 'p');
     let childBubble = [infoBubbleContent];
@@ -38,7 +37,6 @@ export function CreateCard(_data)
     const childInfo = [divProjectTitleContainer, divDescription];
     const cardInfoData = new data.Data("CardInfo", childInfo);
     const divCardInfo = elem.CreateDiv(cardInfoData);
-    //divCardInfo.style.backgroundColor = _data.BgColor;
     elem.SetColorToClassElement(divCardInfo, _data.textColor,"ImportantText");
     
     /*---------------------------- Creation de la div Video ---------------------------------*/
@@ -174,14 +172,24 @@ export function CreateGameDetails(_projectName)
     const divGameInfo = elem.CreateDiv(divGameInfoData);
 
 /*---------------- Creation du titre du jeu ------------------------*/
-    const titleGameBandData = new data.Data("", data.cardsDetailData[_projectName].titleGame);
+    const titleGameBandData = new data.Data("ImportantText", data.cardsDetailData[_projectName].titleGame);
     const titleGameBand = elem.CreateText(titleGameBandData, 'h2', data.cardsData[_projectName].textColor);
+/*-----------------Création du lien Itchio-----------------------------*/
+    const infoBubbleData = new data.Data("", data.cardsDetailData[_projectName].linkText);
+    const infoBubbleContent = elem.CreateText(infoBubbleData, 'p');
+    const infoBubbleLinkData = new data.Data("", "");
+    const infoBubbleLink = elem.CreateText(infoBubbleLinkData, 'a');
+    infoBubbleLink.setAttribute("href", data.cardsDetailData[_projectName].externalLink);
+    infoBubbleLink.setAttribute("target", "_blank");
+    infoBubbleLink.appendChild(infoBubbleContent);
+    let childBubble = [infoBubbleLink];
+    const divInfoBubbleData = new data.Data("BubbleInfo Clickable",childBubble);
+    const infoBubble = elem.CreateDiv(divInfoBubbleData);
 
 /*---------------- Creation de la bande du jeu ------------------------*/
-    const childInfo = [titleGameBand];
+    const childInfo = [titleGameBand, infoBubble];
     const titleBandData = new data.Data("TitleBand", childInfo);
     const divTitleBand = elem.CreateDiv(titleBandData);
-   /* divCardInfo.style.backgroundColor = data.cardsData[_projectName].BgColor;
 
 /*---------------- Creation de la vidéo ------------------------*/
     const video = elem.CreateVideo(data.cardsDetailData[_projectName].videoSrc);
