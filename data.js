@@ -39,7 +39,7 @@ export const cardsData = [
     
     {
         projectName: EProjectName.VOIDFISHER,
-        videoSrc: 'ExtraitVideo',
+        videoSrc: 'ComingSoon',
         videoPath: '',
         teamMate: '10',
         productionTime: '8 months',
@@ -52,7 +52,7 @@ export const cardsData = [
     },
     {
         projectName: EProjectName.BUBBLEHEAD,
-        videoSrc: 'ExtraitVideo',
+        videoSrc: 'ComingSoon',
         videoPath: '',
         teamMate: '7',
         productionTime: '2 days',
@@ -65,7 +65,7 @@ export const cardsData = [
     },
     {
         projectName: EProjectName.OCULI,
-        videoSrc: 'ExtraitVideo',
+        videoSrc: 'ComingSoon',
         videoPath: '',
         teamMate: '8',
         productionTime: '2 months',
@@ -78,7 +78,7 @@ export const cardsData = [
     },
     {
         projectName: EProjectName.SHIIN,
-        videoSrc: 'ExtraitVideo',
+        videoSrc: 'ComingSoon',
         videoPath: '',
         teamMate: '1',
         productionTime: '3 months',
@@ -101,7 +101,7 @@ export const cardsDetailData = [
     {
         projectName: EProjectName.VOIDFISHER,
         titleGame: `VoidFisher`,
-        videoSrc: 'ExtraitVideo',
+        videoSrc: 'ComingSoon',
         videoPath: '',
         titleAbout: 'About',
         titleProjectInfo: 'Project Info',
@@ -116,7 +116,7 @@ export const cardsDetailData = [
     {
         projectName: EProjectName.BUBBLEHEAD,
         titleGame: `Bubbl'Head`,
-        videoSrc: 'ExtraitVideo',
+        videoSrc: 'ComingSoon',
         videoPath: '',
         titleAbout: 'About',
         titleProjectInfo: 'Project Info',
@@ -131,7 +131,7 @@ export const cardsDetailData = [
     {
         projectName: EProjectName.OCULI,
         titleGame: 'Oculi',
-        videoSrc: 'ExtraitVideo',
+        videoSrc: 'ComingSoon',
         videoPath: '',
         titleAbout: 'About',
         titleProjectInfo: 'Project Info',
@@ -146,7 +146,7 @@ export const cardsDetailData = [
     {
         projectName: EProjectName.SHIIN,
         titleGame: 'Shiin',
-        videoSrc: 'ExtraitVideo',
+        videoSrc: 'ComingSoon',
         videoPath: '',
         titleAbout: 'About',
         titleProjectInfo: 'Project Info',
