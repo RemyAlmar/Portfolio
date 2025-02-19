@@ -121,11 +121,18 @@ export function CreateSection(_projectName)
             _bloc.img.forEach(_imgChild =>
             {
                 let _img = elem.CreateSourceImage(_imgChild);
-                _imgChilds.push(_img);
+                if(_img != null)
+                {
+                    _imgChilds.push(_img);
+                }
             })
-            let _PicturesDivData = new data.Data("Pictures", _imgChilds);
-            let _PicturesDiv = elem.CreateDiv(_PicturesDivData);
-            _blocDivChilds.push(_PicturesDiv);
+            if(_imgChilds.length > 0)
+            {              
+                console.log(_projectName);  
+                let _PicturesDivData = new data.Data("Pictures", _imgChilds);
+                let _PicturesDiv = elem.CreateDiv(_PicturesDivData);
+                _blocDivChilds.push(_PicturesDiv);
+            }
         }
 
         let _blocDivData = new data.Data("BlocContent", _blocDivChilds);
@@ -153,7 +160,7 @@ export function CreateGameDetails(_projectName)
     const divAbout = elem.CreateDiv(divAboutData);
 
     /*---------------- Creation Div Project Info --------------------*/
-    const textProjectData = new data.Data("", data.cardsDetailData[_projectName].problemText);
+    const textProjectData = new data.Data("", data.cardsDetailData[_projectName].projectInfoText);
     const textProjectInfo = elem.CreateText(textProjectData, 'p');
     const titleSectionProjectInfoData = new data.Data("",data.cardsDetailData[_projectName].titleProjectInfo);
     const titleSectionProjectInfo = elem.CreateText(titleSectionProjectInfoData, 'h3');

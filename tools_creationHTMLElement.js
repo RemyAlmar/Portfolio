@@ -34,12 +34,13 @@ export function CreateText(textData, textFormat, _color = 'currentColor')
     text.className = textData.className;
     text.textContent = textData.content;
     text.style.color = _color;
+    text.innerHTML = text.innerText.replace(/\n/g, "<br>");
     return text;
 }
 
 export function CreateSourceImage(imageName, path = 'Pictures', _formatImg = 'png')
 {
-    if(imageName == 'none')
+    if(imageName == '')
     {
         return;
     }
