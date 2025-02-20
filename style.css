@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 :root
 {
-    --TestColorData: #f28266;
+    --TestColorData: #bb843d;
 
     --colorBaseFont: #f2fdff;
     --colorContact: #fea900c9;
@@ -411,6 +411,25 @@ header
     gap: clamp(.25rem, 1vw, .75rem) !important;
 }
 /*---------------------- Animation --------------------------*/
+.UnderLine
+{
+    text-decoration: none;
+    position: relative;
+}
+.UnderLine::after
+{
+    content: ''; /* Créer un pseudo-élément vide */
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 0;
+    height: 2px; /* Épaisseur de la ligne */
+    background-color: var(--colorHover); /* Couleur de la ligne */
+    transition: width 0.3s ease; /* Animation du soulignement */
+}
+.UnderLine:hover::after {
+  width: 100%; /* La ligne s'étend à 100% sous le mot lors du survol */
+}
 .DisplayAnimationPage
 {
     animation: fadeIn .5s forwards;
