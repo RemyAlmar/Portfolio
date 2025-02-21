@@ -155,7 +155,7 @@ export const cardsDetailData = [
     {
         projectName: EProjectName.SHIIN,
         titleGame: 'Shiin',
-        videoSrc: 'ComingSoon',
+        videoSrc: 'ShiinTrailer_02',
         videoPath: '',
         titleProjectInfo: 'Project Info',
         projectInfoText: 'Solo Project\n\nPlatformer 2D - Action - Solo\n\nProduction Time : 3 months',
