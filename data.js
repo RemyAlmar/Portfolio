@@ -78,7 +78,7 @@ export const cardsData = [
     },
     {
         projectName: EProjectName.SHIIN,
-        videoSrc: 'ComingSoon',
+        videoSrc: 'ShiinTrailer',
         videoPath: '',
         teamMate: '1',
         productionTime: '3 months',
