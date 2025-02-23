@@ -4,9 +4,9 @@
     --TestColorData: #bb843d;
 
     --colorBaseFont: #f2fdff;
-    --colorContact: #fea900c9;
+    --colorContact: #ff9900;
     --colorMainTitle: #b7e2ff;
-    --colorHover: #ff9b05;
+    --colorHover: #ff8000;
     --colorBackgroundBody: #1a1a25;
 
     /* Color Card*/
@@ -322,18 +322,31 @@ header
 }
 
 .BackButton{
-    display: flex;
-    font-size: clamp(15px, 1vw, 25px);
-    justify-content: center;
-    width: fit-content;
-    height: fit-content;
-    padding: 0 1.5em;
-    position: fixed;
+    background-color: #27221d;
+    border-radius: 2em;
     bottom: 2%;
+    color: var(--colorHover);
+    display: flex;
+    font-size: clamp(.7em, 2vw, 1em);
+    height: fit-content;
+    justify-content: center;
+    padding: 0 1em;
+    position: fixed;
     right: 5%;
+    transition: scale 0.2s, background-color .2s ease-in-out, color .2s ease-in-out;
+    width: fit-content;
     z-index: 15;
 }
-
+.BackButton:hover
+{  
+    background-color: var(--colorHover);
+    color: #27221d;
+    scale: 110%;
+}
+.BackButton > *
+{
+    margin: .7em;
+}
 /*---------------------- Card Info ---------------------------*/
 .VideoContainer
 {
