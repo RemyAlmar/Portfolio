@@ -49,7 +49,6 @@ export function CreateCard(_data)
 
     infoBubble.addEventListener('click', () => 
     {
-        console.log("Click");
         const event = new CustomEvent('clickInfoBubble', {detail: {projectName: _data.projectName}});
         window.dispatchEvent(event);        
     });
@@ -208,7 +207,6 @@ export function CreateGameDetails(_projectName)
 
     divButtonBack.addEventListener('click', () => 
     {
-        console.log("BackToMainMenu");
         const event = new CustomEvent('backToMainPage');
         window.dispatchEvent(event);        
     });
