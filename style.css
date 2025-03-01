@@ -45,7 +45,7 @@ body
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: clamp(250px, 100%, 5000px);
+    width: clamp(250px, 100%, 100%);
 }
 video
 {
