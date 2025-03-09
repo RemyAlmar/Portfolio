@@ -4,7 +4,7 @@ import * as elem from './tools_creationHTMLElement.js'
 export function CreateHeader(_headerIndex) 
 {
     /* --------------------------------- Menu du Header ---------------------------------*/
-    let childsListNavMenu = [links];
+    let childsListNavMenu = [];
     data.Headers[_headerIndex].links.forEach((_currentLink, _index) => {
         const _linkData = new data.Data(data.Headers[_headerIndex].classLinks, _currentLink);
         const _link = elem.CreateText(_linkData, 'a');
@@ -16,15 +16,17 @@ export function CreateHeader(_headerIndex)
     const listNavMenu = elem.CreateDiv(listNavMenuData);
 
     /*----------------- Partie Gauche du Header (Nom Prenom Profession) -----------------*/
-    const professionData = new data.Data("", data.Headers[_headerIndex].profession);
+    const professionData = new data.Data("", data.Headers[_headerIndex].profession, '', false);
     const profession = elem.CreateText(professionData, 'small');
 
     const linkCVData = new data.Data("Clickable", data.Headers[_headerIndex].fullName);
     const linkCV = elem.CreateText(linkCVData, 'a');
+    linkCV.setAttribute('href', data.linkCv);
+    linkCV.setAttribute('target', "_blank");
 
     const titleSectionAboutData = new data.Data();
     const titleSectionAbout = elem.CreateText(titleSectionAboutData, 'h1');
-    titleSectionAbout.appendChild(linkCV, profession);
+    titleSectionAbout.append(linkCV, profession);
 
     /*----------------- Bande du Header -----------------*/
     const childsNavBarTitle = [titleSectionAbout];
@@ -37,6 +39,8 @@ export function CreateHeader(_headerIndex)
 
     const header = document.createElement('header');
     header.appendChild(divNavBar);
+
+    return header;
 }
 
 export function CreateCard(_data)

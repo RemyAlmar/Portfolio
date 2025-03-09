@@ -22,6 +22,7 @@ export const chevronIconData = new Data("SVG Icon", chevronSVG);
 export const linkedinIconData = new Data("SVG ExtLink Icon Clickable", linkedinSVG);
 export const githubIconData = new Data("SVG ExtLink Icon Clickable", githubSVG);
 
+export const linkCv = "/Misc/CV_GameplayProgrammer.pdf";
 export const EProjectName = 
 {
     VOIDFISHER : 0,    
@@ -33,10 +34,10 @@ export const EProjectName =
 export const Headers =
 [
     {
-        fullName : 'Rémy ALMAR',
+        fullName : 'ALMAR Rémy',
         profession : 'Gameplay Programmer',
         links : ['Home', 'Projects', 'About me', 'Contacts'],
-        refLinks : ['#', '#content', '#', 'contacts'],  
+        refLinks : ['#', '#content', '#', '#contacts'],  
         classLinks : "Clickable UnderLine",  
     },
 

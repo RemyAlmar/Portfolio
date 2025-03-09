@@ -2,8 +2,10 @@ import * as tools from './tools.js';
 import * as toolsHtml from './tools_creationHTMLElement.js';
 
 let container = document.getElementById('content');
+const header = tools.CreateHeader(0);
 const divMain = tools.DisplayMainPage();
 const detailledCards = tools.CreateAllGameDetails();
+container.appendChild(header);
 container.appendChild(divMain);
 
 window.addEventListener('clickInfoBubble', (event) =>
