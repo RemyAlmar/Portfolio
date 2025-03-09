@@ -1,6 +1,44 @@
 import * as data from './data.js';
 import * as elem from './tools_creationHTMLElement.js'
 
+export function CreateHeader(_headerIndex) 
+{
+    /* --------------------------------- Menu du Header ---------------------------------*/
+    let childsListNavMenu = [links];
+    data.Headers[_headerIndex].links.forEach((_currentLink, _index) => {
+        const _linkData = new data.Data(data.Headers[_headerIndex].classLinks, _currentLink);
+        const _link = elem.CreateText(_linkData, 'a');
+        _link.setAttribute('href', data.Headers[_headerIndex].refLinks[_index]);
+        childsListNavMenu.push(_link);
+    });
+
+    const listNavMenuData = new data.Data("HorizontalList NavMenu", childsListNavMenu);
+    const listNavMenu = elem.CreateDiv(listNavMenuData);
+
+    /*----------------- Partie Gauche du Header (Nom Prenom Profession) -----------------*/
+    const professionData = new data.Data("", data.Headers[_headerIndex].profession);
+    const profession = elem.CreateText(professionData, 'small');
+
+    const linkCVData = new data.Data("Clickable", data.Headers[_headerIndex].fullName);
+    const linkCV = elem.CreateText(linkCVData, 'a');
+
+    const titleSectionAboutData = new data.Data();
+    const titleSectionAbout = elem.CreateText(titleSectionAboutData, 'h1');
+    titleSectionAbout.appendChild(linkCV, profession);
+
+    /*----------------- Bande du Header -----------------*/
+    const childsNavBarTitle = [titleSectionAbout];
+    const navBarTitleData = new data.Data("NavBarTitle", childsNavBarTitle);
+    const navBarTitle = elem.CreateDiv(navBarTitleData);
+     
+    const childsNavBar = [navBarTitle, listNavMenu];
+    const divNavBarData = new data.Data("NavBar", childsNavBar);
+    const divNavBar = elem.CreateDiv(divNavBarData);
+
+    const header = document.createElement('header');
+    header.appendChild(divNavBar);
+}
+
 export function CreateCard(_data)
 {  
     /*---------------------------- Creation de la bande avec le titre ---------------------------------*/

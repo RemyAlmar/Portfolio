@@ -29,10 +29,30 @@ export const EProjectName =
     OCULI : 2,
     SHIIN : 3
 }
+
+export const Headers =
+[
+    {
+        fullName : 'Rémy ALMAR',
+        profession : 'Gameplay Programmer',
+        links : ['Home', 'Projects', 'About me', 'Contacts'],
+        refLinks : ['#', '#content', '#', 'contacts'],  
+        classLinks : "Clickable UnderLine",  
+    },
+
+    {
+        fullName : 'Rémy ALMAR',
+        profession : 'Gameplay Programmer',
+        links : ['Home'],
+        refLinks : ['/'],
+        classLinks : "Clickable UnderLine",
+    }
+]
+
 export const presentation = {
     parcours: 'Student at ESMA in Toulouse, I like working on all kinds of projects in which my contribution can be useful.',
     passion: 'I like learning new things, especially about programming and animation, these two professions are those in which I would like to flourish.',
-    lookThat: 'Below you can see some projects I have worked on and here my <a class="Clickable UnderLine" href="/Portfolio/Misc/CV_GameplayProgrammer.pdf" target="_blank">CV</a>.',
+    lookThat: 'Below you can see some projects I have worked on and here my <a class="Clickable UnderLine" href="/Misc/CV_GameplayProgrammer.pdf" target="_blank">CV</a>.',
 };
 
 export const cardsData = [
