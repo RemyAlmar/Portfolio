@@ -1,6 +1,48 @@
 import * as data from './data.js';
 import * as elem from './tools_creationHTMLElement.js'
 
+export function CreateHeader(_headerIndex) 
+{
+    /* --------------------------------- Menu du Header ---------------------------------*/
+    let childsListNavMenu = [];
+    data.Headers[_headerIndex].links.forEach((_currentLink, _index) => {
+        const _linkData = new data.Data(data.Headers[_headerIndex].classLinks, _currentLink);
+        const _link = elem.CreateText(_linkData, 'a');
+        _link.setAttribute('href', data.Headers[_headerIndex].refLinks[_index]);
+        childsListNavMenu.push(_link);
+    });
+
+    const listNavMenuData = new data.Data("HorizontalList NavMenu", childsListNavMenu);
+    const listNavMenu = elem.CreateDiv(listNavMenuData);
+
+    /*----------------- Partie Gauche du Header (Nom Prenom Profession) -----------------*/
+    const professionData = new data.Data("", data.Headers[_headerIndex].profession, '');
+    const profession = elem.CreateText(professionData, 'small');
+
+    const linkCVData = new data.Data("Clickable", data.Headers[_headerIndex].fullName);
+    const linkCV = elem.CreateText(linkCVData, 'a');
+    linkCV.setAttribute('href', data.linkCv);
+    linkCV.setAttribute('target', "_blank");
+
+    const titleSectionAboutData = new data.Data();
+    const titleSectionAbout = elem.CreateText(titleSectionAboutData, 'h1');
+    titleSectionAbout.append(linkCV, profession);
+
+    /*----------------- Bande du Header -----------------*/
+    const childsNavBarTitle = [titleSectionAbout];
+    const navBarTitleData = new data.Data("NavBarTitle", childsNavBarTitle);
+    const navBarTitle = elem.CreateDiv(navBarTitleData);
+     
+    const childsNavBar = [navBarTitle, listNavMenu];
+    const divNavBarData = new data.Data("NavBar", childsNavBar);
+    const divNavBar = elem.CreateDiv(divNavBarData);
+
+    const header = document.createElement('header');
+    header.appendChild(divNavBar);
+
+    return header;
+}
+
 export function CreateCard(_data)
 {  
     /*---------------------------- Creation de la bande avec le titre ---------------------------------*/
@@ -49,7 +91,7 @@ export function CreateCard(_data)
 
     infoBubble.addEventListener('click', () => 
     {
-        const event = new CustomEvent('clickInfoBubble', {detail: {projectName: _data.projectName}});
+        const event = new CustomEvent('clickInfoBubble', {detail: {projectName: _data.projectName, titleGame: _data.titleGame}});
         window.dispatchEvent(event);        
     });
     return videoDiv;
@@ -84,7 +126,7 @@ export function DisplayMainPage()
 
     //Ajout des div au container parent
     const mainChild = [presentation, cardArray];
-    const divMainData = new data.Data("MainContent", mainChild);
+    const divMainData = new data.Data("SubjectContainer", mainChild);
     divMain = elem.CreateDiv(divMainData);
 
     return divMain;
@@ -216,10 +258,18 @@ export function CreateGameDetails(_projectName)
     const divProjectContainer = elem.CreateDiv(divProjectContainerData);
 
     const divContainerChilds = [divProjectContainer, divButtonBack];
-    const divContainerData = new data.Data('GlobalContainer', divContainerChilds);
+    const divContainerData = new data.Data('SubjectContainer', divContainerChilds);
     const divContainer = elem.CreateDiv(divContainerData);
 
-    return divContainer;
+    let header = CreateHeader(1);
+    let footer = CreateFooter();
+
+    let childsContent = [header, divContainer, footer];
+    const contentData = new data.Data("", childsContent);
+    const content = elem.CreateDiv(contentData);
+    content.setAttribute('id', 'content');
+
+    return content;
 }
 
 export function CreateAllGameDetails()
@@ -234,6 +284,51 @@ export function CreateAllGameDetails()
     return detailledCards;
 }
 
+export function CreateFooter()
+{
+    let childsHorList = [];
+    data.linkContacts.forEach(link => {
+        const toolsIcon = elem.CreateIcon(link.linkIcon);
+        const linkData = new data.Data("ExtLink Clickable", "");
+        let currentlink = elem.CreateText(linkData, 'a');
+        currentlink.setAttribute('href', link.linkURL);
+        currentlink.setAttribute('target', '_blank');
+        currentlink.setAttribute('title', link.displayName);
+        currentlink.appendChild(toolsIcon);
+        childsHorList.push(currentlink);
+    });
+
+    const divHorizontalListData = new data.Data("HorizontalList", childsHorList);
+    const divHorizontalList = elem.CreateDiv(divHorizontalListData);
+
+    const mailData = new data.Data("Clickable mail", 'r.almar1997@gmail.com');
+    const mail = elem.CreateText(mailData, 'p');
+    mail.setAttribute('id', 'mail');
+
+    const titleContactsData = new data.Data("", 'Contacts');
+    const titleContacts = elem.CreateText(titleContactsData, 'h4');
+
+    let childsVerticalList = [titleContacts, mail, divHorizontalList];
+    const divVerticalListData = new data.Data('VerticalList', childsVerticalList); 
+    const divVerticalList = elem.CreateDiv(divVerticalListData);
+    divVerticalList.setAttribute('id', 'contacts');
+
+    const footer = document.createElement('footer');
+    footer.appendChild(divVerticalList);
+    return footer;
+}
+
+export function CreateMainPage()
+{
+    const header = CreateHeader(0);
+    const divMain = DisplayMainPage();
+    const footer = CreateFooter();
+    let childsContent = [header, divMain, footer];
+    const contentData = new data.Data("", childsContent);
+    const content = elem.CreateDiv(contentData);
+    content.setAttribute('id', 'content');
+    return content;
+} 
 export function FadeInAnimation(_parentContainer)
 {
     _parentContainer.classList.add('DisplayAnimationPage');
@@ -260,6 +355,5 @@ export function FadeOutAnimation(_parentContainer, _elementToDisplay)
         FadeInAnimation(_parentContainer);
     };
     _parentContainer.addEventListener('animationend', handleAnimationEnd);
-
     console.log("Changement de page initié, In");
 }

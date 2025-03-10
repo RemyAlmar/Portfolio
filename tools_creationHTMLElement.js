@@ -28,7 +28,7 @@ export function CreateDiv(divData)
         });
     return div;
 } 
-export function CreateText(textData, textFormat, _color = 'currentColor')
+export function CreateText(textData, textFormat, _color = '')
 {
     const text = document.createElement(`${textFormat}`);
     text.className = textData.className;

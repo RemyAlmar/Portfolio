@@ -45,7 +45,7 @@ body
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: clamp(250px, 100%, 5000px);
+    width: clamp(250px, 100%, 100%);
 }
 video
 {
@@ -112,7 +112,7 @@ header
 }
 .NavBar
 {
-    width: clamp(250px, 80%, 2000px);
+    width: clamp(250px, 80%, 1100px);
     align-items: center;
     display: flex;
     line-height: 1;
@@ -121,17 +121,17 @@ header
     justify-items: center;
     color: var(--colorMainTitle);
 }
-#navBarTitle
+.NavBarTitle
 {
     font-size: clamp(.8rem, 3vw, 1rem);
 }
-#navBarTitle h1 
+.NavBarTitle h1 
 {
     margin: .5rem 0;
     display: flex;
     flex-direction: column;
 }
-#navBarTitle small
+.NavBarTitle small
 {
     font-size: clamp(.8rem, 3vw, 1rem);
     font-weight: 400;
@@ -166,10 +166,10 @@ header
     font-size: clamp(.7rem, 3vw, 1.2rem);
 }
 /*------------------------------ Content ---------------------------------------------*/
-#content{
+.SubjectContainer{
     justify-items: center;
     margin: auto;
-    width: clamp(250px, 80%, 2000px);
+    width: clamp(250px, 80%, 1100px);
     transition: opacity 1s;
 }
 
