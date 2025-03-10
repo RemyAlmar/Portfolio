@@ -91,7 +91,7 @@ export function CreateCard(_data)
 
     infoBubble.addEventListener('click', () => 
     {
-        const event = new CustomEvent('clickInfoBubble', {detail: {projectName: _data.projectName}});
+        const event = new CustomEvent('clickInfoBubble', {detail: {projectName: _data.projectName, titleGame: _data.titleGame}});
         window.dispatchEvent(event);        
     });
     return videoDiv;
@@ -261,7 +261,15 @@ export function CreateGameDetails(_projectName)
     const divContainerData = new data.Data('SubjectContainer', divContainerChilds);
     const divContainer = elem.CreateDiv(divContainerData);
 
-    return divContainer;
+    let header = CreateHeader(1);
+    let footer = CreateFooter();
+
+    let childsContent = [header, divContainer, footer];
+    const contentData = new data.Data("", childsContent);
+    const content = elem.CreateDiv(contentData);
+    content.setAttribute('id', 'content');
+
+    return content;
 }
 
 export function CreateAllGameDetails()
@@ -310,12 +318,15 @@ export function CreateFooter()
     return footer;
 }
 
-export function CreatePage()
+export function CreateMainPage()
 {
-    let childsContent = []; 
-    let contentData = new data.Data("", childsContent);
-    let content = elem.CreateDiv(contentData);    
-
+    const header = CreateHeader(0);
+    const divMain = DisplayMainPage();
+    const footer = CreateFooter();
+    let childsContent = [header, divMain, footer];
+    const contentData = new data.Data("", childsContent);
+    const content = elem.CreateDiv(contentData);
+    content.setAttribute('id', 'content');
     return content;
 } 
 export function FadeInAnimation(_parentContainer)
@@ -344,6 +355,5 @@ export function FadeOutAnimation(_parentContainer, _elementToDisplay)
         FadeInAnimation(_parentContainer);
     };
     _parentContainer.addEventListener('animationend', handleAnimationEnd);
-
     console.log("Changement de page initié, In");
 }

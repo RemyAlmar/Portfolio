@@ -41,7 +41,7 @@ export const EProjectName =
     VOIDFISHER : 0,    
     BUBBLEHEAD : 1,
     OCULI : 2,
-    SHIIN : 3
+    SHIIN : 3,
 }
 
 export const Headers =
