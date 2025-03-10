@@ -1,12 +1,14 @@
 import * as tools from './tools.js';
 import * as toolsHtml from './tools_creationHTMLElement.js';
 
-let container = document.getElementById('content');
+let content = document.getElementById('content');
 const header = tools.CreateHeader(0);
 const divMain = tools.DisplayMainPage();
 const detailledCards = tools.CreateAllGameDetails();
-container.appendChild(header);
-container.appendChild(divMain);
+const footer = tools.CreateFooter();
+content.appendChild(header);
+content.appendChild(divMain);
+content.appendChild(footer);
 
 window.addEventListener('clickInfoBubble', (event) =>
 {

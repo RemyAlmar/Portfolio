@@ -16,7 +16,7 @@ export function CreateHeader(_headerIndex)
     const listNavMenu = elem.CreateDiv(listNavMenuData);
 
     /*----------------- Partie Gauche du Header (Nom Prenom Profession) -----------------*/
-    const professionData = new data.Data("", data.Headers[_headerIndex].profession, '', false);
+    const professionData = new data.Data("", data.Headers[_headerIndex].profession, '');
     const profession = elem.CreateText(professionData, 'small');
 
     const linkCVData = new data.Data("Clickable", data.Headers[_headerIndex].fullName);
@@ -126,7 +126,7 @@ export function DisplayMainPage()
 
     //Ajout des div au container parent
     const mainChild = [presentation, cardArray];
-    const divMainData = new data.Data("MainContent", mainChild);
+    const divMainData = new data.Data("SubjectContainer", mainChild);
     divMain = elem.CreateDiv(divMainData);
 
     return divMain;
@@ -258,7 +258,7 @@ export function CreateGameDetails(_projectName)
     const divProjectContainer = elem.CreateDiv(divProjectContainerData);
 
     const divContainerChilds = [divProjectContainer, divButtonBack];
-    const divContainerData = new data.Data('GlobalContainer', divContainerChilds);
+    const divContainerData = new data.Data('SubjectContainer', divContainerChilds);
     const divContainer = elem.CreateDiv(divContainerData);
 
     return divContainer;
@@ -276,6 +276,48 @@ export function CreateAllGameDetails()
     return detailledCards;
 }
 
+export function CreateFooter()
+{
+    let childsHorList = [];
+    data.linkContacts.forEach(link => {
+        const toolsIcon = elem.CreateIcon(link.linkIcon);
+        const linkData = new data.Data("ExtLink Clickable", "");
+        let currentlink = elem.CreateText(linkData, 'a');
+        currentlink.setAttribute('href', link.linkURL);
+        currentlink.setAttribute('target', '_blank');
+        currentlink.setAttribute('title', link.displayName);
+        currentlink.appendChild(toolsIcon);
+        childsHorList.push(currentlink);
+    });
+
+    const divHorizontalListData = new data.Data("HorizontalList", childsHorList);
+    const divHorizontalList = elem.CreateDiv(divHorizontalListData);
+
+    const mailData = new data.Data("Clickable mail", 'r.almar1997@gmail.com');
+    const mail = elem.CreateText(mailData, 'p');
+    mail.setAttribute('id', 'mail');
+
+    const titleContactsData = new data.Data("", 'Contacts');
+    const titleContacts = elem.CreateText(titleContactsData, 'h4');
+
+    let childsVerticalList = [titleContacts, mail, divHorizontalList];
+    const divVerticalListData = new data.Data('VerticalList', childsVerticalList); 
+    const divVerticalList = elem.CreateDiv(divVerticalListData);
+    divVerticalList.setAttribute('id', 'contacts');
+
+    const footer = document.createElement('footer');
+    footer.appendChild(divVerticalList);
+    return footer;
+}
+
+export function CreatePage()
+{
+    let childsContent = []; 
+    let contentData = new data.Data("", childsContent);
+    let content = elem.CreateDiv(contentData);    
+
+    return content;
+} 
 export function FadeInAnimation(_parentContainer)
 {
     _parentContainer.classList.add('DisplayAnimationPage');

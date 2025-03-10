@@ -28,16 +28,13 @@ export function CreateDiv(divData)
         });
     return div;
 } 
-export function CreateText(textData, textFormat, _color = '', isText = true)
+export function CreateText(textData, textFormat, _color = '')
 {
     const text = document.createElement(`${textFormat}`);
     text.className = textData.className;
     text.textContent = textData.content;
     text.style.color = _color;
-    if(isText)
-    {
-        text.innerHTML = text.innerText.replace(/\n/g, "<br>");
-    }
+    text.innerHTML = text.innerText.replace(/\n/g, "<br>");
     return text;
 }
 

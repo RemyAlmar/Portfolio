@@ -166,7 +166,7 @@ header
     font-size: clamp(.7rem, 3vw, 1.2rem);
 }
 /*------------------------------ Content ---------------------------------------------*/
-#content{
+.SubjectContainer{
     justify-items: center;
     margin: auto;
     width: clamp(250px, 80%, 1100px);
