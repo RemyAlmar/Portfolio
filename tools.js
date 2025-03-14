@@ -9,9 +9,37 @@ export function CreateHeader(_headerIndex)
         const _linkData = new data.Data(data.Headers[_headerIndex].classLinks, _currentLink);
         const _link = elem.CreateText(_linkData, 'a');
         _link.setAttribute('href', data.Headers[_headerIndex].refLinks[_index]);
+        _link.addEventListener("click", (event) => {
+            if(data.Headers[_headerIndex].refLinks[_index] == "#")
+            {
+                event.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+                
+                return;
+            }
+            if (_headerIndex == 0) 
+            {
+                event.preventDefault();
+                if(event.target.hash)
+                {
+                    const targetElement = document.querySelector(event.target.hash);
+                    if (targetElement) {
+                        
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                    return;
+                }
+            }                        
+            window.dispatchEvent(new PopStateEvent("popstate", { state: history.state }));
+        });
+                
+        // window.dispatchEvent(new PopStateEvent("popstate", { state: history.state }));
         childsListNavMenu.push(_link);
     });
-
+                
     const listNavMenuData = new data.Data("HorizontalList NavMenu", childsListNavMenu);
     const listNavMenu = elem.CreateDiv(listNavMenuData);
 
@@ -111,7 +139,7 @@ export function DisplayMainPage()
     //*Ajout des enfants à la présentation
     const presentationData = new data.Data("", childs);
     const presentation = elem.CreateDiv(presentationData);
-    presentation.id = 'presentation';
+    presentation.id = 'about';
     
     //Initialisation des cartes
     let cardChilds = []; 
@@ -303,6 +331,7 @@ export function CreateFooter()
 
     const mailData = new data.Data("Clickable mail", 'r.almar1997@gmail.com');
     const mail = elem.CreateText(mailData, 'p');
+    elem.CopyText(mail);
     mail.setAttribute('id', 'mail');
 
     const titleContactsData = new data.Data("", 'Contacts');
@@ -329,7 +358,7 @@ export function CreateMainPage()
     content.setAttribute('id', 'content');
     return content;
 } 
-export function FadeInAnimation(_parentContainer)
+export function FadeOutAnimation(_parentContainer)
 {
     _parentContainer.classList.add('DisplayAnimationPage');
 
@@ -339,10 +368,8 @@ export function FadeInAnimation(_parentContainer)
     };
     _parentContainer.addEventListener('animationend', handleAnimationEnd);
 
-    console.log("Changement de page initié, Out");
-
 }
-export function FadeOutAnimation(_parentContainer, _elementToDisplay)
+export function FadeInAnimation(_parentContainer, _elementToDisplay)
 {
     _parentContainer.classList.add('HiddenAnimationPage');
 
@@ -352,8 +379,7 @@ export function FadeOutAnimation(_parentContainer, _elementToDisplay)
         window.scrollTo(0, 0);
         _parentContainer.classList.remove('HiddenAnimationPage');
         _parentContainer.removeEventListener('animationend', handleAnimationEnd);
-        FadeInAnimation(_parentContainer);
+        FadeOutAnimation(_parentContainer);
     };
     _parentContainer.addEventListener('animationend', handleAnimationEnd);
-    console.log("Changement de page initié, In");
 }

@@ -132,9 +132,9 @@ export function CreateBubbleInfo(content = 'BubbleInfo')
 
     return divText;
 }
-export function CopyText(eventForCopy = 'click', idSelected = 'mail')
+export function CopyText(element, eventForCopy = 'click')
 {
-    const elementToCopy = document.getElementById(idSelected);
+    const elementToCopy = element;
 
     elementToCopy.addEventListener(eventForCopy, () => {
 
@@ -142,8 +142,6 @@ export function CopyText(eventForCopy = 'click', idSelected = 'mail')
         navigator.clipboard.writeText(textToCopy).then(() => {
             let bubbleInfo = CreateBubbleInfo(`${textToCopy} was copied`);
             document.body.appendChild(bubbleInfo);
-
-            //Supprime la bubble après 1.5s
             setTimeout(() => 
             {
                 bubbleInfo.remove();
