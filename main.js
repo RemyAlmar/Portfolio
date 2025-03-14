@@ -13,29 +13,19 @@ window.addEventListener('clickInfoBubble', (event) =>
     const projectName = event.detail.titleGame;
     history.pushState({ page: projectIndex }, projectIndex, `#${projectName}`);
 
-    tools.FadeOutAnimation(body, detailledCards[event.detail.projectName]);
+    tools.FadeInAnimation(body, detailledCards[event.detail.projectName]);
 });
+
 window.addEventListener('backToMainPage', () =>
 {
     history.pushState({ page: 'home' }, 'home', '#home');
-    tools.FadeOutAnimation(body, mainPage);
-    // window.history.back();
+    tools.FadeInAnimation(body, mainPage);
 });
+
 window.addEventListener('popstate', (event) => 
 {
     const page = event.state ? event.state.page : 'home';  // Si aucun état trouvé, revenir à 'home'
-    if (page === 'home') {
-        // Si on revient à la page d'accueil, afficher mainPage
-        tools.FadeOutAnimation(body, mainPage);
-    } else {
-        // Si on est sur une page de projet, afficher le projet correspondant
-        if (detailledCards[page]) {
-            tools.FadeOutAnimation(body, detailledCards[page]);  // Utilise le nom du projet comme clé
-        } else {
-            // Si le projet n'existe pas (erreur), on revient à l'accueil par défaut
-            tools.FadeOutAnimation(body, mainPage);
-        }
-    }
+    tools.FadeInAnimation(body, page === 'home' ? mainPage : detailledCards[page]);
 });
 
 // Une fois les videos chargées, fait le calcul pour placer la bande
@@ -61,5 +51,3 @@ function PlaceBandOnGameCard(elementToPlaceClassName, elemToGetHeightClassName =
         index++;
     };
 }
-
-toolsHtml.CopyText();

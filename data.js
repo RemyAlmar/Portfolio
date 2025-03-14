@@ -50,7 +50,7 @@ export const Headers =
         fullName : 'ALMAR Rémy',
         profession : 'Gameplay Programmer',
         links : ['Home', 'Projects', 'About me', 'Contacts'],
-        refLinks : ['#', '#content', '#', '#contacts'],  
+        refLinks : ['#', '#content', '#about', '#contacts'],  
         classLinks : "Clickable UnderLine",  
     },
 
@@ -58,7 +58,7 @@ export const Headers =
         fullName : 'Rémy ALMAR',
         profession : 'Gameplay Programmer',
         links : ['Home'],
-        refLinks : ['/'],
+        refLinks : ['#home'],
         classLinks : "Clickable UnderLine",
     }
 ]
