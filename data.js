@@ -147,7 +147,7 @@ export const cardsDetailData = [
         solutionText: '...',
         solutionExample:[''],
         learnedText: '...',
-        externalLink:'VoidFisher',
+        externalLink:'https://remyalmar.github.io/Portfolio/#VoidFisher',
         linkText: 'Coming Soon on Itch.io',
     },
     {
