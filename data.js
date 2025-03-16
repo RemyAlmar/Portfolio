@@ -147,8 +147,8 @@ export const cardsDetailData = [
         solutionText: '...',
         solutionExample:[''],
         learnedText: '...',
-        externalLink:'',
-        linkText: 'Itch.io',
+        externalLink:'VoidFisher',
+        linkText: 'Coming Soon on Itch.io',
     },
     {
         projectName: EProjectName.BUBBLEHEAD,
@@ -165,8 +165,8 @@ export const cardsDetailData = [
         solutionText: '...',
         solutionExample:[''],
         learnedText: '...',
-        externalLink:'',
-        linkText: 'Itch.io',
+        externalLink:'https://malvy-delaban.itch.io/bubblhead',
+        linkText: 'Play Game on Itch.io',
     },
     {
         projectName: EProjectName.OCULI,
