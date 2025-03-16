@@ -1,24 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 :root
 {
-    --TestColorData: #bb843d;
-
+    
     --colorBaseFont: #f2fdff;
     --colorContact: #ff9900;
     --colorMainTitle: #b7e2ff;
     --colorHover: #ff8000;
     --colorBackgroundBody: #1a1a25;
 
-    /* Color Card*/
+    /* /* Color Card */
     --colorBackgroundGameCard: #15121b;
     --bgColorCardInfo : #1b1722d8;
     --bubbleInfoColor: var(--colorBackgroundGameCard);
 
-    /* Color Header */
+    /* /* Color Header  */
     --headerBoxShadow: 0px 0px 4px #120b24a5;
     --colorNavBar: #0e0d13c2;
     --navBarBlur: 15px;
 }
+
 html
 {
     scroll-behavior: smooth;
@@ -95,6 +95,11 @@ video
     background-color: var(--colorHover);
     color: var(--bubbleInfoColor);
     scale: 105%;
+}
+
+.BubbleInfo a 
+{
+    color : currentColor;
 }
 /* ------------------- Head Section - Title And Contact --------------------------*/
 header

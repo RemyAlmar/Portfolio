@@ -50,12 +50,12 @@ export const Headers =
         fullName : 'ALMAR Rémy',
         profession : 'Gameplay Programmer',
         links : ['Home', 'Projects', 'About me', 'Contacts'],
-        refLinks : ['#', '#content', '#about', '#contacts'],  
+        refLinks : ['#', '#project', '#', '#contacts'],  
         classLinks : "Clickable UnderLine",  
     },
 
     {
-        fullName : 'Rémy ALMAR',
+        fullName : 'ALMAR Rémy',
         profession : 'Gameplay Programmer',
         links : ['Home'],
         refLinks : ['#home'],
@@ -81,7 +81,7 @@ export const cardsData = [
         titleGame: `VoidFisher`,
         selfRole: '', 
         description: 'Coming Soon',
-        textColor: '#ff9b05',
+        textColor: '#ff8000',
         BgColor: '#0f0f0f',
     },
     {
@@ -92,9 +92,9 @@ export const cardsData = [
         productionTime: '2 days',
         device: 'Blueprint, UE5',
         titleGame: `Bubbl'Head`,
-        selfRole: 'Developer', 
-        description: 'It’s a multiplayer party game for up to 4 players, where you battle against each other in an arena. Your goal: push your opponents out of the play area and be the last one standing to win. Ready? Set... Push!',
-        textColor: '#ff9b05',
+        selfRole: 'My role : Developer', 
+        description: 'Local Multiplayer / Party Game',
+        textColor: '#ff8000',
         BgColor: '#0f0f0f',
     },
     {
@@ -106,8 +106,8 @@ export const cardsData = [
         device: 'Blueprint, UE5',
         titleGame: 'Oculi',
         selfRole: 'My role : UX, Developer, Animator', 
-        description: 'It’s a psychological horror game where you play as Elise, a journalist trapped in the manor she was investigating. To escape and evade the lurking monster, you’ll need to solve puzzles.',
-        textColor: '#ff9b05',
+        description: 'Psychological Horror Game / Puzzle / First Person',
+        textColor: '#ff8000',
         BgColor: '#0f0f0f',
     },
     {
@@ -118,9 +118,9 @@ export const cardsData = [
         productionTime: '3 months',
         device: 'C#, Unity',
         titleGame: 'Shiin',
-        selfRole: 'My role : All', 
-        description: 'This a 2D platformer where you play as ninja. You have to fight ennemies and overcomes several obstacles to finish all levels.',
-        textColor: '#ff9b05',
+        selfRole: '', 
+        description: 'Platformer 2D / Action / Solo',
+        textColor: '#ff8000',
         BgColor: '#0f0f0f',
     }
 ];
@@ -184,7 +184,7 @@ export const cardsDetailData = [
         solutionExample:[''],
         learnedText: 'On this project, I mainly deepened my understanding of data handling. The real challenge was primarily the lack of time and organization.',
         externalLink:'https://lucyju.itch.io/oculi',
-        linkText: 'Itch.io',
+        linkText: 'Play Game on Itch.io',
     },
     {
         projectName: EProjectName.SHIIN,
@@ -194,15 +194,15 @@ export const cardsDetailData = [
         titleProjectInfo: 'Project Info',
         projectInfoText: 'Solo Project\n\nPlatformer 2D - Action - Solo\n\nProduction Time : 3 months',
         titleAbout: 'About',
-        aboutText: 'Shiin was my very first solo project.\nBack then, I had no knowledge of code architecture: class inheritance, interfaces, and even the essential basics needed to successfully complete such a project were unknown to me.\nI added it to my portfolio, not to showcase my work, but to remind myself where I started and to measure how far I’ve come.\nDespite its flaws, I still feel a genuine sense of pride for it.',
+        aboutText: 'Shiin was my first solo project.\nWhile far from perfect, I still feel a genuine sense of pride in it, as it reflects my growth from the very beginning to where I am today.',
         titleProblemText: 'Problem encountered during development',
-        problemText: 'I couldn’t list all the challenges I faced during development, but in reality, they weren’t "problems" per se, but rather a lack of knowledge and experience. These obstacles gradually disappeared as I progressed, thanks to a lot of research.\nFor example, I remember struggling with implementing the ragdoll system and working on the AI. As I mentioned earlier, at the time, I had no concept of class inheritance, interfaces, or even state machines.\nI only discovered these concepts after finishing the project. I honestly don’t know how I didn’t come across them sooner.',
+        problemText: 'My two biggest challenges were designing a functional and engaging AI, as well as implementing a ragdoll system that activates upon a character’s death.',
         problemExample:['ShiinTrailer_Ragdoll_01', 'ShiinTrailer_Ragdoll_02'],
-        solutionText: 'As you can imagine, for the ragdoll, I found plenty of tutorials to solve the problem. However, I didn’t fully grasp all the details or how the system actually worked.\nEn ce qui concerne les IA, elles fonctionnaient grâce à des booleens, en faisant le post mortem de ce jeu et après avoir parlé à plusieurs personnes j’ai découvert les states machines',
+        solutionText: 'As for the ragdoll system, the issue was resolved with the help of tutorials. However, due to time constraints, I wasn’t able to fully grasp how it worked.\nRegarding the AI, they were built using a system based on multiple booleans. It wasn’t until after this project that I discovered the state machine pattern.',
         solutionExample:[''],
-        learnedText: 'Unity, les states machines, création de controller, gestion des IA, level design',
+        learnedText: 'As my first major project, I learned a lot, including working with the Unity engine, creating a fluid controller, managing AI, level design, and camera handling.\nThere were so many things I learned that it’s hard to list them all.',
         externalLink:'https://remy-almar.itch.io/shiin',
-        linkText: 'Itch.io',
+        linkText: 'Play Game on Itch.io',
     }
 ];
 
