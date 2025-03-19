@@ -52,6 +52,7 @@ body
 {    
     color : var(--colorBaseFont);
     background-color: var(--colorBackgroundBody);
+    width: clamp(250px, 100%, 100%);
 }
 video
 {
